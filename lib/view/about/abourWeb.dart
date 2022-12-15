@@ -206,17 +206,18 @@ class _AboutWebState extends ConsumerState<AboutWeb> {
                               child: Container(
                                 width: AppClass().getMqWidth(context) * 0.22,
                                 height: AppClass().getMqWidth(context) * 0.22,
-                                decoration: BoxDecoration(
-                                    borderRadius: const BorderRadius.all(
-                                        Radius.circular(5.0)),
+                                decoration: const BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(5.0)),
                                     image: DecorationImage(
                                         fit: BoxFit.cover,
-                                        colorFilter: ColorFilter.mode(
-                                            AppColors().primaryColor,
-                                            isHovered
-                                                ? BlendMode.lighten
-                                                : BlendMode.color),
-                                        image: const AssetImage(
+                                        // colorFilter: ColorFilter.mode(
+                                        //     AppColors().primaryColor,
+                                        //     isHovered
+                                        //         ? BlendMode.lighten
+                                        //         : BlendMode.color
+                                        //         ),
+                                        image: AssetImage(
                                             'assets/svg/profilePic.jpg')),
                                     color: Colors.transparent),
                               ),

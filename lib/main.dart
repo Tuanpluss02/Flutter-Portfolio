@@ -15,7 +15,7 @@ class AppTheme extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'PORTFOLIO',
+      title: 'Tuan Do\'s Portfolio',
       theme: ThemeData(
         brightness: Brightness.dark,
         primaryColor: AppColors().primaryColor,
