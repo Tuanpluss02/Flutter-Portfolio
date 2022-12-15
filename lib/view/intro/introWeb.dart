@@ -6,6 +6,7 @@ import '../../resource/appClass.dart';
 import '../../resource/colors.dart';
 import '../../resource/strings.dart';
 
+// ignore: must_be_immutable
 class IntroWeb extends StatefulWidget {
   AutoScrollController aScrollController;
 

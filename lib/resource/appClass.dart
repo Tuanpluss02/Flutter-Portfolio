@@ -13,56 +13,57 @@ class AppClass {
 
   /* URL */
   static const resumeDownloadURL =
-      '''https://jeeva-portfolio.s3.amazonaws.com/JEEVANANDHAM's+Resume.pdf''';
+      '''https://www.facebook.com/tuanpluss.stormX/''';
 
-  static const gitSafeC19 = '''https://github.com/jeeva-HBK/SafeC19''';
+  static const gitSafeC19 = '''https://github.com/Tuanpluss02/english-memory''';
 
   // static final gitHermarts = '''https://github.com/jeeva-HBK/SafeC19''';
-  static const gitWtIot = '''https://github.com/jeeva-HBK/AutoChem''';
+  static const gitWtIot =
+      '''https://github.com/Tuanpluss02/e-commerce-flutter''';
   static const gitAutoStabilizer =
-      '''https://github.com/jeeva-HBK/AutoStabilizer''';
-  static const gitPAT = '''https://github.com/jeeva-HBK/PAT''';
+      '''https://github.com/Tuanpluss02/Computer-Program-Assignment''';
+  static const gitPAT =
+      '''https://github.com/Tuanpluss02/Microprocessors-Assignment''';
 
   // static final gitAVM = '''https://github.com/jeeva-HBK/SafeC19''';
 
   List<WorkModel> projectList = [
     WorkModel(
-        projectTitle: "SafeC19",
+        projectTitle: "English Quiz",
         projectContent:
-            "It’s an Automatic Contactless Face Mask detection/Temperature detection/Hand Sanitizer app",
+            "This is a simple English quiz app, it's a game to test your English knowledge.",
         tech1: "Android",
-        tech2: "Google ML",
-        tech3: "Java"),
+        tech2: "Flutter",
+        tech3: "iOS"),
     WorkModel(
-        projectTitle: "Hermarts",
-        projectContent: "E-Commerce Application for homemade Indian products",
-        tech1: "Android",
-        tech2: "RazorPay"),
-    WorkModel(
-        projectTitle: "WT-IoT",
+        projectTitle: "Flutter Chat App",
         projectContent:
-            '''It’s a water treatment process controller which can control all the sensors, calibration process, and staff management.''',
-        tech1: "Android",
-        tech2: "TCP",
-        tech3: "API"),
+            "A simple chating application using Firebase to store data and Flutter to build UI.",
+        tech1: "Firebase",
+        tech2: "Flutter"),
     WorkModel(
-        projectTitle: "AutoStabilizer",
-        projectContent:
-            '''Client - SenseElec Remote controller mobile app for stabilizers and can be accessed locally(WiFi) and globally(MQTT).''',
+        projectTitle: "E-Commerce UI App",
+        projectContent: '''This is a simple E-Commerce app, only UI.''',
         tech1: "Android",
-        tech2: "MQTT"),
+        tech2: "Hero",
+        tech3: "Flutter"),
     WorkModel(
-        projectTitle: "PAT",
+        projectTitle: "Custom management system",
         projectContent:
-            '''PCB testing tool that helps QC/QA employees of T-Town international, records the production flow and work strategy of every employee and automatically generates and stores some of the records as reports in the cloud.''',
-        tech1: "Flutter",
-        tech2: "NodeJs"),
+            '''This is a simple customer management system written in C++. It's allows you to add, edit, delete, sort and search customers. It also allows you to save and load customers from a file.''',
+        tech1: "C++",
+        tech2: "Regex"),
     WorkModel(
-        projectTitle: "AVM",
+        projectTitle: "STM32 Project",
         projectContent:
-            '''It Acts as a display of a beverage vending machine that can perform several operations like Brewing, Dispensing, Cleaning drums, and several other operations.''',
-        tech1: "Android",
-        tech2: "Tablet"),
+            '''Using STM32 to control 26 LEDs, 1 button to change the effect of the LEDs. The project is written in C.''',
+        tech1: "C Language",
+        tech2: "STM32"),
+    WorkModel(
+        projectTitle: "Discord bot",
+        projectContent: '''A Discord bot using Dart and nyxx package.''',
+        tech1: "Dart",
+        tech2: "Nyxx"),
   ];
 
   factory AppClass() {

@@ -301,7 +301,7 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                             border: Border.all(
                                 color: AppColors().neonColor, width: 1.5)),
                         child: Center(
-                          child: Text('Resume',
+                          child: Text('Contact',
                               style: TextStyle(
                                   color: AppColors().neonColor,
                                   fontSize: 13,

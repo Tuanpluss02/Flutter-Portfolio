@@ -1,7 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/resource/appClass.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../resource/colors.dart';
 import '../../resource/strings.dart';
@@ -73,7 +73,10 @@ class _ContactWebState extends State<ContactWeb> {
               Padding(
                 padding: const EdgeInsets.only(top: 50, bottom: 70),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () async {
+                    await launchUrl(
+                        Uri.parse("https://m.me/tuanpluss.stormX/"));
+                  },
                   child: Container(
                     height: AppClass().getMqHeight(context) * 0.09,
                     width: AppClass().getMqWidth(context) * 0.15,
@@ -100,7 +103,7 @@ class _ContactWebState extends State<ContactWeb> {
           Column(
             children: [
               Text(
-                '''Built & Developed by Jeevanandham''',
+                '''Thanks for visit my website''',
                 style: TextStyle(
                     color: AppColors().textColor,
                     fontSize: 12,
@@ -109,7 +112,7 @@ class _ContactWebState extends State<ContactWeb> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  '''ref - Britney C''',
+                  '''Do Ngoc Tuan - 2022''',
                   style: TextStyle(
                       color: AppColors().neonColor,
                       fontSize: 12,

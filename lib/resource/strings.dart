@@ -10,9 +10,9 @@ class Strings {
 
   /* About screen contents */
   static const aboutPara1 =
-      '''Hello! My name is Tuan Do and I enjoy creating things that live on the internet. My interest in mobile development started back in 2019 when I decided to clone some applications — turns my passion into profession.''';
+      '''Hello! My name is Tuan Do and I enjoy creating things that live on the internet. My interest in mobile development started back in 2021 when I decided to clone some applications — turns my passion into profession.''';
   static const aboutPara2 =
-      '''Fast-forward to today, and I’ve had the privilege of working for a good organization, a product-based, a huge corporation, and a student-led working atmosphere. My main focus these days is building accessible, inclusive products and digital experiences at Netaccess for a variety of clients.''';
+      '''Currently, I am a 3rd year student at Posts and Telecommunications Institute of Technology. I work as a tech lead at Code MeLy - an IT community in Vietnam..''';
   static const aboutPara3 =
       '''I also freelance for various clients across the world. If you've any ideas about creating a project or something, feel free to contact me!''';
 
@@ -24,7 +24,7 @@ class Strings {
   static const tech4 = ''' Python'''; // space for manual padding
 
   /* Exp screen contents */
-  static const expCompName1 = '''Techno Kryon''';
+  static const expCompName1 = '''GDG Hanoi''';
   static const expDesig1 = '''Android Developer''';
   static const expDur1 = '''Nov 2019 - Mar 2020''';
   static const expAbout1 =
