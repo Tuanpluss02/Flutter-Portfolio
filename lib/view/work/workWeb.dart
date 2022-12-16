@@ -137,10 +137,13 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
         String data = ref.watch(hoverProvider);
         bool isHovered = (data == "$index");
         return AnimatedContainer(
+          decoration: const BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(30))),
           duration: const Duration(milliseconds: 300),
           // Provide an optional curve to make the animation feel smoother.
           curve: Curves.fastOutSlowIn,
           margin: EdgeInsets.all(isHovered ? 8.0 : 0.0),
+
           child: Card(
             color: AppColors().cardColor,
             elevation: 10,

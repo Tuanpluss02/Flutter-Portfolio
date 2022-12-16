@@ -115,7 +115,10 @@ class AppClass {
                       style: ElevatedButton.styleFrom(
                           backgroundColor: AppColors().neonColor),
                       onPressed: () => Navigator.pop(context),
-                      child: const Text('Okay'))
+                      child: const Text(
+                        'Okay',
+                        style: TextStyle(color: Colors.black),
+                      ))
                 ]));
   }
 }

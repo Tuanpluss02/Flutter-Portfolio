@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_portfolio/controller/generalController.dart';
 import 'package:my_portfolio/resource/appClass.dart';
+import 'package:rive/rive.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../resource/colors.dart';
@@ -16,6 +17,51 @@ class ContactWeb extends StatefulWidget {
 }
 
 class _ContactWebState extends State<ContactWeb> {
+  String animation = 'idle';
+
+  Artboard? _birdArtboard;
+  SMIBool? trigger;
+  StateMachineController? stateMachineController;
+
+  @override
+  void initState() {
+    super.initState();
+    rootBundle.load('rive/pup_hello.riv').then(
+      (data) {
+        final file = RiveFile.import(data);
+        final artboard = file.mainArtboard;
+        stateMachineController =
+            StateMachineController.fromArtboard(artboard, "State Machine 1");
+        if (stateMachineController != null) {
+          artboard.addController(stateMachineController!);
+          trigger = stateMachineController!.findSMI('searchHover');
+          // isHover = stateMachineController!.findSMI('searchHover');
+          // for (var e in stateMachineController!.inputs) {
+          //   debugPrint(e.runtimeType.toString());
+          //   debugPrint("name${e.name}End");
+          // }
+          // try {
+          trigger = stateMachineController!.inputs.first as SMIBool;
+          // } on Exception catch (exception) {
+          //   print(exception);
+          // } catch (error) {
+          //   print(error);
+          // }
+        }
+
+        setState(() => _birdArtboard = artboard);
+      },
+    );
+  }
+
+  void jump() {
+    trigger?.value = true;
+  }
+
+  void disjump() {
+    trigger?.value = false;
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -75,8 +121,6 @@ class _ContactWebState extends State<ContactWeb> {
               Padding(
                 padding: const EdgeInsets.only(top: 50, bottom: 70),
                 child: Consumer(builder: (context, ref, child) {
-                  var data = ref.watch(hoverProvider);
-                  bool isHovered = (data == "hello");
                   return InkWell(
                     onTap: () async {
                       await launchUrl(
@@ -84,34 +128,40 @@ class _ContactWebState extends State<ContactWeb> {
                     },
                     onHover: (bol) {
                       if (bol) {
-                        ref.read(hoverProvider.notifier).state = "hello";
+                        jump();
                       } else {
-                        ref.read(hoverProvider.notifier).state = "";
+                        disjump();
                       }
                     },
-                    child: Container(
-                      height: AppClass().getMqHeight(context) * 0.09,
-                      width: AppClass().getMqWidth(context) * 0.15,
-                      decoration: BoxDecoration(
-                          color: (isHovered
-                              ? AppColors().neonColor
-                              : Colors.transparent),
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(3.0)),
-                          border: Border.all(
-                              color: AppColors().neonColor, width: 1.5)),
-                      child: Center(
-                        child: Text('Say Hello!',
-                            style: TextStyle(
-                                color: (isHovered
-                                    ? Colors.black
-                                    : AppColors().neonColor),
-                                fontSize: 13,
-                                letterSpacing: 1,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'sfmono')),
+
+                    child: Stack(children: [
+                      Container(
+                        margin: const EdgeInsets.only(top: 5),
+                        height: AppClass().getMqHeight(context) * 0.2,
+                        // width: AppClass().getMqHeight(context) * 0.5,
+                        child: Center(
+                          child: Rive(artboard: _birdArtboard!),
+                        ),
                       ),
-                    ),
+                      Padding(
+                        padding: EdgeInsets.only(
+                            top: AppClass().getMqHeight(context) * 0.12,
+                            right: 10),
+                        child: Center(
+                          child: Text('Say Hello!',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: AppColors().primaryColor,
+                                  fontSize: 25,
+                                  letterSpacing: 1,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'sfmono')),
+                        ),
+                      ),
+                    ]),
+
+                    //    ),
+                    //  ),
                   );
                 }),
               )
