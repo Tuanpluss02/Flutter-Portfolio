@@ -40,7 +40,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                     SizedBox(
                       width: AppClass().getMqWidth(context) * 0.35,
                       child: Text(
-                        Strings.expAbout1,
+                        Strings.expAbout3,
                         style: TextStyle(
                             color: AppColors().textLight,
                             letterSpacing: 1,
@@ -67,7 +67,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                     SizedBox(
                       width: AppClass().getMqWidth(context) * 0.35,
                       child: Text(
-                        Strings.expAbout1_2,
+                        Strings.expAbout3_2,
                         style: TextStyle(
                             color: AppColors().textLight,
                             letterSpacing: 1,
@@ -94,7 +94,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                     SizedBox(
                       width: AppClass().getMqWidth(context) * 0.35,
                       child: Text(
-                        Strings.expAbout1_3,
+                        Strings.expAbout3_3,
                         style: TextStyle(
                             color: AppColors().textLight,
                             letterSpacing: 1,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../model/workModel.dart';
+import 'colors.dart';
 import 'styles.dart';
 
 enum ScreenType { mobile, tab, web }
@@ -40,7 +41,8 @@ class AppClass {
         projectContent:
             "A simple chating application using Firebase to store data and Flutter to build UI.",
         tech1: "Firebase",
-        tech2: "Flutter"),
+        tech2: "Flutter",
+        tech3: "BLoC"),
     WorkModel(
         projectTitle: "E-Commerce UI App",
         projectContent: '''This is a simple E-Commerce app, only UI.''',
@@ -52,18 +54,21 @@ class AppClass {
         projectContent:
             '''This is a simple customer management system written in C++. It's allows you to add, edit, delete, sort and search customers. It also allows you to save and load customers from a file.''',
         tech1: "C++",
-        tech2: "Regex"),
+        tech2: "Regex",
+        tech3: "OOP"),
     WorkModel(
         projectTitle: "STM32 Project",
         projectContent:
             '''Using STM32 to control 26 LEDs, 1 button to change the effect of the LEDs. The project is written in C.''',
         tech1: "C Language",
-        tech2: "STM32"),
+        tech2: "STM32",
+        tech3: "Embedded"),
     WorkModel(
         projectTitle: "Discord bot",
         projectContent: '''A Discord bot using Dart and nyxx package.''',
         tech1: "Dart",
-        tech2: "Nyxx"),
+        tech2: "Nyxx",
+        tech3: "Discord"),
   ];
 
   factory AppClass() {
@@ -108,7 +113,7 @@ class AppClass {
                 actions: [
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.green),
+                          backgroundColor: AppColors().neonColor),
                       onPressed: () => Navigator.pop(context),
                       child: const Text('Okay'))
                 ]));

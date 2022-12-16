@@ -136,7 +136,10 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
       child: Consumer(builder: (context, ref, child) {
         String data = ref.watch(hoverProvider);
         bool isHovered = (data == "$index");
-        return Container(
+        return AnimatedContainer(
+          duration: const Duration(milliseconds: 300),
+          // Provide an optional curve to make the animation feel smoother.
+          curve: Curves.fastOutSlowIn,
           margin: EdgeInsets.all(isHovered ? 8.0 : 0.0),
           child: Card(
             color: AppColors().cardColor,

@@ -12,7 +12,7 @@ class Strings {
   static const aboutPara1 =
       '''Hello! My name is Tuan Do and I enjoy creating things that live on the internet. My interest in mobile development started back in 2021 when I decided to clone some applications — turns my passion into profession.''';
   static const aboutPara2 =
-      '''Currently, I am a 3rd year student at Posts and Telecommunications Institute of Technology. I work as a tech lead at Code MeLy - an IT community in Vietnam..''';
+      '''Currently, I am a 3rd year student at Posts and Telecommunications Institute of Technology. I work as a tech lead at Code MeLy - an IT community in Vietnam.''';
   static const aboutPara3 =
       '''I also freelance for various clients across the world. If you've any ideas about creating a project or something, feel free to contact me!''';
 
@@ -25,8 +25,8 @@ class Strings {
 
   /* Exp screen contents */
   static const expCompName1 = '''GDG Hanoi''';
-  static const expDesig1 = '''Android Developer''';
-  static const expDur1 = '''Nov 2019 - Mar 2020''';
+  static const expDesig1 = '''Member''';
+  static const expDur1 = '''Nov 2022 - Present''';
   static const expAbout1 =
       '''sample test about the work statuary and atmosphere, qerjqwjqwiojeqwjeq ''';
   static const expAbout1_2 =
@@ -50,8 +50,7 @@ class Strings {
   static const expAbout3 =
       '''Develop the landing page using Flutter for web ''';
   static const expAbout3_2 = '''Write articles about technology ''';
-  static const expAbout3_3 =
-      '''sample test about the work statuary and atmosphere, qerjqwjqwiojeqwjeq ''';
+  static const expAbout3_3 = '''Human Resource Manager ''';
 
   /* Contact screen content */
   static const endTxt =

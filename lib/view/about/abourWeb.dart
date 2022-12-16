@@ -179,7 +179,7 @@ class _AboutWebState extends ConsumerState<AboutWeb> {
                         bool isHovered = (data == "profilePic");
                         return Stack(
                           children: [
-                            Container(
+                            AnimatedContainer(
                               width: AppClass().getMqWidth(context) *
                                   (isHovered ? 0.22 : 0.225),
                               height: AppClass().getMqWidth(context) *
@@ -192,6 +192,9 @@ class _AboutWebState extends ConsumerState<AboutWeb> {
                                   border: Border.all(
                                       color: AppColors().neonColor,
                                       width: 1.5)),
+                              duration: const Duration(milliseconds: 300),
+                              // Provide an optional curve to make the animation feel smoother.
+                              curve: Curves.fastOutSlowIn,
                             ),
                             InkWell(
                               onTap: () {},

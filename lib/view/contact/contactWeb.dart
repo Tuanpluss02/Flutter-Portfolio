@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_portfolio/controller/generalController.dart';
 import 'package:my_portfolio/resource/appClass.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -72,31 +74,46 @@ class _ContactWebState extends State<ContactWeb> {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 50, bottom: 70),
-                child: InkWell(
-                  onTap: () async {
-                    await launchUrl(
-                        Uri.parse("https://m.me/tuanpluss.stormX/"));
-                  },
-                  child: Container(
-                    height: AppClass().getMqHeight(context) * 0.09,
-                    width: AppClass().getMqWidth(context) * 0.15,
-                    decoration: BoxDecoration(
-                        color: Colors.transparent,
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(3.0)),
-                        border: Border.all(
-                            color: AppColors().neonColor, width: 1.5)),
-                    child: Center(
-                      child: Text('Say Hello!',
-                          style: TextStyle(
-                              color: AppColors().neonColor,
-                              fontSize: 13,
-                              letterSpacing: 1,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'sfmono')),
+                child: Consumer(builder: (context, ref, child) {
+                  var data = ref.watch(hoverProvider);
+                  bool isHovered = (data == "hello");
+                  return InkWell(
+                    onTap: () async {
+                      await launchUrl(
+                          Uri.parse("https://m.me/tuanpluss.stormX/"));
+                    },
+                    onHover: (bol) {
+                      if (bol) {
+                        ref.read(hoverProvider.notifier).state = "hello";
+                      } else {
+                        ref.read(hoverProvider.notifier).state = "";
+                      }
+                    },
+                    child: Container(
+                      height: AppClass().getMqHeight(context) * 0.09,
+                      width: AppClass().getMqWidth(context) * 0.15,
+                      decoration: BoxDecoration(
+                          color: (isHovered
+                              ? AppColors().neonColor
+                              : Colors.transparent),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(3.0)),
+                          border: Border.all(
+                              color: AppColors().neonColor, width: 1.5)),
+                      child: Center(
+                        child: Text('Say Hello!',
+                            style: TextStyle(
+                                color: (isHovered
+                                    ? Colors.black
+                                    : AppColors().neonColor),
+                                fontSize: 13,
+                                letterSpacing: 1,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'sfmono')),
+                      ),
                     ),
-                  ),
-                ),
+                  );
+                }),
               )
             ],
           ),

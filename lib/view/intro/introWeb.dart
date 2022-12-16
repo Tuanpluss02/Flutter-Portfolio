@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_portfolio/controller/generalController.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
 import '../../resource/appClass.dart';
@@ -17,6 +19,7 @@ class IntroWeb extends StatefulWidget {
 }
 
 class _IntroWebState extends State<IntroWeb> {
+  // late bool isHovered;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -95,32 +98,47 @@ class _IntroWebState extends State<IntroWeb> {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 50, bottom: 70),
-                child: InkWell(
-                  onTap: () {
-                    widget.aScrollController.scrollToIndex(1,
-                        preferPosition: AutoScrollPosition.begin);
-                  },
-                  child: Container(
-                    height: AppClass().getMqHeight(context) * 0.09,
-                    width: AppClass().getMqWidth(context) * 0.2,
-                    decoration: BoxDecoration(
-                        color: Colors.transparent,
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(3.0)),
-                        border: Border.all(
-                            color: AppColors().neonColor, width: 1.5)),
-                    child: Center(
-                      child: Text('Check Out My Work!',
-                          style: TextStyle(
-                              color: AppColors().neonColor,
-                              fontSize: 13,
-                              letterSpacing: 1,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'sfmono')),
+                child: Consumer(builder: (context, ref, child) {
+                  var data = ref.watch(hoverProvider);
+                  bool isHovered = (data == "checkout");
+                  return InkWell(
+                    onHover: (bol) {
+                      if (bol) {
+                        ref.read(hoverProvider.notifier).state = "checkout";
+                      } else {
+                        ref.read(hoverProvider.notifier).state = "";
+                      }
+                    },
+                    onTap: () {
+                      widget.aScrollController.scrollToIndex(1,
+                          preferPosition: AutoScrollPosition.begin);
+                    },
+                    child: Container(
+                      height: AppClass().getMqHeight(context) * 0.09,
+                      width: AppClass().getMqWidth(context) * 0.2,
+                      decoration: BoxDecoration(
+                          color: (isHovered
+                              ? AppColors().neonColor
+                              : Colors.transparent),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(3.0)),
+                          border: Border.all(
+                              color: AppColors().neonColor, width: 1.5)),
+                      child: Center(
+                        child: Text('Check Out My Work!',
+                            style: TextStyle(
+                                color: (isHovered
+                                    ? Colors.black
+                                    : AppColors().neonColor),
+                                fontSize: 13,
+                                letterSpacing: 1,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'sfmono')),
+                      ),
                     ),
-                  ),
-                ),
-              )
+                  );
+                }),
+              ),
             ],
           ),
         ],

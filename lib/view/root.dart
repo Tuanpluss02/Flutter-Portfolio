@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
+import 'package:web_smooth_scroll/web_smooth_scroll.dart';
 
 import '../controller/generalController.dart';
 import '../resource/appClass.dart';
@@ -23,6 +24,12 @@ class RootScreen extends ConsumerStatefulWidget {
 
 class _RootScreenState extends ConsumerState<RootScreen> {
   final aScrollController = AutoScrollController();
+  //late ScrollController _scrollController;
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -69,35 +76,42 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                             : const LeftPane(),
                         Expanded(
                             flex: 8,
-                            child: ListView(
+                            child: WebSmoothScroll(
                               controller: aScrollController,
-                              children: [
-                                AutoScrollTag(
-                                    key: const ValueKey(0),
-                                    controller: aScrollController,
-                                    index: 0,
-                                    child: IntroContent(aScrollController)),
-                                AutoScrollTag(
-                                    key: const ValueKey(1),
-                                    controller: aScrollController,
-                                    index: 1,
-                                    child: const About()),
-                                AutoScrollTag(
-                                    key: const ValueKey(2),
-                                    controller: aScrollController,
-                                    index: 2,
-                                    child: const Experience()),
-                                AutoScrollTag(
-                                    key: const ValueKey(3),
-                                    controller: aScrollController,
-                                    index: 3,
-                                    child: const Work()),
-                                AutoScrollTag(
-                                    key: const ValueKey(4),
-                                    controller: aScrollController,
-                                    index: 4,
-                                    child: const Contact())
-                              ],
+                              scrollOffset: 100,
+                              // animationDuration: 600,
+                              // curve: Curves.easeInOutCirc,
+                              child: ListView(
+                                physics: const NeverScrollableScrollPhysics(),
+                                controller: aScrollController,
+                                children: [
+                                  AutoScrollTag(
+                                      key: const ValueKey(0),
+                                      controller: aScrollController,
+                                      index: 0,
+                                      child: IntroContent(aScrollController)),
+                                  AutoScrollTag(
+                                      key: const ValueKey(1),
+                                      controller: aScrollController,
+                                      index: 1,
+                                      child: const About()),
+                                  AutoScrollTag(
+                                      key: const ValueKey(2),
+                                      controller: aScrollController,
+                                      index: 2,
+                                      child: const Experience()),
+                                  AutoScrollTag(
+                                      key: const ValueKey(3),
+                                      controller: aScrollController,
+                                      index: 3,
+                                      child: const Work()),
+                                  AutoScrollTag(
+                                      key: const ValueKey(4),
+                                      controller: aScrollController,
+                                      index: 4,
+                                      child: const Contact())
+                                ],
+                              ),
                             )),
                         scrType == ScreenType.mobile
                             ? const SizedBox()
