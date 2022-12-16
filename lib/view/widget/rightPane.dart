@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../resource/colors.dart';
 
@@ -26,13 +27,19 @@ class _RightPaneState extends State<RightPane> {
                       padding: const EdgeInsets.only(bottom: 25),
                       child: RotatedBox(
                           quarterTurns: 1,
-                          child: Text(
-                            'dongoctuan2002sp@gmail.com',
-                            style: TextStyle(
-                                letterSpacing: 1,
-                                color: AppColors().textColor,
-                                fontSize: 14,
-                                fontFamily: 'sfmono'),
+                          child: InkWell(
+                            onTap: () async {
+                              await launchUrl(Uri.parse(
+                                  "mailto: dongoctuan2002sp@gmail.com"));
+                            },
+                            child: Text(
+                              'dongoctuan2002sp@gmail.com',
+                              style: TextStyle(
+                                  letterSpacing: 1,
+                                  color: AppColors().textColor,
+                                  fontSize: 14,
+                                  fontFamily: 'sfmono'),
+                            ),
                           )),
                     )
                   ],
