@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/resource/appClass.dart';
 import 'package:rive/rive.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../resource/colors.dart';
 import '../../resource/strings.dart';
@@ -26,7 +25,7 @@ class _ContactWebState extends State<ContactWeb> {
   @override
   void initState() {
     super.initState();
-    rootBundle.load('rive/pup_hello.riv').then(
+    rootBundle.load('assets/rive/pup_hello.riv').then(
       (data) {
         final file = RiveFile.import(data);
         final artboard = file.mainArtboard;
@@ -123,8 +122,8 @@ class _ContactWebState extends State<ContactWeb> {
                 child: Consumer(builder: (context, ref, child) {
                   return InkWell(
                     onTap: () async {
-                      await launchUrl(
-                          Uri.parse("https://m.me/tuanpluss.stormX/"));
+                      // await launchUrl(
+                      //     Uri.parse("https://m.me/tuanpluss.stormX/"));
                     },
                     onHover: (bol) {
                       if (bol) {
@@ -135,12 +134,15 @@ class _ContactWebState extends State<ContactWeb> {
                     },
 
                     child: Stack(children: [
-                      Container(
-                        margin: const EdgeInsets.only(top: 5),
-                        height: AppClass().getMqHeight(context) * 0.2,
-                        // width: AppClass().getMqHeight(context) * 0.5,
-                        child: Center(
-                          child: Rive(artboard: _birdArtboard!),
+                      Center(
+                        child: Container(
+                          margin: const EdgeInsets.only(top: 5),
+                          height: AppClass().getMqHeight(context) * 0.2,
+                          // width: AppClass().getMqHeight(context) * 0.5,
+                          child: Rive(
+                            artboard: _birdArtboard!,
+                            // alignment: Alignment.center,
+                          ),
                         ),
                       ),
                       Padding(

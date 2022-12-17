@@ -24,12 +24,6 @@ class RootScreen extends ConsumerStatefulWidget {
 
 class _RootScreenState extends ConsumerState<RootScreen> {
   final aScrollController = AutoScrollController();
-  //late ScrollController _scrollController;
-  // @override
-  // void initState() {
-  //   // TODO: implement initState
-  //   super.initState();
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +76,9 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                               // animationDuration: 600,
                               // curve: Curves.easeInOutCirc,
                               child: ListView(
-                                physics: const NeverScrollableScrollPhysics(),
+                                physics: scrType == ScreenType.web
+                                    ? const NeverScrollableScrollPhysics()
+                                    : const BouncingScrollPhysics(),
                                 controller: aScrollController,
                                 children: [
                                   AutoScrollTag(
