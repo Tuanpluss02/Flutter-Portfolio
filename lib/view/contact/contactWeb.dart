@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/resource/appClass.dart';
 import 'package:rive/rive.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../resource/colors.dart';
 import '../../resource/strings.dart';
@@ -122,8 +123,8 @@ class _ContactWebState extends State<ContactWeb> {
                 child: Consumer(builder: (context, ref, child) {
                   return InkWell(
                     onTap: () async {
-                      // await launchUrl(
-                      //     Uri.parse("https://m.me/tuanpluss.stormX/"));
+                      await launchUrl(
+                          Uri.parse("https://m.me/tuanpluss.stormX/"));
                     },
                     onHover: (bol) {
                       if (bol) {
