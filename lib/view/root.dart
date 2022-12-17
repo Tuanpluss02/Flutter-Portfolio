@@ -72,7 +72,7 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                             flex: 8,
                             child: WebSmoothScroll(
                               controller: aScrollController,
-                              scrollOffset: 100,
+                              scrollOffset: 250,
                               // animationDuration: 600,
                               // curve: Curves.easeInOutCirc,
                               child: ListView(
