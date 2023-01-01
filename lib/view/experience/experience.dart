@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/responsive.dart';
-import 'package:my_portfolio/view/experience/experienceMobile.dart';
-import 'package:my_portfolio/view/experience/experienceTab.dart';
-
-import 'experienceWeb.dart';
+import 'package:my_portfolio/view/experience/experience_mobile.dart';
+import 'package:my_portfolio/view/experience/experience_tab.dart';
+import 'package:my_portfolio/view/experience/experience_web.dart';
 
 class Experience extends StatefulWidget {
   const Experience({Key? key}) : super(key: key);

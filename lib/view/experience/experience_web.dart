@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_portfolio/resource/appClass.dart';
+import 'package:my_portfolio/resource/app_class.dart';
 
-import '../../controller/generalController.dart';
-import '../../model/experienceModel.dart';
+import '../../controller/general_controller.dart';
+import '../../model/experience_model.dart';
 import '../../resource/colors.dart';
 import '../../resource/strings.dart';
 

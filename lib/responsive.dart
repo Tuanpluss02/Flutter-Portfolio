@@ -1,13 +1,12 @@
 import 'package:flutter/cupertino.dart';
+import 'package:my_portfolio/resource/app_class.dart';
 
-import 'resource/appClass.dart';
-
+// ignore: must_be_immutable
 class Responsive extends StatefulWidget {
+  // ignore: prefer_typing_uninitialized_variables
   var mobileView, webView, tabView;
 
-  Responsive({Key? key, this.mobileView, this.tabView, this.webView})
-      : super(key: key);
-
+  Responsive({super.key, this.mobileView, this.tabView, this.webView});
   @override
   State<Responsive> createState() => _ResponsiveState();
 }

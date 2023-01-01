@@ -3,8 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../controller/generalController.dart';
-import '../../resource/appClass.dart';
+import '../../controller/general_controller.dart';
+import '../../resource/app_class.dart';
 import '../../resource/colors.dart';
 
 class LeftPane extends ConsumerStatefulWidget {

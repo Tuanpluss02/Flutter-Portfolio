@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/model/work_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../model/workModel.dart';
 import 'colors.dart';
 import 'styles.dart';
 

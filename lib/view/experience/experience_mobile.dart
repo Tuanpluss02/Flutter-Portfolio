@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_portfolio/resource/appClass.dart';
-
-import '../../controller/generalController.dart';
-import '../../model/experienceModel.dart';
-import '../../resource/colors.dart';
-import '../../resource/strings.dart';
+import 'package:my_portfolio/controller/general_controller.dart';
+import 'package:my_portfolio/model/experience_model.dart';
+import 'package:my_portfolio/resource/app_class.dart';
+import 'package:my_portfolio/resource/colors.dart';
+import 'package:my_portfolio/resource/strings.dart';
 
 class ExperienceMobile extends StatefulWidget {
   const ExperienceMobile({Key? key}) : super(key: key);

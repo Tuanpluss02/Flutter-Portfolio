@@ -4,20 +4,20 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_portfolio/controller/generalController.dart';
-import 'package:my_portfolio/resource/appClass.dart';
+import 'package:my_portfolio/controller/general_controller.dart';
+import 'package:my_portfolio/resource/app_class.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../resource/colors.dart';
 
-class WorkTab extends ConsumerStatefulWidget {
-  const WorkTab({Key? key}) : super(key: key);
+class WorkWeb extends ConsumerStatefulWidget {
+  const WorkWeb({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<WorkTab> createState() => _WorkWebState();
+  ConsumerState<WorkWeb> createState() => _WorkWebState();
 }
 
-class _WorkWebState extends ConsumerState<WorkTab> {
+class _WorkWebState extends ConsumerState<WorkWeb> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -36,7 +36,7 @@ class _WorkWebState extends ConsumerState<WorkTab> {
                       color: AppColors().textColor,
                       letterSpacing: 1,
                       fontWeight: FontWeight.bold,
-                      fontSize: 20),
+                      fontSize: 25),
                 )
               ]),
         ),
@@ -46,14 +46,14 @@ class _WorkWebState extends ConsumerState<WorkTab> {
             'view the archives',
             style: TextStyle(
                 color: AppColors().neonColor,
-                fontSize: 12,
+                fontSize: 15,
                 fontFamily: 'sfmono'),
           ),
         ),
         Container(
-          padding: const EdgeInsets.only(top: 30.0, bottom: 50.0),
+          padding: const EdgeInsets.only(top: 30.0, bottom: 70.0),
           child: StaggeredGrid.count(
-            crossAxisCount: 2,
+            crossAxisCount: 3,
             mainAxisSpacing: 4,
             crossAxisSpacing: 4,
             children: [
@@ -77,6 +77,16 @@ class _WorkWebState extends ConsumerState<WorkTab> {
                 mainAxisCellCount: 1,
                 child: Tile(index: 3),
               ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 1,
+                mainAxisCellCount: 1,
+                child: Tile(index: 4),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 1,
+                mainAxisCellCount: 1,
+                child: Tile(index: 5),
+              ),
             ],
           ),
         ),
@@ -84,6 +94,7 @@ class _WorkWebState extends ConsumerState<WorkTab> {
     );
   }
 
+  // ignore: non_constant_identifier_names
   Tile({required int index}) {
     return InkWell(
       onTap: () async {
@@ -115,8 +126,9 @@ class _WorkWebState extends ConsumerState<WorkTab> {
             break;
         }
       },
-      onHover: (bol) {
-        if (bol) {
+      // ignore: avoid_types_as_parameter_names
+      onHover: (bool) {
+        if (bool) {
           ref.read(hoverProvider.notifier).state = "$index";
         } else {
           ref.read(hoverProvider.notifier).state = "";
@@ -125,8 +137,14 @@ class _WorkWebState extends ConsumerState<WorkTab> {
       child: Consumer(builder: (context, ref, child) {
         String data = ref.watch(hoverProvider);
         bool isHovered = (data == "$index");
-        return Container(
+        return AnimatedContainer(
+          decoration: const BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(30))),
+          duration: const Duration(milliseconds: 300),
+          // Provide an optional curve to make the animation feel smoother.
+          curve: Curves.fastOutSlowIn,
           margin: EdgeInsets.all(isHovered ? 8.0 : 0.0),
+
           child: Card(
             color: AppColors().cardColor,
             elevation: 10,

@@ -1,31 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_portfolio/resource/strings.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
-import '../../resource/appClass.dart';
+import '../../resource/app_class.dart';
 import '../../resource/colors.dart';
-import '../../resource/strings.dart';
 
-class IntroMobile extends StatefulWidget {
-  final AutoScrollController aScrollController;
+// ignore: must_be_immutable
+class IntroTab extends StatefulWidget {
+  AutoScrollController aScrollController;
 
-  const IntroMobile(this.aScrollController, {Key? key}) : super(key: key);
+  IntroTab(this.aScrollController, {Key? key}) : super(key: key);
 
   @override
-  State<IntroMobile> createState() => _IntroMobileState();
+  State<IntroTab> createState() => _IntroTabState();
 }
 
-class _IntroMobileState extends State<IntroMobile> {
+class _IntroTabState extends State<IntroTab> {
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.transparent,
-      height: AppClass().getMqHeight(context) - 50,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      margin: EdgeInsets.only(
+          left: AppClass().getMqWidth(context) * 0.01,
+          top: AppClass().getMqHeight(context) * 0.07),
+      padding: const EdgeInsets.only(bottom: 50),
+      child: Row(
         children: [
           Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
@@ -39,14 +41,14 @@ class _IntroMobileState extends State<IntroMobile> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 10.0),
+                padding: const EdgeInsets.only(top: 8.0),
                 child: Text(
                   Strings.name,
                   style: GoogleFonts.robotoSlab(
                     color: AppColors().textColor,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 3,
-                    fontSize: 30,
+                    fontSize: 45,
                   ),
                 ),
               ),
@@ -61,15 +63,15 @@ class _IntroMobileState extends State<IntroMobile> {
                       color: AppColors().textLight,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 3,
-                      fontSize: 30,
+                      fontSize: 45,
                     ),
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 20.0),
+                padding: const EdgeInsets.only(top: 15.0),
                 child: SizedBox(
-                  width: AppClass().getMqWidth(context) * 0.6,
+                  width: AppClass().getMqWidth(context) * 0.45,
                   child: RichText(
                       text: TextSpan(
                           text: Strings.introAbout,
@@ -77,7 +79,7 @@ class _IntroMobileState extends State<IntroMobile> {
                             color: AppColors().textLight,
                             letterSpacing: 1,
                             height: 1.5,
-                            fontSize: 15,
+                            fontSize: 16,
                           ),
                           children: <TextSpan>[
                         TextSpan(
@@ -86,14 +88,14 @@ class _IntroMobileState extends State<IntroMobile> {
                             color: AppColors().neonColor,
                             letterSpacing: 1,
                             height: 1.5,
-                            fontSize: 15,
+                            fontSize: 16,
                           ),
                         )
                       ])),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 60.0),
+                padding: const EdgeInsets.only(top: 30.0, bottom: 50),
                 child: InkWell(
                   onTap: () {
                     widget.aScrollController.scrollToIndex(1,
@@ -101,7 +103,7 @@ class _IntroMobileState extends State<IntroMobile> {
                   },
                   child: Container(
                     height: AppClass().getMqHeight(context) * 0.09,
-                    width: AppClass().getMqWidth(context) * 0.45,
+                    width: AppClass().getMqWidth(context) * 0.25,
                     decoration: BoxDecoration(
                         color: Colors.transparent,
                         borderRadius:

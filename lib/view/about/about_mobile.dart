@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../resource/appClass.dart';
+import '../../resource/app_class.dart';
 import '../../resource/colors.dart';
 import '../../resource/strings.dart';
 
-class AboutTab extends StatefulWidget {
-  const AboutTab({Key? key}) : super(key: key);
+class AboutMobile extends StatefulWidget {
+  const AboutMobile({Key? key}) : super(key: key);
 
   @override
-  State<AboutTab> createState() => _AboutTabState();
+  State<AboutMobile> createState() => _AboutMobileState();
 }
 
-class _AboutTabState extends State<AboutTab> {
+class _AboutMobileState extends State<AboutMobile> {
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(
-          left: AppClass().getMqWidth(context) * 0.03,
-          right: AppClass().getMqWidth(context) * 0.03),
-      padding: const EdgeInsets.only(bottom: 50),
+          left: AppClass().getMqWidth(context) * 0.1,
+          right: AppClass().getMqWidth(context) * 0.1),
+      padding: const EdgeInsets.only(bottom: 30),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -61,14 +61,14 @@ class _AboutTabState extends State<AboutTab> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(top: 40.0),
+                      padding: const EdgeInsets.only(top: 30.0),
                       child: Text(
                         Strings.aboutPara1,
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
                           letterSpacing: 1,
                           height: 1.5,
-                          fontSize: 18,
+                          fontSize: 15,
                         ),
                       ),
                     ),
@@ -80,7 +80,7 @@ class _AboutTabState extends State<AboutTab> {
                           color: AppColors().textLight,
                           letterSpacing: 1,
                           height: 1.5,
-                          fontSize: 18,
+                          fontSize: 15,
                         ),
                       ),
                     ),
@@ -92,7 +92,7 @@ class _AboutTabState extends State<AboutTab> {
                           color: AppColors().textLight,
                           letterSpacing: 1,
                           height: 1.5,
-                          fontSize: 18,
+                          fontSize: 15,
                         ),
                       ),
                     ),
@@ -104,7 +104,7 @@ class _AboutTabState extends State<AboutTab> {
                           color: AppColors().textLight,
                           letterSpacing: 1,
                           height: 1.5,
-                          fontSize: 18,
+                          fontSize: 15,
                         ),
                       ),
                     ),
@@ -118,12 +118,12 @@ class _AboutTabState extends State<AboutTab> {
                             Row(
                               children: [
                                 const Icon(Icons.arrow_right),
-                                Text(Strings.tech1,
+                                Text(' Flutter',
                                     style: GoogleFonts.robotoFlex(
                                       color: AppColors().textLight,
                                       letterSpacing: 1,
                                       height: 1.5,
-                                      fontSize: 17,
+                                      fontSize: 14,
                                     )),
                               ],
                             ),
@@ -135,7 +135,7 @@ class _AboutTabState extends State<AboutTab> {
                                       color: AppColors().textLight,
                                       letterSpacing: 1,
                                       height: 1.5,
-                                      fontSize: 17,
+                                      fontSize: 14,
                                     )),
                               ],
                             ),
@@ -147,7 +147,7 @@ class _AboutTabState extends State<AboutTab> {
                                       color: AppColors().textLight,
                                       letterSpacing: 1,
                                       height: 1.5,
-                                      fontSize: 17,
+                                      fontSize: 14,
                                     )),
                               ],
                             ),
@@ -159,7 +159,7 @@ class _AboutTabState extends State<AboutTab> {
                                       color: AppColors().textLight,
                                       letterSpacing: 1,
                                       height: 1.5,
-                                      fontSize: 17,
+                                      fontSize: 14,
                                     )),
                               ],
                             ),

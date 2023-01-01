@@ -1,26 +1,27 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../resource/appClass.dart';
+import '../../controller/general_controller.dart';
+import '../../resource/app_class.dart';
 import '../../resource/colors.dart';
 import '../../resource/strings.dart';
 
-class AboutMobile extends StatefulWidget {
-  const AboutMobile({Key? key}) : super(key: key);
+class AboutWeb extends ConsumerStatefulWidget {
+  const AboutWeb({Key? key}) : super(key: key);
 
   @override
-  State<AboutMobile> createState() => _AboutMobileState();
+  ConsumerState<AboutWeb> createState() => _AboutWebState();
 }
 
-class _AboutMobileState extends State<AboutMobile> {
+class _AboutWebState extends ConsumerState<AboutWeb> {
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(
-          left: AppClass().getMqWidth(context) * 0.1,
-          right: AppClass().getMqWidth(context) * 0.1),
-      padding: const EdgeInsets.only(bottom: 30),
+          left: AppClass().getMqWidth(context) * 0.03,
+          right: AppClass().getMqWidth(context) * 0.03),
+      padding: const EdgeInsets.only(bottom: 40),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -62,14 +63,14 @@ class _AboutMobileState extends State<AboutMobile> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(top: 30.0),
+                      padding: const EdgeInsets.only(top: 40.0),
                       child: Text(
                         Strings.aboutPara1,
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
                           letterSpacing: 1,
                           height: 1.5,
-                          fontSize: 15,
+                          fontSize: 18,
                         ),
                       ),
                     ),
@@ -81,7 +82,7 @@ class _AboutMobileState extends State<AboutMobile> {
                           color: AppColors().textLight,
                           letterSpacing: 1,
                           height: 1.5,
-                          fontSize: 15,
+                          fontSize: 18,
                         ),
                       ),
                     ),
@@ -93,7 +94,7 @@ class _AboutMobileState extends State<AboutMobile> {
                           color: AppColors().textLight,
                           letterSpacing: 1,
                           height: 1.5,
-                          fontSize: 15,
+                          fontSize: 18,
                         ),
                       ),
                     ),
@@ -105,7 +106,7 @@ class _AboutMobileState extends State<AboutMobile> {
                           color: AppColors().textLight,
                           letterSpacing: 1,
                           height: 1.5,
-                          fontSize: 15,
+                          fontSize: 18,
                         ),
                       ),
                     ),
@@ -119,12 +120,12 @@ class _AboutMobileState extends State<AboutMobile> {
                             Row(
                               children: [
                                 const Icon(Icons.arrow_right),
-                                Text(' Flutter',
+                                Text(Strings.tech1,
                                     style: GoogleFonts.robotoFlex(
                                       color: AppColors().textLight,
                                       letterSpacing: 1,
                                       height: 1.5,
-                                      fontSize: 14,
+                                      fontSize: 17,
                                     )),
                               ],
                             ),
@@ -136,7 +137,7 @@ class _AboutMobileState extends State<AboutMobile> {
                                       color: AppColors().textLight,
                                       letterSpacing: 1,
                                       height: 1.5,
-                                      fontSize: 14,
+                                      fontSize: 17,
                                     )),
                               ],
                             ),
@@ -148,7 +149,7 @@ class _AboutMobileState extends State<AboutMobile> {
                                       color: AppColors().textLight,
                                       letterSpacing: 1,
                                       height: 1.5,
-                                      fontSize: 14,
+                                      fontSize: 17,
                                     )),
                               ],
                             ),
@@ -160,7 +161,7 @@ class _AboutMobileState extends State<AboutMobile> {
                                       color: AppColors().textLight,
                                       letterSpacing: 1,
                                       height: 1.5,
-                                      fontSize: 14,
+                                      fontSize: 17,
                                     )),
                               ],
                             ),
@@ -169,6 +170,60 @@ class _AboutMobileState extends State<AboutMobile> {
                   ],
                 ),
               ),
+              Expanded(
+                  flex: 2,
+                  child: Column(
+                    children: [
+                      Consumer(builder: (context, ref, child) {
+                        var data = ref.watch(hoverProvider);
+                        bool isHovered = (data == "profilePic");
+                        return Stack(
+                          children: [
+                            AnimatedContainer(
+                              width: AppClass().getMqWidth(context) *
+                                  (isHovered ? 0.22 : 0.225),
+                              height: AppClass().getMqWidth(context) *
+                                  (isHovered ? 0.22 : 0.225),
+                              margin: const EdgeInsets.only(top: 10, left: 10),
+                              decoration: BoxDecoration(
+                                  color: Colors.transparent,
+                                  borderRadius: const BorderRadius.all(
+                                      Radius.circular(5.0)),
+                                  border: Border.all(
+                                      color: AppColors().neonColor,
+                                      width: 1.5)),
+                              duration: const Duration(milliseconds: 300),
+                              // Provide an optional curve to make the animation feel smoother.
+                              curve: Curves.fastOutSlowIn,
+                            ),
+                            InkWell(
+                              onTap: () {},
+                              onHover: (bol) {
+                                if (bol) {
+                                  ref.read(hoverProvider.notifier).state =
+                                      "profilePic";
+                                } else {
+                                  ref.read(hoverProvider.notifier).state = "";
+                                }
+                              },
+                              child: Container(
+                                width: AppClass().getMqWidth(context) * 0.22,
+                                height: AppClass().getMqWidth(context) * 0.22,
+                                decoration: const BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10.0)),
+                                    image: DecorationImage(
+                                        fit: BoxFit.cover,
+                                        image: AssetImage(
+                                            'assets/svg/profilePic.jpg')),
+                                    color: Colors.transparent),
+                              ),
+                            ),
+                          ],
+                        );
+                      }),
+                    ],
+                  ))
             ],
           )
         ],

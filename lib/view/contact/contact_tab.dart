@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_portfolio/resource/appClass.dart';
+import 'package:my_portfolio/resource/app_class.dart';
+import 'package:rive/rive.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../resource/colors.dart';
 import '../../resource/strings.dart';
@@ -13,6 +16,28 @@ class ContactTab extends StatefulWidget {
 }
 
 class _ContactTabState extends State<ContactTab> {
+  String animation = 'idle';
+  Artboard? _helloArtboard;
+  StateMachineController? stateMachineController;
+
+  @override
+  void initState() {
+    super.initState();
+    rootBundle.load('assets/rive/pup_hello.riv').then(
+      (data) async {
+        final file = RiveFile.import(data);
+        final artboard = file.mainArtboard;
+        stateMachineController =
+            StateMachineController.fromArtboard(artboard, "State Machine 1");
+        if (stateMachineController != null) {
+          artboard.addController(stateMachineController!);
+        }
+
+        setState(() => _helloArtboard = artboard);
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -69,29 +94,43 @@ class _ContactTabState extends State<ContactTab> {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 50, bottom: 70),
+              SizedBox(
+                // padding: const EdgeInsets.only(bottom: 20),
+                height: AppClass().getMqHeight(context) * 0.2,
+                width: AppClass().getMqHeight(context) * 0.5,
                 child: InkWell(
-                  onTap: () {},
-                  child: Container(
-                    height: AppClass().getMqHeight(context) * 0.09,
-                    width: AppClass().getMqWidth(context) * 0.15,
-                    decoration: BoxDecoration(
-                        color: Colors.transparent,
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(3.0)),
-                        border: Border.all(
-                            color: AppColors().neonColor, width: 1.5)),
-                    child: Center(
-                      child: Text('Say Hello!',
-                          style: TextStyle(
-                              color: AppColors().neonColor,
-                              fontSize: 13,
-                              letterSpacing: 1,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'sfmono')),
+                  onTap: () async {
+                    await launchUrl(
+                        Uri.parse("https://m.me/tuanpluss.stormX/"));
+                  },
+                  child: Stack(children: [
+                    Center(
+                      child: Container(
+                        margin: const EdgeInsets.only(top: 5),
+                        height: AppClass().getMqHeight(context) * 0.2,
+                        width: AppClass().getMqWidth(context) * 0.5,
+                        child: Rive(
+                          artboard: _helloArtboard!,
+                          // alignment: Alignment.center,
+                        ),
+                      ),
                     ),
-                  ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          top: AppClass().getMqHeight(context) * 0.09,
+                          right: 10),
+                      child: Center(
+                        child: Text('Say Hello!',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: AppColors().primaryColor,
+                                fontSize: 27,
+                                letterSpacing: 1,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'sfmono')),
+                      ),
+                    ),
+                  ]),
                 ),
               )
             ],
@@ -99,7 +138,7 @@ class _ContactTabState extends State<ContactTab> {
           Column(
             children: [
               Text(
-                '''Built & Developed by Jeevanandham''',
+                '''Thanks for visit my website''',
                 style: TextStyle(
                     color: AppColors().textColor,
                     fontSize: 12,
@@ -108,7 +147,7 @@ class _ContactTabState extends State<ContactTab> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  '''ref - Britney C''',
+                  '''Do Ngoc Tuan - 2023''',
                   style: TextStyle(
                       color: AppColors().neonColor,
                       fontSize: 12,

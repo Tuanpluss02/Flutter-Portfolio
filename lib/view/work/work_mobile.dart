@@ -4,20 +4,20 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_portfolio/controller/generalController.dart';
-import 'package:my_portfolio/resource/appClass.dart';
+import 'package:my_portfolio/controller/general_controller.dart';
+import 'package:my_portfolio/resource/app_class.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../resource/colors.dart';
 
-class WorkWeb extends ConsumerStatefulWidget {
-  const WorkWeb({Key? key}) : super(key: key);
+class WorkMobile extends ConsumerStatefulWidget {
+  const WorkMobile({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<WorkWeb> createState() => _WorkWebState();
+  ConsumerState<WorkMobile> createState() => _WorkWebState();
 }
 
-class _WorkWebState extends ConsumerState<WorkWeb> {
+class _WorkWebState extends ConsumerState<WorkMobile> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -36,7 +36,7 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                       color: AppColors().textColor,
                       letterSpacing: 1,
                       fontWeight: FontWeight.bold,
-                      fontSize: 25),
+                      fontSize: 18),
                 )
               ]),
         ),
@@ -46,14 +46,14 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
             'view the archives',
             style: TextStyle(
                 color: AppColors().neonColor,
-                fontSize: 15,
+                fontSize: 12,
                 fontFamily: 'sfmono'),
           ),
         ),
         Container(
-          padding: const EdgeInsets.only(top: 30.0, bottom: 70.0),
+          padding: const EdgeInsets.only(top: 30.0, bottom: 50.0),
           child: StaggeredGrid.count(
-            crossAxisCount: 3,
+            crossAxisCount: 2,
             mainAxisSpacing: 4,
             crossAxisSpacing: 4,
             children: [
@@ -76,16 +76,6 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                 crossAxisCellCount: 1,
                 mainAxisCellCount: 1,
                 child: Tile(index: 3),
-              ),
-              StaggeredGridTile.count(
-                crossAxisCellCount: 1,
-                mainAxisCellCount: 1,
-                child: Tile(index: 4),
-              ),
-              StaggeredGridTile.count(
-                crossAxisCellCount: 1,
-                mainAxisCellCount: 1,
-                child: Tile(index: 5),
               ),
             ],
           ),
@@ -126,9 +116,8 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
             break;
         }
       },
-      // ignore: avoid_types_as_parameter_names
-      onHover: (bool) {
-        if (bool) {
+      onHover: (bol) {
+        if (bol) {
           ref.read(hoverProvider.notifier).state = "$index";
         } else {
           ref.read(hoverProvider.notifier).state = "";
@@ -137,14 +126,8 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
       child: Consumer(builder: (context, ref, child) {
         String data = ref.watch(hoverProvider);
         bool isHovered = (data == "$index");
-        return AnimatedContainer(
-          decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(30))),
-          duration: const Duration(milliseconds: 300),
-          // Provide an optional curve to make the animation feel smoother.
-          curve: Curves.fastOutSlowIn,
+        return Container(
           margin: EdgeInsets.all(isHovered ? 8.0 : 0.0),
-
           child: Card(
             color: AppColors().cardColor,
             elevation: 10,
@@ -158,14 +141,14 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                     children: [
                       SvgPicture.asset(
                         'assets/svg/folder.svg',
-                        width: 45,
-                        height: 45,
+                        width: 35,
+                        height: 35,
                         color: AppColors().neonColor,
                       ),
                       SvgPicture.asset(
                         'assets/svg/externalLink.svg',
-                        width: 22,
-                        height: 22,
+                        width: 20,
+                        height: 20,
                         color: isHovered ? AppColors().neonColor : Colors.white,
                       ),
                     ],
@@ -180,14 +163,16 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                                 .projectList[index]
                                 .projectTitle
                                 .toString(),
+                            maxLines: 2,
+                            overflow: TextOverflow.clip,
                             textAlign: TextAlign.left,
                             style: GoogleFonts.robotoSlab(
-                                color: isHovered
-                                    ? AppColors().neonColor
-                                    : Colors.white,
-                                letterSpacing: 1,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20),
+                              color: isHovered
+                                  ? AppColors().neonColor
+                                  : Colors.white,
+                              letterSpacing: 1,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ],
@@ -196,13 +181,13 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                      child: Text(
+                      child: AutoSizeText(
                         AppClass().projectList[index].projectContent.toString(),
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
                           letterSpacing: 1,
                           height: 1.5,
-                          fontSize: 14,
+                          fontSize: 12,
                         ),
                       ),
                     ),
@@ -210,29 +195,29 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text(
+                      AutoSizeText(
                         AppClass().projectList[index].tech1.toString(),
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
                           letterSpacing: 1,
-                          fontSize: 12,
+                          fontSize: 10,
                         ),
                       ),
-                      Text(
+                      AutoSizeText(
                         AppClass().projectList[index].tech2.toString(),
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
                           letterSpacing: 1,
-                          fontSize: 12,
+                          fontSize: 10,
                         ),
                       ),
-                      Text(
+                      AutoSizeText(
                         AppClass().projectList[index].tech3.toString(),
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
                           letterSpacing: 1,
                           height: 1.5,
-                          fontSize: 12,
+                          fontSize: 10,
                         ),
                       ),
                     ],

@@ -4,20 +4,20 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_portfolio/controller/generalController.dart';
-import 'package:my_portfolio/resource/appClass.dart';
+import 'package:my_portfolio/controller/general_controller.dart';
+import 'package:my_portfolio/resource/app_class.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../resource/colors.dart';
 
-class WorkMobile extends ConsumerStatefulWidget {
-  const WorkMobile({Key? key}) : super(key: key);
+class WorkTab extends ConsumerStatefulWidget {
+  const WorkTab({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<WorkMobile> createState() => _WorkWebState();
+  ConsumerState<WorkTab> createState() => _WorkWebState();
 }
 
-class _WorkWebState extends ConsumerState<WorkMobile> {
+class _WorkWebState extends ConsumerState<WorkTab> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -36,7 +36,7 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                       color: AppColors().textColor,
                       letterSpacing: 1,
                       fontWeight: FontWeight.bold,
-                      fontSize: 18),
+                      fontSize: 20),
                 )
               ]),
         ),
@@ -116,8 +116,8 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
             break;
         }
       },
-      onHover: (bool) {
-        if (bool) {
+      onHover: (bol) {
+        if (bol) {
           ref.read(hoverProvider.notifier).state = "$index";
         } else {
           ref.read(hoverProvider.notifier).state = "";
@@ -141,14 +141,14 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                     children: [
                       SvgPicture.asset(
                         'assets/svg/folder.svg',
-                        width: 35,
-                        height: 35,
+                        width: 45,
+                        height: 45,
                         color: AppColors().neonColor,
                       ),
                       SvgPicture.asset(
                         'assets/svg/externalLink.svg',
-                        width: 20,
-                        height: 20,
+                        width: 22,
+                        height: 22,
                         color: isHovered ? AppColors().neonColor : Colors.white,
                       ),
                     ],
@@ -163,16 +163,14 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                                 .projectList[index]
                                 .projectTitle
                                 .toString(),
-                            maxLines: 2,
-                            overflow: TextOverflow.clip,
                             textAlign: TextAlign.left,
                             style: GoogleFonts.robotoSlab(
-                              color: isHovered
-                                  ? AppColors().neonColor
-                                  : Colors.white,
-                              letterSpacing: 1,
-                              fontWeight: FontWeight.bold,
-                            ),
+                                color: isHovered
+                                    ? AppColors().neonColor
+                                    : Colors.white,
+                                letterSpacing: 1,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20),
                           ),
                         ),
                       ],
@@ -181,13 +179,13 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                      child: AutoSizeText(
+                      child: Text(
                         AppClass().projectList[index].projectContent.toString(),
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
                           letterSpacing: 1,
                           height: 1.5,
-                          fontSize: 12,
+                          fontSize: 14,
                         ),
                       ),
                     ),
@@ -195,29 +193,29 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      AutoSizeText(
+                      Text(
                         AppClass().projectList[index].tech1.toString(),
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
                           letterSpacing: 1,
-                          fontSize: 10,
+                          fontSize: 12,
                         ),
                       ),
-                      AutoSizeText(
+                      Text(
                         AppClass().projectList[index].tech2.toString(),
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
                           letterSpacing: 1,
-                          fontSize: 10,
+                          fontSize: 12,
                         ),
                       ),
-                      AutoSizeText(
+                      Text(
                         AppClass().projectList[index].tech3.toString(),
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
                           letterSpacing: 1,
                           height: 1.5,
-                          fontSize: 10,
+                          fontSize: 12,
                         ),
                       ),
                     ],
