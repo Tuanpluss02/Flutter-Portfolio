@@ -99,7 +99,7 @@ class _ContactMobileState extends State<ContactMobile> {
           Column(
             children: [
               Text(
-                '''Built & Developed by Jeevanandham''',
+                '''Thanks for visit my website''',
                 style: TextStyle(
                     color: AppColors().textColor,
                     fontSize: 12,
@@ -108,7 +108,7 @@ class _ContactMobileState extends State<ContactMobile> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  '''ref - Britney C''',
+                  '''Do Ngoc Tuan - 2023''',
                   style: TextStyle(
                       color: AppColors().neonColor,
                       fontSize: 12,

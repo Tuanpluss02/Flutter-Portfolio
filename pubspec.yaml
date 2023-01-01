@@ -44,6 +44,7 @@ dependencies:
   scroll_to_index: ^3.0.1
   web_smooth_scroll: ^1.0.0
   rive: ^0.9.1
+  auto_size_text: ^3.0.0
 
 dev_dependencies:
   flutter_test:

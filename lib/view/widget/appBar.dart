@@ -23,23 +23,21 @@ class _ActionBarState extends ConsumerState<ActionBar> {
   Widget build(BuildContext context) {
     return Container(
         height: 70,
-        padding: const EdgeInsets.only(right: 55.0, top: 33.0),
+        padding: const EdgeInsets.only(right: 20.0, top: 25.0),
         child: () {
           ScreenType scrType = AppClass().getScreenType(context);
           if (scrType == ScreenType.mobile || scrType == ScreenType.tab) {
             return Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
+                    flex: 2,
                     child: Padding(
-                  padding: const EdgeInsets.only(left: 20.0),
-                  child: Image.asset(
-                    'assets/svg/appLogo.png',
-                    width: AppClass().getMqWidth(context) * 0.5,
-                    height: AppClass().getMqHeight(context) * 0.5,
-                  ),
-                )),
+                      padding: const EdgeInsets.only(left: 20.0, bottom: 5.0),
+                      child: Image.asset('assets/svg/appLogo.png'),
+                    )),
                 Expanded(
-                  flex: 9,
+                  flex: 8,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [

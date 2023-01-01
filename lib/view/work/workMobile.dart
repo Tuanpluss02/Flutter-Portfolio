@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -156,16 +157,23 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                     padding: const EdgeInsets.only(top: 10.0, bottom: 8.0),
                     child: Row(
                       children: [
-                        Text(
-                          AppClass().projectList[index].projectTitle.toString(),
-                          textAlign: TextAlign.left,
-                          style: GoogleFonts.robotoSlab(
+                        Expanded(
+                          child: AutoSizeText(
+                            AppClass()
+                                .projectList[index]
+                                .projectTitle
+                                .toString(),
+                            maxLines: 2,
+                            overflow: TextOverflow.clip,
+                            textAlign: TextAlign.left,
+                            style: GoogleFonts.robotoSlab(
                               color: isHovered
                                   ? AppColors().neonColor
                                   : Colors.white,
                               letterSpacing: 1,
                               fontWeight: FontWeight.bold,
-                              fontSize: 18),
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -173,7 +181,7 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                      child: Text(
+                      child: AutoSizeText(
                         AppClass().projectList[index].projectContent.toString(),
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
@@ -187,7 +195,7 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text(
+                      AutoSizeText(
                         AppClass().projectList[index].tech1.toString(),
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
@@ -195,7 +203,7 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                           fontSize: 10,
                         ),
                       ),
-                      Text(
+                      AutoSizeText(
                         AppClass().projectList[index].tech2.toString(),
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
@@ -203,7 +211,7 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                           fontSize: 10,
                         ),
                       ),
-                      Text(
+                      AutoSizeText(
                         AppClass().projectList[index].tech3.toString(),
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,

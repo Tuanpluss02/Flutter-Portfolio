@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -114,8 +115,8 @@ class _WorkWebState extends ConsumerState<WorkTab> {
             break;
         }
       },
-      onHover: (bool) {
-        if (bool) {
+      onHover: (bol) {
+        if (bol) {
           ref.read(hoverProvider.notifier).state = "$index";
         } else {
           ref.read(hoverProvider.notifier).state = "";
@@ -155,16 +156,21 @@ class _WorkWebState extends ConsumerState<WorkTab> {
                     padding: const EdgeInsets.only(top: 10.0, bottom: 8.0),
                     child: Row(
                       children: [
-                        Text(
-                          AppClass().projectList[index].projectTitle.toString(),
-                          textAlign: TextAlign.left,
-                          style: GoogleFonts.robotoSlab(
-                              color: isHovered
-                                  ? AppColors().neonColor
-                                  : Colors.white,
-                              letterSpacing: 1,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
+                        Expanded(
+                          child: AutoSizeText(
+                            AppClass()
+                                .projectList[index]
+                                .projectTitle
+                                .toString(),
+                            textAlign: TextAlign.left,
+                            style: GoogleFonts.robotoSlab(
+                                color: isHovered
+                                    ? AppColors().neonColor
+                                    : Colors.white,
+                                letterSpacing: 1,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20),
+                          ),
                         ),
                       ],
                     ),
