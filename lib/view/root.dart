@@ -73,8 +73,6 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                             child: WebSmoothScroll(
                               controller: aScrollController,
                               scrollOffset: 250,
-                              // animationDuration: 600,
-                              // curve: Curves.easeInOutCirc,
                               child: ListView(
                                 physics: scrType == ScreenType.web
                                     ? const NeverScrollableScrollPhysics()

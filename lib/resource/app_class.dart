@@ -13,8 +13,7 @@ class AppClass {
   ScrollController controller = ScrollController();
 
   /* URL */
-  static const resumeDownloadURL =
-      '''https://www.facebook.com/tuanpluss.stormX/''';
+  static const resumeDownloadURL = '''https://t.me/Tuanpluss02''';
 
   static const gitSafeC19 = '''https://github.com/Tuanpluss02/english-memory''';
 
