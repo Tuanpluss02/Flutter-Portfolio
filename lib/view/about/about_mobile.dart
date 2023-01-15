@@ -22,7 +22,7 @@ class _AboutMobileState extends State<AboutMobile> {
       padding: const EdgeInsets.only(bottom: 30),
       child: Column(
         mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.start,

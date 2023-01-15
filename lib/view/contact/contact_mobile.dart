@@ -41,7 +41,7 @@ class _ContactMobileState extends State<ContactMobile> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: AppClass().getMqHeight(context) - 70,
+      height: AppClass().getMqHeight(context) - 100,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -94,34 +94,30 @@ class _ContactMobileState extends State<ContactMobile> {
                   ),
                 ),
               ),
-              InkWell(
-                onTap: () async {
-                  await launchUrl(Uri.parse("https://m.me/tuanpluss.stormX/"));
+              TextButton(
+                onPressed: () {
+                  launchUrl(Uri.parse("https://m.me/tuanpluss.stormX/"));
                 },
-                child: Stack(
-                  children: [
-                    SizedBox(
-                        height: AppClass().getMqHeight(context) * 0.15,
-                        width: AppClass().getMqWidth(context) * 0.5,
-                        child: Rive(
-                          artboard: _helloArtboard!,
-                        )),
-                    Container(
-                      padding: EdgeInsets.only(
-                          top: AppClass().getMqHeight(context) * 0.05),
-                      height: AppClass().getMqHeight(context) * 0.15,
-                      width: AppClass().getMqWidth(context) * 0.5,
-                      child: const Center(
-                        child: Text('Say Hello!',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 20,
-                                letterSpacing: 1,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'sfmono')),
-                      ),
-                    ),
-                  ],
+                child: Container(
+                  // padding: const EdgeInsets.only(top: 30),
+                  margin: const EdgeInsets.only(top: 30),
+                  height: AppClass().getMqHeight(context) * 0.09,
+                  width: AppClass().getMqWidth(context) * 0.45,
+                  decoration: BoxDecoration(
+                      color: Colors.transparent,
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(3.0)),
+                      border:
+                          Border.all(color: AppColors().neonColor, width: 1.5)),
+                  child: Center(
+                    child: Text('Say Hello!',
+                        style: TextStyle(
+                            color: AppColors().neonColor,
+                            fontSize: 20,
+                            letterSpacing: 1,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'sfmono')),
+                  ),
                 ),
               )
             ],

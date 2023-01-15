@@ -94,43 +94,30 @@ class _ContactTabState extends State<ContactTab> {
                   ),
                 ),
               ),
-              SizedBox(
-                // padding: const EdgeInsets.only(bottom: 20),
-                height: AppClass().getMqHeight(context) * 0.2,
-                width: AppClass().getMqHeight(context) * 0.5,
-                child: InkWell(
-                  onTap: () async {
-                    await launchUrl(
-                        Uri.parse("https://m.me/tuanpluss.stormX/"));
-                  },
-                  child: Stack(children: [
-                    Center(
-                      child: Container(
-                        margin: const EdgeInsets.only(top: 5),
-                        height: AppClass().getMqHeight(context) * 0.2,
-                        width: AppClass().getMqWidth(context) * 0.5,
-                        child: Rive(
-                          artboard: _helloArtboard!,
-                          // alignment: Alignment.center,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          top: AppClass().getMqHeight(context) * 0.09,
-                          right: 10),
-                      child: Center(
-                        child: Text('Say Hello!',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: AppColors().primaryColor,
-                                fontSize: 27,
-                                letterSpacing: 1,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'sfmono')),
-                      ),
-                    ),
-                  ]),
+              TextButton(
+                onPressed: () {
+                  launchUrl(Uri.parse("https://m.me/tuanpluss.stormX/"));
+                },
+                child: Container(
+                  // padding: const EdgeInsets.only(top: 30),
+                  margin: const EdgeInsets.only(top: 30),
+                  height: AppClass().getMqHeight(context) * 0.09,
+                  width: AppClass().getMqWidth(context) * 0.45,
+                  decoration: BoxDecoration(
+                      color: Colors.transparent,
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(3.0)),
+                      border:
+                          Border.all(color: AppColors().neonColor, width: 1.5)),
+                  child: Center(
+                    child: Text('Say Hello!',
+                        style: TextStyle(
+                            color: AppColors().neonColor,
+                            fontSize: 30,
+                            letterSpacing: 1,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'sfmono')),
+                  ),
                 ),
               )
             ],
