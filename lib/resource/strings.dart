@@ -12,7 +12,7 @@ class Strings {
   static const aboutPara1 =
       '''Hello! My name is Tuan Do and I enjoy creating things that live on the internet. My interest in mobile development started back in 2021 when I decided to clone some applications — turns my passion into profession.''';
   static const aboutPara2 =
-      '''Currently, I am a 3rd year student at Posts and Telecommunications Institute of Technology. I work as a tech lead at Code MeLy - an IT community in Vietnam.''';
+      '''Currently, I am a 3rd year student at Posts and Telecommunications Institute of Technology. I work as a mobile developer at Code MeLy - an IT community in Vietnam.''';
   static const aboutPara3 =
       '''I also freelance for various clients across the world. If you've any ideas about creating a project or something, feel free to contact me!''';
 
