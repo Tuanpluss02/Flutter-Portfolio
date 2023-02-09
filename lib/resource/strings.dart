@@ -18,10 +18,10 @@ class Strings {
 
   static const techIntro =
       '''Here are a few technologies I’ve been working with recently:''';
-  static const tech1 = ''' Flutter'''; // space for manual padding
-  static const tech2 = ''' Firebase'''; // space for manual padding
-  static const tech3 = ''' Rive'''; // space for manual padding
-  static const tech4 = ''' Python'''; // space for manual padding
+  static const tech1 = ''' Flutter'''; 
+  static const tech2 = ''' Firebase''';
+  static const tech3 = ''' Rive'''; 
+  static const tech4 = ''' Python'''; 
 
   /* Exp screen contents */
   static const expCompName1 = '''GDG Hanoi''';
@@ -38,7 +38,7 @@ class Strings {
   static const expDesig2 = '''Mobile App Developer''';
   static const expDur2 = '''Aug 2020 - Jun 2022''';
   static const expAbout2 =
-      '''sample test about the work statuary and atmosphere, qerjqwjqwiojeqwjeq ''';
+      '''T ''';
   static const expAbout2_2 =
       '''sample test about the work statuary and atmosphere. asdhasjdhajhdajasbdjbasjkdasjkbldjkabsdjkablsdasdas''';
   static const expAbout2_3 =
