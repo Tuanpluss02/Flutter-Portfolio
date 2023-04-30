@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/resource/app_class.dart';
-import 'package:rive/rive.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../resource/colors.dart';
@@ -16,28 +14,6 @@ class ContactMobile extends StatefulWidget {
 }
 
 class _ContactMobileState extends State<ContactMobile> {
-  String animation = 'idle';
-
-  Artboard? _helloArtboard;
-  StateMachineController? stateMachineController;
-
-  @override
-  void initState() {
-    super.initState();
-    rootBundle.load('assets/rive/pup_hello.riv').then(
-      (data) async {
-        final file = RiveFile.import(data);
-        final artboard = file.mainArtboard;
-        stateMachineController =
-            StateMachineController.fromArtboard(artboard, "State Machine 1");
-        if (stateMachineController != null) {
-          artboard.addController(stateMachineController!);
-        }
-        setState(() => _helloArtboard = artboard);
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(

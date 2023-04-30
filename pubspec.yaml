@@ -45,6 +45,8 @@ dependencies:
   web_smooth_scroll: ^1.0.0
   rive: ^0.9.1
   auto_size_text: ^3.0.0
+  carousel_slider: ^4.2.1
+  url_strategy: ^0.2.0
 
 dev_dependencies:
   flutter_test:
