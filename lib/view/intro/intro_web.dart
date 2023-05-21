@@ -130,7 +130,7 @@ class _IntroWebState extends State<IntroWeb> {
                                   ? AppColors().neonColor
                                   : Colors.transparent),
                               borderRadius:
-                                  const BorderRadius.all(Radius.circular(3.0)),
+                                  const BorderRadius.all(Radius.circular(45)),
                               border: Border.all(
                                   color: AppColors().neonColor, width: 1.5)),
                           child: Center(

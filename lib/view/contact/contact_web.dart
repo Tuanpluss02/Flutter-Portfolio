@@ -108,6 +108,7 @@ class _ContactWebState extends State<ContactWeb> {
                               stateMachineController =
                                   StateMachineController.fromArtboard(
                                       artboard, 'State Machine 1');
+
                               if (stateMachineController != null) {
                                 artboard.addController(stateMachineController!);
                                 var inputListener =
