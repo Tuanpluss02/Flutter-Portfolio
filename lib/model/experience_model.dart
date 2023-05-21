@@ -1,10 +1,14 @@
-import 'package:flutter/widgets.dart';
-
 class ExperienceModel {
-  String? desig;
-  String? compName;
+  String? company;
+  String? position;
   String? duration;
-  Widget? points;
-
-  ExperienceModel({this.desig, this.compName, this.duration, this.points});
+  String? website;
+  List<String>? jobs;
+  ExperienceModel({
+    this.company,
+    this.position,
+    this.duration,
+    this.website,
+    this.jobs,
+  });
 }

@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/controller/general_controller.dart';
-import 'package:my_portfolio/model/experience_model.dart';
 import 'package:my_portfolio/resource/app_class.dart';
 import 'package:my_portfolio/resource/colors.dart';
-import 'package:my_portfolio/resource/strings.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ExperienceMobile extends StatefulWidget {
   const ExperienceMobile({Key? key}) : super(key: key);
@@ -17,276 +16,6 @@ class ExperienceMobile extends StatefulWidget {
 class _ExperienceMobileState extends State<ExperienceMobile> {
   @override
   Widget build(BuildContext context) {
-    List<ExperienceModel> experienceList = [
-      ExperienceModel(
-          desig: Strings.expDesig3,
-          compName: Strings.expCompName3,
-          duration: Strings.expDur3,
-          points: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 5.0),
-                      child: Icon(
-                        Icons.arrow_right,
-                        color: AppColors().neonColor,
-                        size: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      width: AppClass().getMqWidth(context) * 0.5,
-                      child: Text(
-                        Strings.expAbout1,
-                        style: TextStyle(
-                            color: AppColors().textLight,
-                            letterSpacing: 1,
-                            height: 1.5,
-                            fontSize: 13,
-                            fontFamily: 'sfmono'),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 5.0),
-                      child: Icon(
-                        Icons.arrow_right,
-                        color: AppColors().neonColor,
-                        size: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      width: AppClass().getMqWidth(context) * 0.5,
-                      child: Text(
-                        Strings.expAbout1_2,
-                        style: TextStyle(
-                            color: AppColors().textLight,
-                            letterSpacing: 1,
-                            height: 1.5,
-                            fontSize: 13,
-                            fontFamily: 'sfmono'),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 5.0),
-                      child: Icon(
-                        Icons.arrow_right,
-                        color: AppColors().neonColor,
-                        size: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      width: AppClass().getMqWidth(context) * 0.5,
-                      child: Text(
-                        Strings.expAbout1_3,
-                        style: TextStyle(
-                            color: AppColors().textLight,
-                            letterSpacing: 1,
-                            height: 1.5,
-                            fontSize: 13,
-                            fontFamily: 'sfmono'),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          )),
-      ExperienceModel(
-          desig: Strings.expDesig2,
-          compName: Strings.expCompName2,
-          duration: Strings.expDur2,
-          points: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 5.0),
-                      child: Icon(
-                        Icons.arrow_right,
-                        color: AppColors().neonColor,
-                        size: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      width: AppClass().getMqWidth(context) * 0.5,
-                      child: Text(
-                        Strings.expAbout2,
-                        style: TextStyle(
-                            color: AppColors().textLight,
-                            letterSpacing: 1,
-                            height: 1.5,
-                            fontSize: 13,
-                            fontFamily: 'sfmono'),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 5.0),
-                      child: Icon(
-                        Icons.arrow_right,
-                        color: AppColors().neonColor,
-                        size: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      width: AppClass().getMqWidth(context) * 0.5,
-                      child: Text(
-                        Strings.expAbout2_2,
-                        style: TextStyle(
-                            color: AppColors().textLight,
-                            letterSpacing: 1,
-                            height: 1.5,
-                            fontSize: 13,
-                            fontFamily: 'sfmono'),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 5.0),
-                      child: Icon(
-                        Icons.arrow_right,
-                        color: AppColors().neonColor,
-                        size: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      width: AppClass().getMqWidth(context) * 0.5,
-                      child: Text(
-                        Strings.expAbout2_3,
-                        style: TextStyle(
-                            color: AppColors().textLight,
-                            letterSpacing: 1,
-                            height: 1.5,
-                            fontSize: 13,
-                            fontFamily: 'sfmono'),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          )),
-      ExperienceModel(
-          desig: Strings.expDesig1,
-          compName: Strings.expCompName1,
-          duration: Strings.expDur1,
-          points: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 5.0),
-                      child: Icon(
-                        Icons.arrow_right,
-                        color: AppColors().neonColor,
-                        size: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      width: AppClass().getMqWidth(context) * 0.5,
-                      child: Text(
-                        Strings.expAbout3,
-                        style: TextStyle(
-                            color: AppColors().textLight,
-                            letterSpacing: 1,
-                            height: 1.5,
-                            fontSize: 13,
-                            fontFamily: 'sfmono'),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 5.0),
-                      child: Icon(
-                        Icons.arrow_right,
-                        color: AppColors().neonColor,
-                        size: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      width: AppClass().getMqWidth(context) * 0.5,
-                      child: Text(
-                        Strings.expAbout3_2,
-                        style: TextStyle(
-                            color: AppColors().textLight,
-                            letterSpacing: 1,
-                            height: 1.5,
-                            fontSize: 13,
-                            fontFamily: 'sfmono'),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 5.0),
-                      child: Icon(
-                        Icons.arrow_right,
-                        color: AppColors().neonColor,
-                        size: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      width: AppClass().getMqWidth(context) * 0.5,
-                      child: Text(
-                        Strings.expAbout3_3,
-                        style: TextStyle(
-                            color: AppColors().textLight,
-                            letterSpacing: 1,
-                            height: 1.5,
-                            fontSize: 13,
-                            fontFamily: 'sfmono'),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          )),
-    ];
-
     return SizedBox(
       height: AppClass().getMqHeight(context) - 100,
       child: Column(
@@ -335,90 +64,8 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        InkWell(
-                          onTap: () {
-                            ref.read(selectedExpProvider.notifier).state = 0;
-                          },
-                          child: Container(
-                            padding: const EdgeInsets.all(10.0),
-                            decoration: BoxDecoration(
-                                color: data == 0
-                                    ? AppColors().cardColor
-                                    : Colors.transparent,
-                                border: Border(
-                                    left: BorderSide(
-                                        color: data == 0
-                                            ? AppColors().neonColor
-                                            : Colors.white,
-                                        width: 2))),
-                            child: Text(
-                              'Code MeLy',
-                              style: TextStyle(
-                                  color: data == 0
-                                      ? AppColors().neonColor
-                                      : AppColors().textLight,
-                                  height: 1.5,
-                                  fontSize: 11,
-                                  fontFamily: 'sfmono'),
-                            ),
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () {
-                            ref.read(selectedExpProvider.notifier).state = 1;
-                          },
-                          child: Container(
-                            padding: const EdgeInsets.all(10.0),
-                            decoration: BoxDecoration(
-                                color: data == 1
-                                    ? AppColors().cardColor
-                                    : Colors.transparent,
-                                border: Border(
-                                    left: BorderSide(
-                                        color: data == 1
-                                            ? AppColors().neonColor
-                                            : Colors.white,
-                                        width: 2))),
-                            child: Text(
-                              'T-Town',
-                              style: TextStyle(
-                                  color: data == 1
-                                      ? AppColors().neonColor
-                                      : AppColors().textLight,
-                                  height: 1.5,
-                                  fontSize: 11,
-                                  fontFamily: 'sfmono'),
-                            ),
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () {
-                            ref.read(selectedExpProvider.notifier).state = 2;
-                          },
-                          child: Container(
-                            padding: const EdgeInsets.all(10.0),
-                            decoration: BoxDecoration(
-                                color: data == 2
-                                    ? AppColors().cardColor
-                                    : Colors.transparent,
-                                border: Border(
-                                    left: BorderSide(
-                                        color: data == 2
-                                            ? AppColors().neonColor
-                                            : Colors.white,
-                                        width: 2))),
-                            child: Text(
-                              'Techno Kryon',
-                              style: TextStyle(
-                                  color: data == 2
-                                      ? AppColors().neonColor
-                                      : AppColors().textLight,
-                                  height: 1.5,
-                                  fontSize: 11,
-                                  fontFamily: 'sfmono'),
-                            ),
-                          ),
-                        ),
+                        ...List.generate(AppClass().experienceList.length,
+                            (index) => selectCompany(ref, index))
                       ],
                     ),
                   ),
@@ -428,25 +75,30 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        RichText(
-                          text: TextSpan(
-                              text: experienceList[data].desig,
-                              style: GoogleFonts.roboto(
-                                  color: AppColors().textColor,
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 1,
-                                  fontSize: 18),
-                              children: <TextSpan>[
-                                TextSpan(
-                                  text: ' @${experienceList[data].compName}',
-                                  style: GoogleFonts.roboto(
-                                      color: AppColors().neonColor,
-                                      fontSize: 18),
-                                )
-                              ]),
+                        InkWell(
+                          onTap: () => launchUrl(Uri.parse(
+                              AppClass().experienceList[data].website!)),
+                          child: RichText(
+                            text: TextSpan(
+                                text: AppClass().experienceList[data].position,
+                                style: GoogleFonts.roboto(
+                                    color: AppColors().textColor,
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 1,
+                                    fontSize: 18),
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text:
+                                        ' @${AppClass().experienceList[data].company}',
+                                    style: GoogleFonts.roboto(
+                                        color: AppColors().neonColor,
+                                        fontSize: 18),
+                                  )
+                                ]),
+                          ),
                         ),
                         Text(
-                          experienceList[data].duration.toString(),
+                          AppClass().experienceList[data].duration!,
                           style: TextStyle(
                               color: AppColors().textLight,
                               letterSpacing: 1,
@@ -454,7 +106,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                               fontSize: 13,
                               fontFamily: 'sfmono'),
                         ),
-                        experienceList[data].points!
+                        expWidget(data)
                       ],
                     ),
                   )
@@ -464,6 +116,75 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
           })
         ],
       ),
+    );
+  }
+
+  Widget selectCompany(WidgetRef ref, int index) {
+    return InkWell(
+      onTap: () {
+        ref.read(selectedExpProvider.notifier).state = index;
+      },
+      child: Container(
+        padding: const EdgeInsets.all(10.0),
+        decoration: BoxDecoration(
+            color: index == 0 ? AppColors().cardColor : Colors.transparent,
+            border: Border(
+                left: BorderSide(
+                    color: index == 0 ? AppColors().neonColor : Colors.white,
+                    width: 2))),
+        child: Text(
+          AppClass().experienceList[index].company!,
+          style: TextStyle(
+              color: index == 0 ? AppColors().neonColor : AppColors().textLight,
+              height: 1.5,
+              fontSize: 11,
+              fontFamily: 'sfmono'),
+        ),
+      ),
+    );
+  }
+
+  Widget expWidget(int indexExp) {
+    return Column(
+      children: [
+        ...List.generate(
+          AppClass().experienceList[indexExp].jobs!.length,
+          (index) => Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(right: 5.0),
+                        child: Icon(
+                          Icons.arrow_right,
+                          color: AppColors().neonColor,
+                          size: 20,
+                        ),
+                      ),
+                      SizedBox(
+                        width: AppClass().getMqWidth(context) * 0.5,
+                        child: Text(
+                          AppClass().experienceList[indexExp].jobs![index],
+                          style: TextStyle(
+                              color: AppColors().textLight,
+                              letterSpacing: 1,
+                              height: 1.5,
+                              fontSize: 13,
+                              fontFamily: 'sfmono'),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        )
+      ],
     );
   }
 }

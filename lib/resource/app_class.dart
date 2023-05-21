@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/model/experience_model.dart';
 import 'package:my_portfolio/model/work_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -61,6 +62,40 @@ class AppClass {
         tech2: "Firebase",
         tech3: "Rive",
         link: "https://github.com/Tuanpluss02/my-portfolio"),
+  ];
+
+  List<ExperienceModel> experienceList = [
+    ExperienceModel(
+        company: "Code MeLy",
+        position: "Flutter Developer",
+        duration: "2022 - Present",
+        website: "https://codemely.tech/",
+        jobs: [
+          "Discord Admin.",
+          "Content writer for company's blog.",
+          "Developed Flutter application for clients.",
+        ]),
+    ExperienceModel(
+        company: "T-Town",
+        position: "Tech Lead",
+        duration: "2020 - 2022",
+        website: "https://t-town.tech/",
+        jobs: [
+          "Human Resource Manager.",
+          "Content writer for company's blog.",
+          "Developed Flutter application for company.",
+        ]),
+    ExperienceModel(
+      company: "StormX",
+      position: "Founder",
+      duration: "2019 - Present",
+      website: "https://stormx.software/",
+      jobs: [
+        "Design and develop the landing page using Flutter for web.",
+        "Write articles about technology.",
+        "Learn and research about new technology.",
+      ],
+    )
   ];
 
   factory AppClass() {

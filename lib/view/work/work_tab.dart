@@ -72,7 +72,6 @@ class _WorkWebState extends ConsumerState<WorkTab> {
     );
   }
 
-  // ignore: non_constant_identifier_names
   projectWidget({required int index}) {
     return InkWell(
       onTap: () async {
