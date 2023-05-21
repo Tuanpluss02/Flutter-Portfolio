@@ -57,36 +57,14 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
             mainAxisSpacing: 4,
             crossAxisSpacing: 4,
             children: [
-              StaggeredGridTile.count(
-                crossAxisCellCount: 1,
-                mainAxisCellCount: 1,
-                child: Tile(index: 0),
-              ),
-              StaggeredGridTile.count(
-                crossAxisCellCount: 1,
-                mainAxisCellCount: 1,
-                child: Tile(index: 1),
-              ),
-              StaggeredGridTile.count(
-                crossAxisCellCount: 1,
-                mainAxisCellCount: 1,
-                child: Tile(index: 2),
-              ),
-              StaggeredGridTile.count(
-                crossAxisCellCount: 1,
-                mainAxisCellCount: 1,
-                child: Tile(index: 3),
-              ),
-              StaggeredGridTile.count(
-                crossAxisCellCount: 1,
-                mainAxisCellCount: 1,
-                child: Tile(index: 4),
-              ),
-              StaggeredGridTile.count(
-                crossAxisCellCount: 1,
-                mainAxisCellCount: 1,
-                child: Tile(index: 5),
-              ),
+              ...List.generate(
+                AppClass().projectList.length,
+                (index) => StaggeredGridTile.count(
+                  crossAxisCellCount: 1,
+                  mainAxisCellCount: 1,
+                  child: projectWidget(index: index),
+                ),
+              )
             ],
           ),
         ),
@@ -95,40 +73,13 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
   }
 
   // ignore: non_constant_identifier_names
-  Tile({required int index}) {
+  projectWidget({required int index}) {
     return InkWell(
       onTap: () async {
-        switch (index) {
-          case 0:
-            await launchUrl(Uri.parse(AppClass.gitSafeC19));
-            break;
-
-          case 1:
-            AppClass().alertDialog(context, 'Not Found',
-                'Sorry the project you requested not found in the repository');
-            break;
-
-          case 2:
-            await launchUrl(Uri.parse(AppClass.gitWtIot));
-            break;
-
-          case 3:
-            await launchUrl(Uri.parse(AppClass.gitAutoStabilizer));
-            break;
-
-          case 4:
-            await launchUrl(Uri.parse(AppClass.gitPAT));
-            break;
-
-          case 5:
-            AppClass().alertDialog(context, 'Not Found',
-                'Sorry the project you requested not found in the repository');
-            break;
-        }
+        await launchUrl(Uri.parse(AppClass().projectList[index].link!));
       },
-      // ignore: avoid_types_as_parameter_names
-      onHover: (bool) {
-        if (bool) {
+      onHover: (val) {
+        if (val) {
           ref.read(hoverProvider.notifier).state = "$index";
         } else {
           ref.read(hoverProvider.notifier).state = "";
@@ -141,10 +92,8 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
           decoration: const BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(30))),
           duration: const Duration(milliseconds: 300),
-          // Provide an optional curve to make the animation feel smoother.
           curve: Curves.fastOutSlowIn,
           margin: EdgeInsets.all(isHovered ? 8.0 : 0.0),
-
           child: Card(
             color: AppColors().cardColor,
             elevation: 10,

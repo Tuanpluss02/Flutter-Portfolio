@@ -57,26 +57,14 @@ class _WorkWebState extends ConsumerState<WorkTab> {
             mainAxisSpacing: 4,
             crossAxisSpacing: 4,
             children: [
-              StaggeredGridTile.count(
-                crossAxisCellCount: 1,
-                mainAxisCellCount: 1,
-                child: Tile(index: 0),
-              ),
-              StaggeredGridTile.count(
-                crossAxisCellCount: 1,
-                mainAxisCellCount: 1,
-                child: Tile(index: 1),
-              ),
-              StaggeredGridTile.count(
-                crossAxisCellCount: 1,
-                mainAxisCellCount: 1,
-                child: Tile(index: 2),
-              ),
-              StaggeredGridTile.count(
-                crossAxisCellCount: 1,
-                mainAxisCellCount: 1,
-                child: Tile(index: 3),
-              ),
+              ...List.generate(
+                AppClass().projectList.length,
+                (index) => StaggeredGridTile.count(
+                  crossAxisCellCount: 1,
+                  mainAxisCellCount: 1,
+                  child: projectWidget(index: index),
+                ),
+              )
             ],
           ),
         ),
@@ -85,36 +73,10 @@ class _WorkWebState extends ConsumerState<WorkTab> {
   }
 
   // ignore: non_constant_identifier_names
-  Tile({required int index}) {
+  projectWidget({required int index}) {
     return InkWell(
       onTap: () async {
-        switch (index) {
-          case 0:
-            await launchUrl(Uri.parse(AppClass.gitSafeC19));
-            break;
-
-          case 1:
-            AppClass().alertDialog(context, 'Not Found',
-                'Sorry the project you requested not found in the repository');
-            break;
-
-          case 2:
-            await launchUrl(Uri.parse(AppClass.gitWtIot));
-            break;
-
-          case 3:
-            await launchUrl(Uri.parse(AppClass.gitAutoStabilizer));
-            break;
-
-          case 4:
-            await launchUrl(Uri.parse(AppClass.gitPAT));
-            break;
-
-          case 5:
-            AppClass().alertDialog(context, 'Not Found',
-                'Sorry the project you requested not found in the repository');
-            break;
-        }
+        await launchUrl(Uri.parse(AppClass().projectList[index].link!));
       },
       onHover: (bol) {
         if (bol) {

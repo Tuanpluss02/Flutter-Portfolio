@@ -15,59 +15,52 @@ class AppClass {
   /* URL */
   static const resumeDownloadURL = '''https://t.me/Tuanpluss02''';
 
-  static const gitSafeC19 = '''https://github.com/Tuanpluss02/english-memory''';
-
-  // static final gitHermarts = '''https://github.com/jeeva-HBK/SafeC19''';
-  static const gitWtIot =
-      '''https://github.com/Tuanpluss02/e-commerce-flutter''';
-  static const gitAutoStabilizer =
-      '''https://github.com/Tuanpluss02/Computer-Program-Assignment''';
-  static const gitPAT =
-      '''https://github.com/Tuanpluss02/Microprocessors-Assignment''';
-
-  // static final gitAVM = '''https://github.com/jeeva-HBK/SafeC19''';
-
   List<WorkModel> projectList = [
     WorkModel(
-        projectTitle: "English Quiz",
+        projectTitle: "URL Shortener",
+        projectContent: "URL Shotener using Python with FastAPI.",
+        tech1: "Python",
+        tech2: "FastAPI",
+        tech3: "MongoDB",
+        link: "https://github.com/Tuanpluss02/URL-Shortener"),
+    WorkModel(
+        projectTitle: "URL Shortener Launcher",
         projectContent:
-            "This is a simple English quiz app, it's a game to test your English knowledge.",
-        tech1: "Android",
-        tech2: "Flutter",
-        tech3: "iOS"),
+            '''URL Shortener Launcher is a web application that allows users to shorten long URLs into short and easy-to-remember links.''',
+        tech1: "Flutter",
+        tech2: "Rive",
+        tech3: "Firebase",
+        link: "https://github.com/Tuanpluss02/URL-Shortener-Launcher"),
     WorkModel(
-        projectTitle: "Flutter Chat App",
+        projectTitle: "Pro Chat",
         projectContent:
-            "A simple chating application using Firebase to store data and Flutter to build UI.",
-        tech1: "Firebase",
-        tech2: "Flutter",
-        tech3: "BLoC"),
+            "Pro Chat is a real-time messaging web application that allows users to chat with each other instantly.",
+        tech1: "ReactJS",
+        tech2: "FastAPI",
+        tech3: "MongoDB",
+        link: "https://github.com/Tuanpluss02/Pro-Chat"),
     WorkModel(
-        projectTitle: "E-Commerce UI App",
-        projectContent: '''This is a simple E-Commerce app, only UI.''',
-        tech1: "Android",
-        tech2: "Hero",
-        tech3: "Flutter"),
-    WorkModel(
-        projectTitle: "Custom management system",
+        projectTitle: "Pro Note",
         projectContent:
-            '''This is a simple customer management system written in C++. It's allows you to add, edit, delete, sort and search customers. It also allows you to save and load customers from a file.''',
-        tech1: "C++",
-        tech2: "Regex",
-        tech3: "OOP"),
+            '''The ultimate cross-platform note-taking application built with Flutter framework.''',
+        tech1: "Flutter",
+        tech2: "Firebase",
+        tech3: "Dart",
+        link: "https://github.com/Tuanpluss02/Pro-Note"),
     WorkModel(
-        projectTitle: "STM32 Project",
-        projectContent:
-            '''Using STM32 to control 26 LEDs, 1 button to change the effect of the LEDs. The project is written in C.''',
-        tech1: "C Language",
-        tech2: "STM32",
-        tech3: "Embedded"),
+        projectTitle: "SVD to Turtle",
+        projectContent: '''Python code to convert SVG to Turtle draw''',
+        tech1: "Python",
+        tech2: "Turtle",
+        tech3: "SVG",
+        link: "https://github.com/Tuanpluss02/turtle-svg"),
     WorkModel(
-        projectTitle: "Discord bot",
-        projectContent: '''A Discord bot using Dart and nyxx package.''',
-        tech1: "Dart",
-        tech2: "Nyxx",
-        tech3: "Discord"),
+        projectTitle: "Flutter Portfolio",
+        projectContent: '''Source code of this portfolio''',
+        tech1: "Flutter",
+        tech2: "Firebase",
+        tech3: "Rive",
+        link: "https://github.com/Tuanpluss02/my-portfolio"),
   ];
 
   factory AppClass() {

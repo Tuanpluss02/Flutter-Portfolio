@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/resource/app_class.dart';
 import 'package:rive/rive.dart';
@@ -16,41 +15,8 @@ class ContactWeb extends StatefulWidget {
 }
 
 class _ContactWebState extends State<ContactWeb> {
-  String animation = 'idle';
-
-  Artboard? _helloArtboard;
   SMIBool? _onHoverDetect;
   StateMachineController? stateMachineController;
-
-  @override
-  void initState() {
-    super.initState();
-    rootBundle.load('assets/rive/pup_hello.riv').then(
-      (data) async {
-        final file = RiveFile.import(data);
-        final artboard = file.mainArtboard;
-        stateMachineController =
-            StateMachineController.fromArtboard(artboard, "State Machine 1");
-        if (stateMachineController != null) {
-          artboard.addController(stateMachineController!);
-          _onHoverDetect = stateMachineController!.findSMI('searchHover');
-          // for (var e in stateMachineController!.inputs) {
-          //   debugPrint(e.runtimeType.toString());
-          //   debugPrint("name ${e.name} End");
-          // }
-          // try {
-          _onHoverDetect = stateMachineController!.inputs.first as SMIBool;
-          //   } on Exception catch (exception) {
-          //     print(exception);
-          //   } catch (error) {
-          //     print(error);
-          //   }
-        }
-
-        setState(() => _helloArtboard = artboard);
-      },
-    );
-  }
 
   void jump() {
     _onHoverDetect?.value = true;
@@ -136,8 +102,20 @@ class _ContactWebState extends State<ContactWeb> {
                       Center(
                         child: Container(
                           margin: const EdgeInsets.only(top: 5),
-                          child: Rive(
-                            artboard: _helloArtboard!,
+                          child: RiveAnimation.asset(
+                            'assets/rive/pup_hello.riv',
+                            onInit: (artboard) {
+                              stateMachineController =
+                                  StateMachineController.fromArtboard(
+                                      artboard, 'State Machine 1');
+                              if (stateMachineController != null) {
+                                artboard.addController(stateMachineController!);
+                                var inputListener =
+                                    stateMachineController!.inputs as List;
+                                _onHoverDetect = inputListener.first as SMIBool;
+                              }
+                            },
+                            // artboard: _helloArtboard!,
                             // alignment: Alignment.center,
                           ),
                         ),
