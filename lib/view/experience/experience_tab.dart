@@ -142,7 +142,9 @@ class _ExperienceTabState extends State<ExperienceTab> {
         child: Text(
           AppClass().experienceList[index].company!,
           style: TextStyle(
-              color: index == 0 ? AppColors().neonColor : AppColors().textLight,
+              color: index == selectedIndex
+                  ? AppColors().neonColor
+                  : AppColors().textLight,
               height: 1.5,
               fontSize: 11,
               fontFamily: 'sfmono'),

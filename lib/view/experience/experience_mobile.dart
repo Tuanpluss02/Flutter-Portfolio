@@ -65,7 +65,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         ...List.generate(AppClass().experienceList.length,
-                            (index) => selectCompany(ref, index))
+                            (index) => selectCompany(ref, data, index))
                       ],
                     ),
                   ),
@@ -119,7 +119,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
     );
   }
 
-  Widget selectCompany(WidgetRef ref, int index) {
+  Widget selectCompany(WidgetRef ref, int selectedIndex, int index) {
     return InkWell(
       onTap: () {
         ref.read(selectedExpProvider.notifier).state = index;
@@ -127,15 +127,21 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
       child: Container(
         padding: const EdgeInsets.all(10.0),
         decoration: BoxDecoration(
-            color: index == 0 ? AppColors().cardColor : Colors.transparent,
+            color: index == selectedIndex
+                ? AppColors().cardColor
+                : Colors.transparent,
             border: Border(
                 left: BorderSide(
-                    color: index == 0 ? AppColors().neonColor : Colors.white,
+                    color: index == selectedIndex
+                        ? AppColors().neonColor
+                        : Colors.white,
                     width: 2))),
         child: Text(
           AppClass().experienceList[index].company!,
           style: TextStyle(
-              color: index == 0 ? AppColors().neonColor : AppColors().textLight,
+              color: index == selectedIndex
+                  ? AppColors().neonColor
+                  : AppColors().textLight,
               height: 1.5,
               fontSize: 11,
               fontFamily: 'sfmono'),

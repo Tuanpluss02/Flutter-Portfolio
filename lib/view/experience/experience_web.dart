@@ -141,7 +141,9 @@ class _ExperienceWebState extends State<ExperienceWeb> {
         child: Text(
           AppClass().experienceList[index].company!,
           style: TextStyle(
-              color: index == 0 ? AppColors().neonColor : AppColors().textLight,
+              color: index == selectedIndex
+                  ? AppColors().neonColor
+                  : AppColors().textLight,
               letterSpacing: 1,
               height: 1.5,
               fontSize: 14,

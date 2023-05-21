@@ -14,12 +14,14 @@ class AppClass {
   ScrollController controller = ScrollController();
 
   /* URL */
-  static const resumeDownloadURL = '''https://t.me/Tuanpluss02''';
+  static const resumeDownloadURL =
+      '''https://www.linkedin.com/in/Tuanpluss02''';
 
   List<WorkModel> projectList = [
     WorkModel(
         projectTitle: "URL Shortener",
-        projectContent: "URL Shotener using Python with FastAPI.",
+        projectContent:
+            "Backend for URL Shortener Launcher. Using FastAPI for backend and MongoDB for database.",
         tech1: "Python",
         tech2: "FastAPI",
         tech3: "MongoDB",
@@ -49,15 +51,17 @@ class AppClass {
         tech3: "Dart",
         link: "https://github.com/Tuanpluss02/Pro-Note"),
     WorkModel(
-        projectTitle: "SVD to Turtle",
-        projectContent: '''Python code to convert SVG to Turtle draw''',
+        projectTitle: "SVG to Turtle",
+        projectContent:
+            '''The script reads an SVG file and extracts the path data from it. It then converts the path data into a series of Turtle draw commands that can be executed by a Turtle graphics library. This enables you to take advantage of the rich graphics capabilities offered by SVG files and replicate them using the Turtle graphics library.''',
         tech1: "Python",
         tech2: "Turtle",
         tech3: "SVG",
         link: "https://github.com/Tuanpluss02/turtle-svg"),
     WorkModel(
         projectTitle: "Flutter Portfolio",
-        projectContent: '''Source code of this portfolio''',
+        projectContent:
+            '''My portfolio built using Flutter, an open-source UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase. This portfolio showcases my skills and experiences as a Flutter developer.''',
         tech1: "Flutter",
         tech2: "Firebase",
         tech3: "Rive",

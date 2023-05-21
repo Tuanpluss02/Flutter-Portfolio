@@ -18,41 +18,10 @@ class Strings {
 
   static const techIntro =
       '''Here are a few technologies I’ve been working with recently:''';
-  static const tech1 = ''' Flutter'''; 
+  static const tech1 = ''' Flutter''';
   static const tech2 = ''' Firebase''';
-  static const tech3 = ''' Rive'''; 
-  static const tech4 = ''' Python'''; 
-
-  /* Exp screen contents */
-  static const expCompName1 = '''GDG Hanoi''';
-  static const expDesig1 = '''Member''';
-  static const expDur1 = '''Nov 2022 - Present''';
-  static const expAbout1 =
-      '''sample test about the work statuary and atmosphere, qerjqwjqwiojeqwjeq ''';
-  static const expAbout1_2 =
-      '''sample test about the work statuary and atmosphere. asdhasjdhajhdajasbdjbasjkdasjkbldjkabsdjkablsdasdas''';
-  static const expAbout1_3 =
-      '''sample test about the work statuary and atmosphere, ''';
-
-  static const expCompName2 = '''T-Town''';
-  static const expDesig2 = '''Mobile App Developer''';
-  static const expDur2 = '''Aug 2020 - Jun 2022''';
-  static const expAbout2 =
-      '''T ''';
-  static const expAbout2_2 =
-      '''sample test about the work statuary and atmosphere. asdhasjdhajhdajasbdjbasjkdasjkbldjkabsdjkablsdasdas''';
-  static const expAbout2_3 =
-      '''sample test about the work statuary and atmosphere, ''';
-
-  static const expCompName3 = '''Code MeLy''';
-  static const expDesig3 = '''Tech Lead''';
-  static const expDur3 = '''May 2022 - Present''';
-  static const expAbout3 =
-      '''Develop the landing page using Flutter for web ''';
-  static const expAbout3_2 = '''Write articles about technology ''';
-  static const expAbout3_3 = '''Human Resource Manager ''';
-
-  /* Contact screen content */
+  static const tech3 = ''' Rive''';
+  static const tech4 = ''' Python''';
   static const endTxt =
       '''Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!''';
 }

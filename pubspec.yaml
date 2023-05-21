@@ -71,6 +71,7 @@ flutter:
     - assets/rive/
     - assets/rive/pup_hello.riv
     - assets/rive/handwriting.riv
+    - assets/rive/button.riv
 
 
   fonts:

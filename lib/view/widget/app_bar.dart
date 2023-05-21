@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/controller/general_controller.dart';
 import 'package:my_portfolio/resource/app_class.dart';
@@ -33,9 +34,11 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                 Expanded(
                     flex: 2,
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 20.0, bottom: 5.0),
-                      child: Image.asset('assets/svg/appLogo.png'),
-                    )),
+                        padding: const EdgeInsets.only(left: 20.0, bottom: 5.0),
+                        child: SvgPicture.asset(
+                          'assets/svg/Stormx_logo.svg',
+                          height: 30,
+                        ))),
                 Expanded(
                   flex: 8,
                   child: Row(
@@ -133,7 +136,11 @@ class _ActionBarState extends ConsumerState<ActionBar> {
           }
           return Row(
             children: [
-              Expanded(child: Image.asset('assets/svg/appLogo.png')),
+              Expanded(
+                  flex: 2,
+                  child: SvgPicture.asset(
+                    'assets/svg/Stormx_logo.svg',
+                  )),
               Expanded(
                 flex: 9,
                 child: Row(
@@ -299,7 +306,7 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                             border: Border.all(
                                 color: AppColors().neonColor, width: 1.5)),
                         child: Center(
-                          child: Text('Contact',
+                          child: Text('Resume',
                               style: TextStyle(
                                   color: AppColors().neonColor,
                                   fontSize: 13,
