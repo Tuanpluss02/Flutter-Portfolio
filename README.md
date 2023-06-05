@@ -15,7 +15,7 @@ Welcome to my portfolio built using Flutter, an open-source UI toolkit for build
 
 ## Getting Started
 
-To run Pro Notes on your local machine, follow these simple steps:
+To run on your local machine, follow these simple steps:
 ```
 1. Clone the repository:
 > git clone https://github.com/Tuanpluss02/my-portfolio.git
