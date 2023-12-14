@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_portfolio/resource/strings.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
 import '../../resource/app_class.dart';
 import '../../resource/colors.dart';
+import '../../resource/strings.dart';
 
 // ignore: must_be_immutable
 class IntroTab extends StatefulWidget {

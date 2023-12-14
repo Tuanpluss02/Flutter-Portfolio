@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_portfolio/controller/general_controller.dart';
-import 'package:my_portfolio/resource/app_class.dart';
-import 'package:my_portfolio/resource/colors.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
-class ActionBar extends ConsumerStatefulWidget with PreferredSizeWidget {
+import '../../controller/general_controller.dart';
+import '../../resource/app_class.dart';
+import '../../resource/appbar_items.dart';
+import '../../resource/colors.dart';
+
+class ActionBar extends ConsumerStatefulWidget implements PreferredSizeWidget {
   final AutoScrollController controller;
 
-  ActionBar(this.controller, {Key? key}) : super(key: key);
+  const ActionBar(this.controller, {Key? key}) : super(key: key);
 
   @override
   ConsumerState<ActionBar> createState() => _ActionBarState();
@@ -36,7 +38,7 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                     child: Padding(
                         padding: const EdgeInsets.only(left: 20.0, bottom: 5.0),
                         child: SvgPicture.asset(
-                          'assets/svg/Stormx_logo.svg',
+                          'svg/Stormx_logo.svg',
                           height: 30,
                         ))),
                 Expanded(
@@ -47,84 +49,29 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                       PopupMenuButton(
                         color: AppColors().cardColor,
                         itemBuilder: (c) => <PopupMenuEntry>[
-                          PopupMenuItem(
-                            child: SizedBox(
-                                width: 90.0,
-                                child: InkWell(
-                                  onTap: () => widget.controller.scrollToIndex(
-                                      1,
-                                      preferPosition: AutoScrollPosition.begin),
-                                  child: Row(
-                                    children: [
-                                      const Icon(Icons.account_circle_rounded,
-                                          size: 18),
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 10.0),
-                                        child: Text(
-                                          'About',
-                                          style: GoogleFonts.roboto(),
+                          for (var item in appBarItems)
+                            PopupMenuItem(
+                              child: InkWell(
+                                onTap: () => widget.controller.scrollToIndex(
+                                    item.index,
+                                    preferPosition: AutoScrollPosition.begin),
+                                child: SizedBox(
+                                    width: 90.0,
+                                    child: Row(
+                                      children: [
+                                        item.icon,
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 10.0),
+                                          child: Text(
+                                            item.title,
+                                            style: GoogleFonts.roboto(),
+                                          ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                )),
-                          ),
-                          PopupMenuItem(
-                            child: InkWell(
-                              onTap: () => widget.controller.scrollToIndex(2,
-                                  preferPosition: AutoScrollPosition.begin),
-                              child: Row(
-                                children: [
-                                  const Icon(Icons.travel_explore_rounded,
-                                      size: 18),
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 10.0),
-                                    child: Text(
-                                      'Experience',
-                                      style: GoogleFonts.roboto(),
-                                    ),
-                                  ),
-                                ],
+                                      ],
+                                    )),
                               ),
                             ),
-                          ),
-                          PopupMenuItem(
-                            child: InkWell(
-                              onTap: () => widget.controller.scrollToIndex(3,
-                                  preferPosition: AutoScrollPosition.begin),
-                              child: Row(
-                                children: [
-                                  const Icon(Icons.computer_rounded, size: 18),
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 10.0),
-                                    child: Text(
-                                      'Work',
-                                      style: GoogleFonts.roboto(),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          PopupMenuItem(
-                            child: InkWell(
-                              onTap: () => widget.controller.scrollToIndex(4,
-                                  preferPosition: AutoScrollPosition.begin),
-                              child: Row(
-                                children: [
-                                  const Icon(Icons.phone_rounded, size: 18),
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 10.0),
-                                    child: Text(
-                                      'Contact',
-                                      style: GoogleFonts.roboto(),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
                         ],
                         child: const Icon(Icons.menu_rounded, size: 25),
                       )
@@ -139,7 +86,7 @@ class _ActionBarState extends ConsumerState<ActionBar> {
               Expanded(
                   flex: 2,
                   child: SvgPicture.asset(
-                    'assets/svg/Stormx_logo.svg',
+                    'svg/Stormx_logo.svg',
                   )),
               Expanded(
                 flex: 9,

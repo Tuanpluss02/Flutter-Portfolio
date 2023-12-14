@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:my_portfolio/resource/app_class.dart';
+
+import 'resource/app_class.dart';
 
 // ignore: must_be_immutable
 class Responsive extends StatefulWidget {

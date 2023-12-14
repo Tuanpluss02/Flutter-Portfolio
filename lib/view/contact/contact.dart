@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
-import 'package:my_portfolio/responsive.dart';
-import 'package:my_portfolio/view/contact/contact_mobile.dart';
-import 'package:my_portfolio/view/contact/contact_tab.dart';
-import 'package:my_portfolio/view/contact/contact_web.dart';
+
+import '../../responsive.dart';
+import 'contact_mobile.dart';
+import 'contact_tab.dart';
+import 'contact_web.dart';
 
 class Contact extends StatefulWidget {
   const Contact({Key? key}) : super(key: key);

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_portfolio/view/widget/app_bar.dart';
-import 'package:my_portfolio/view/widget/left_pane.dart';
-import 'package:my_portfolio/view/widget/right_pane.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:web_smooth_scroll/web_smooth_scroll.dart';
 
@@ -13,6 +10,9 @@ import 'about/about.dart';
 import 'contact/contact.dart';
 import 'experience/experience.dart';
 import 'intro/intro.dart';
+import 'widget/app_bar.dart';
+import 'widget/left_pane.dart';
+import 'widget/right_pane.dart';
 import 'work/work.dart';
 
 class RootScreen extends ConsumerStatefulWidget {

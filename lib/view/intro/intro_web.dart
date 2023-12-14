@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_portfolio/controller/general_controller.dart';
 import 'package:rive/rive.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
+import '../../controller/general_controller.dart';
 import '../../resource/app_class.dart';
 import '../../resource/colors.dart';
 import '../../resource/strings.dart';

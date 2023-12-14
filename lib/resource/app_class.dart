@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/model/experience_model.dart';
-import 'package:my_portfolio/model/work_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../model/experience_model.dart';
+import '../model/work_model.dart';
 import 'colors.dart';
 import 'styles.dart';
 
