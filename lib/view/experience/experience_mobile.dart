@@ -6,7 +6,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../controller/general_controller.dart';
 import '../../resource/app_messages.dart';
-import '../../resource/colors.dart';
+import '../../resource/app_colors.dart';
 
 class ExperienceMobile extends StatefulWidget {
   const ExperienceMobile({Key? key}) : super(key: key);

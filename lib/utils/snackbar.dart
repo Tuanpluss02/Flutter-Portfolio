@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../resource/colors.dart';
-import '../resource/styles.dart';
+import '../resource/app_colors.dart';
+import '../resource/text_styles.dart';
 
 class AppDialog {
   static BuildContext? lastContext;

@@ -6,7 +6,7 @@ import 'package:scroll_to_index/scroll_to_index.dart';
 
 import '../../controller/general_controller.dart';
 import '../../resource/app_messages.dart';
-import '../../resource/colors.dart';
+import '../../resource/app_colors.dart';
 import '../../utils/screen_info.dart';
 
 // ignore: must_be_immutable

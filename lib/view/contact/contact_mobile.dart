@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../resource/app_messages.dart';
-import '../../resource/colors.dart';
+import '../../resource/app_colors.dart';
 import '../../utils/screen_info.dart';
 
 class ContactMobile extends StatefulWidget {

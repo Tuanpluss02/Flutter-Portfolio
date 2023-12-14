@@ -6,7 +6,7 @@ import 'package:portfolio/utils/screen_info.dart';
 
 import '../../controller/general_controller.dart';
 import '../../resource/app_messages.dart';
-import '../../resource/colors.dart';
+import '../../resource/app_colors.dart';
 
 class About extends StatefulWidget {
   const About({Key? key}) : super(key: key);

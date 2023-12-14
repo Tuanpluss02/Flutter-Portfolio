@@ -6,7 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../controller/general_controller.dart';
-import '../../resource/colors.dart';
+import '../../resource/app_colors.dart';
 import '../../utils/screen_info.dart';
 
 class LeftPane extends ConsumerStatefulWidget {

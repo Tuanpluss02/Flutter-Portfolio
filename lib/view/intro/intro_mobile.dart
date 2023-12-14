@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
 import '../../resource/app_messages.dart';
-import '../../resource/colors.dart';
+import '../../resource/app_colors.dart';
 import '../../utils/screen_info.dart';
 
 class IntroMobile extends StatefulWidget {
