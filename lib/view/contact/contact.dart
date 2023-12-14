@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 
 import '../../responsive.dart';
 import 'contact_mobile.dart';
-import 'contact_tab.dart';
 import 'contact_web.dart';
 
 class Contact extends StatefulWidget {
@@ -17,7 +16,7 @@ class _ContactState extends State<Contact> {
   Widget build(BuildContext context) {
     return Responsive(
       webView: const ContactWeb(),
-      tabView: const ContactTab(),
+      tabView: const ContactWeb(),
       mobileView: const ContactMobile(),
     );
   }

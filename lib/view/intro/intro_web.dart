@@ -6,8 +6,8 @@ import 'package:scroll_to_index/scroll_to_index.dart';
 
 import '../../controller/general_controller.dart';
 import '../../resource/app_class.dart';
-import '../../resource/colors.dart';
 import '../../resource/app_messages.dart';
+import '../../resource/colors.dart';
 
 // ignore: must_be_immutable
 class IntroWeb extends StatefulWidget {
@@ -26,8 +26,8 @@ class _IntroWebState extends State<IntroWeb> {
     return Container(
       color: Colors.transparent,
       margin: EdgeInsets.only(
-          left: AppClass().getMqWidth(context) * 0.01,
-          top: AppClass().getMqHeight(context) * 0.1),
+          left: ScreenInfo().getMqWidth(context) * 0.01,
+          top: ScreenInfo().getMqHeight(context) * 0.1),
       child: Column(
         children: [
           const Center(
@@ -64,8 +64,8 @@ class _IntroWebState extends State<IntroWeb> {
                     ),
                   ),
                   SizedBox(
-                    width: AppClass().getMqWidth(context) -
-                        (AppClass().getMqWidth(context) * 0.23),
+                    width: ScreenInfo().getMqWidth(context) -
+                        (ScreenInfo().getMqWidth(context) * 0.23),
                     child: Padding(
                       padding: const EdgeInsets.only(top: 5.0),
                       child: Text(
@@ -82,7 +82,7 @@ class _IntroWebState extends State<IntroWeb> {
                   Padding(
                     padding: const EdgeInsets.only(top: 30.0),
                     child: SizedBox(
-                      width: AppClass().getMqWidth(context) * 0.45,
+                      width: ScreenInfo().getMqWidth(context) * 0.45,
                       child: RichText(
                           text: TextSpan(
                               text: Strings.introAbout,
@@ -123,8 +123,8 @@ class _IntroWebState extends State<IntroWeb> {
                               preferPosition: AutoScrollPosition.begin);
                         },
                         child: Container(
-                          height: AppClass().getMqHeight(context) * 0.09,
-                          width: AppClass().getMqWidth(context) * 0.2,
+                          height: ScreenInfo().getMqHeight(context) * 0.09,
+                          width: ScreenInfo().getMqWidth(context) * 0.2,
                           decoration: BoxDecoration(
                               color: (isHovered
                                   ? AppColors().neonColor
@@ -144,8 +144,8 @@ class _IntroWebState extends State<IntroWeb> {
                                     fontWeight: FontWeight.bold,
                                     fontFamily: 'sfmono')),
                             // child: SizedBox(
-                            //     height: AppClass().getMqHeight(context) * 0.2,
-                            //     width: AppClass().getMqWidth(context) * 0.3,
+                            //     height: ScreenInfo().getMqHeight(context) * 0.2,
+                            //     width: ScreenInfo().getMqWidth(context) * 0.3,
                             //     child: const RiveAnimation.asset(
                             //         'rive/handwriting.riv')),
                           ),

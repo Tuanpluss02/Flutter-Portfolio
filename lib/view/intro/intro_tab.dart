@@ -3,8 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
 import '../../resource/app_class.dart';
-import '../../resource/colors.dart';
 import '../../resource/app_messages.dart';
+import '../../resource/colors.dart';
 
 // ignore: must_be_immutable
 class IntroTab extends StatefulWidget {
@@ -22,8 +22,8 @@ class _IntroTabState extends State<IntroTab> {
     return Container(
       color: Colors.transparent,
       margin: EdgeInsets.only(
-          left: AppClass().getMqWidth(context) * 0.01,
-          top: AppClass().getMqHeight(context) * 0.07),
+          left: ScreenInfo().getMqWidth(context) * 0.01,
+          top: ScreenInfo().getMqHeight(context) * 0.07),
       padding: const EdgeInsets.only(bottom: 50),
       child: Row(
         children: [
@@ -53,8 +53,8 @@ class _IntroTabState extends State<IntroTab> {
                 ),
               ),
               SizedBox(
-                width: AppClass().getMqWidth(context) -
-                    (AppClass().getMqWidth(context) * 0.23),
+                width: ScreenInfo().getMqWidth(context) -
+                    (ScreenInfo().getMqWidth(context) * 0.23),
                 child: Padding(
                   padding: const EdgeInsets.only(top: 5.0),
                   child: Text(
@@ -71,7 +71,7 @@ class _IntroTabState extends State<IntroTab> {
               Padding(
                 padding: const EdgeInsets.only(top: 15.0),
                 child: SizedBox(
-                  width: AppClass().getMqWidth(context) * 0.45,
+                  width: ScreenInfo().getMqWidth(context) * 0.45,
                   child: RichText(
                       text: TextSpan(
                           text: Strings.introAbout,
@@ -102,8 +102,8 @@ class _IntroTabState extends State<IntroTab> {
                         preferPosition: AutoScrollPosition.begin);
                   },
                   child: Container(
-                    height: AppClass().getMqHeight(context) * 0.09,
-                    width: AppClass().getMqWidth(context) * 0.25,
+                    height: ScreenInfo().getMqHeight(context) * 0.09,
+                    width: ScreenInfo().getMqWidth(context) * 0.25,
                     decoration: BoxDecoration(
                         color: Colors.transparent,
                         borderRadius:

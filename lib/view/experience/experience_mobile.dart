@@ -18,7 +18,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: AppClass().getMqHeight(context) - 100,
+      height: ScreenInfo().getMqHeight(context) - 100,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -47,7 +47,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
               Container(
                 height: 0.5,
                 margin: const EdgeInsets.only(left: 15),
-                width: AppClass().getMqWidth(context) * 0.2,
+                width: ScreenInfo().getMqWidth(context) * 0.2,
                 color: AppColors().textLight,
               )
             ],
@@ -55,7 +55,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
           Consumer(builder: (context, ref, child) {
             var data = ref.watch(selectedExpProvider);
             return Container(
-              width: AppClass().getMqWidth(context),
+              width: ScreenInfo().getMqWidth(context),
               margin: const EdgeInsets.all(30.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -173,7 +173,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                         ),
                       ),
                       SizedBox(
-                        width: AppClass().getMqWidth(context) * 0.5,
+                        width: ScreenInfo().getMqWidth(context) * 0.5,
                         child: Text(
                           AppClass().experienceList[indexExp].jobs![index],
                           style: TextStyle(

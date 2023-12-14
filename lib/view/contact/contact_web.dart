@@ -3,9 +3,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:rive/rive.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../resource/app_class.dart';
-import '../../resource/colors.dart';
 import '../../resource/app_messages.dart';
+import '../../resource/colors.dart';
+import '../../utils/screen_info.dart';
 
 class ContactWeb extends StatefulWidget {
   const ContactWeb({Key? key}) : super(key: key);
@@ -29,7 +29,7 @@ class _ContactWebState extends State<ContactWeb> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: AppClass().getMqHeight(context) - 70,
+        height: ScreenInfo().getMqHeight(context) - 70,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -69,9 +69,9 @@ class _ContactWebState extends State<ContactWeb> {
                 Padding(
                   padding: const EdgeInsets.only(top: 15.0),
                   child: SizedBox(
-                    width: AppClass().getMqWidth(context) * 0.45,
+                    width: ScreenInfo().getMqWidth(context) * 0.45,
                     child: Text(
-                      Strings.endTxt,
+                      endTxt,
                       textAlign: TextAlign.center,
                       style: GoogleFonts.roboto(
                         color: AppColors().textLight,
@@ -84,8 +84,8 @@ class _ContactWebState extends State<ContactWeb> {
                 ),
                 SizedBox(
                   // padding: const EdgeInsets.only(bottom: 20),
-                  height: AppClass().getMqHeight(context) * 0.2,
-                  width: AppClass().getMqWidth(context) * 0.5,
+                  height: ScreenInfo().getMqHeight(context) * 0.2,
+                  width: ScreenInfo().getMqWidth(context) * 0.5,
                   child: InkWell(
                     onTap: () async {
                       await launchUrl(
@@ -123,7 +123,7 @@ class _ContactWebState extends State<ContactWeb> {
                       ),
                       Padding(
                         padding: EdgeInsets.only(
-                            top: AppClass().getMqHeight(context) * 0.09,
+                            top: ScreenInfo().getMqHeight(context) * 0.09,
                             right: 10),
                         child: Center(
                           child: Text('Say Hello!',

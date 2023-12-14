@@ -6,7 +6,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../controller/general_controller.dart';
-import '../../resource/app_class.dart';
 import '../../resource/colors.dart';
 
 class LeftPane extends ConsumerStatefulWidget {
@@ -34,7 +33,7 @@ class _LeftPaneState extends ConsumerState<LeftPane> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         SizedBox(
-                          height: AppClass().getMqHeight(context) * 0.07,
+                          height: ScreenInfo().getMqHeight(context) * 0.07,
                           child: InkWell(
                             onTap: () async {
                               await launchUrl(
@@ -61,7 +60,7 @@ class _LeftPaneState extends ConsumerState<LeftPane> {
                           ),
                         ),
                         SizedBox(
-                          height: AppClass().getMqHeight(context) * 0.07,
+                          height: ScreenInfo().getMqHeight(context) * 0.07,
                           child: InkWell(
                             onTap: () async {
                               await launchUrl(Uri.parse(
@@ -90,7 +89,7 @@ class _LeftPaneState extends ConsumerState<LeftPane> {
                           ),
                         ),
                         SizedBox(
-                          height: AppClass().getMqHeight(context) * 0.07,
+                          height: ScreenInfo().getMqHeight(context) * 0.07,
                           child: InkWell(
                             onTap: () async {
                               await launchUrl(Uri.parse(
@@ -118,7 +117,7 @@ class _LeftPaneState extends ConsumerState<LeftPane> {
                           ),
                         ),
                         SizedBox(
-                          height: AppClass().getMqHeight(context) * 0.07,
+                          height: ScreenInfo().getMqHeight(context) * 0.07,
                           child: InkWell(
                             onTap: () {},
                             onHover: (bol) {
@@ -143,7 +142,7 @@ class _LeftPaneState extends ConsumerState<LeftPane> {
                           ),
                         ),
                         SizedBox(
-                          height: AppClass().getMqHeight(context) * 0.07,
+                          height: ScreenInfo().getMqHeight(context) * 0.07,
                           child: InkWell(
                             onTap: () async {
                               await launchUrl(Uri.parse(

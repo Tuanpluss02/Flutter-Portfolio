@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../resource/app_class.dart';
-import '../../resource/colors.dart';
 import '../../resource/app_messages.dart';
+import '../../resource/colors.dart';
+import '../../utils/screen_info.dart';
 
 class ContactMobile extends StatefulWidget {
   const ContactMobile({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class _ContactMobileState extends State<ContactMobile> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: AppClass().getMqHeight(context) - 100,
+      height: ScreenInfo().getMqHeight(context) - 100,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -57,9 +57,9 @@ class _ContactMobileState extends State<ContactMobile> {
               Padding(
                 padding: const EdgeInsets.only(top: 15.0),
                 child: SizedBox(
-                  width: AppClass().getMqWidth(context) * 0.55,
+                  width: ScreenInfo().getMqWidth(context) * 0.55,
                   child: Text(
-                    Strings.endTxt,
+                    endTxt,
                     textAlign: TextAlign.center,
                     style: GoogleFonts.roboto(
                       color: AppColors().textLight,
@@ -72,13 +72,12 @@ class _ContactMobileState extends State<ContactMobile> {
               ),
               TextButton(
                 onPressed: () {
-                  launchUrl(Uri.parse("https://m.me/tuanpluss.stormX/"));
+                  launchUrl(Uri.parse(contactLink));
                 },
                 child: Container(
-                  // padding: const EdgeInsets.only(top: 30),
                   margin: const EdgeInsets.only(top: 30),
-                  height: AppClass().getMqHeight(context) * 0.09,
-                  width: AppClass().getMqWidth(context) * 0.45,
+                  height: ScreenInfo().getMqHeight(context) * 0.09,
+                  width: ScreenInfo().getMqWidth(context) * 0.45,
                   decoration: BoxDecoration(
                       color: Colors.transparent,
                       borderRadius:

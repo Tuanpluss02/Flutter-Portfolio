@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import 'resource/app_class.dart';
+import 'utils/screen_info.dart';
 
 // ignore: must_be_immutable
 class Responsive extends StatefulWidget {
@@ -15,7 +15,7 @@ class Responsive extends StatefulWidget {
 class _ResponsiveState extends State<Responsive> {
   @override
   Widget build(BuildContext context) {
-    ScreenType scrType = AppClass().getScreenType(context);
+    ScreenType scrType = ScreenInfo().getScreenType(context);
     switch (scrType) {
       case ScreenType.mobile:
         return widget.mobileView;
