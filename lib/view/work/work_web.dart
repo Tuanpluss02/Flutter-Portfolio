@@ -9,7 +9,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../controller/general_controller.dart';
-import '../../resource/app_class.dart';
+import '../../resource/app_messages.dart';
 import '../../resource/colors.dart';
 
 class WorkWeb extends ConsumerStatefulWidget {
@@ -60,7 +60,7 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
             crossAxisSpacing: 4,
             children: [
               ...List.generate(
-                AppClass().projectList.length,
+                projectList.length,
                 (index) => StaggeredGridTile.count(
                   crossAxisCellCount: 1,
                   mainAxisCellCount: 1,
@@ -78,7 +78,7 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
   projectWidget({required int index}) {
     return InkWell(
       onTap: () async {
-        await launchUrl(Uri.parse(AppClass().projectList[index].link!));
+        await launchUrl(Uri.parse(projectList[index].link!));
       },
       onHover: (val) {
         if (val) {
@@ -127,10 +127,7 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                       children: [
                         Expanded(
                           child: AutoSizeText(
-                            AppClass()
-                                .projectList[index]
-                                .projectTitle
-                                .toString(),
+                            projectList[index].projectTitle.toString(),
                             textAlign: TextAlign.left,
                             style: GoogleFonts.robotoSlab(
                                 color: isHovered
@@ -148,7 +145,7 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
                       child: Text(
-                        AppClass().projectList[index].projectContent.toString(),
+                        projectList[index].projectContent.toString(),
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
                           letterSpacing: 1,
@@ -162,7 +159,7 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Text(
-                        AppClass().projectList[index].tech1.toString(),
+                        projectList[index].tech1.toString(),
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
                           letterSpacing: 1,
@@ -170,7 +167,7 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                         ),
                       ),
                       Text(
-                        AppClass().projectList[index].tech2.toString(),
+                        projectList[index].tech2.toString(),
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
                           letterSpacing: 1,
@@ -178,7 +175,7 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                         ),
                       ),
                       Text(
-                        AppClass().projectList[index].tech3.toString(),
+                        projectList[index].tech3.toString(),
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
                           letterSpacing: 1,

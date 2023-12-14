@@ -5,9 +5,9 @@ import 'package:rive/rive.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
 import '../../controller/general_controller.dart';
-import '../../resource/app_class.dart';
 import '../../resource/app_messages.dart';
 import '../../resource/colors.dart';
+import '../../utils/screen_info.dart';
 
 // ignore: must_be_immutable
 class IntroWeb extends StatefulWidget {
@@ -44,7 +44,7 @@ class _IntroWebState extends State<IntroWeb> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8.0, top: 50),
                     child: Text(
-                      Strings.welcomeTxt,
+                      IntroScreenContents.welcomeTxt,
                       style: TextStyle(
                           color: AppColors().neonColor,
                           fontSize: 18,
@@ -54,7 +54,7 @@ class _IntroWebState extends State<IntroWeb> {
                   Padding(
                     padding: const EdgeInsets.only(top: 8.0),
                     child: Text(
-                      Strings.name,
+                      IntroScreenContents.name,
                       style: GoogleFonts.robotoSlab(
                         color: AppColors().textColor,
                         fontWeight: FontWeight.bold,
@@ -69,7 +69,7 @@ class _IntroWebState extends State<IntroWeb> {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 5.0),
                       child: Text(
-                        Strings.whatIdo,
+                        IntroScreenContents.whatIdo,
                         style: GoogleFonts.robotoSlab(
                           color: AppColors().textLight,
                           fontWeight: FontWeight.bold,
@@ -85,7 +85,7 @@ class _IntroWebState extends State<IntroWeb> {
                       width: ScreenInfo().getMqWidth(context) * 0.45,
                       child: RichText(
                           text: TextSpan(
-                              text: Strings.introAbout,
+                              text: IntroScreenContents.introAbout,
                               style: GoogleFonts.roboto(
                                 color: AppColors().textLight,
                                 letterSpacing: 1,
@@ -94,7 +94,7 @@ class _IntroWebState extends State<IntroWeb> {
                               ),
                               children: <TextSpan>[
                             TextSpan(
-                              text: Strings.currentOrgName,
+                              text: IntroScreenContents.currentOrgName,
                               style: GoogleFonts.roboto(
                                 color: AppColors().neonColor,
                                 letterSpacing: 1,

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../responsive.dart';
 import 'experience_mobile.dart';
-import 'experience_tab.dart';
 import 'experience_web.dart';
 
 class Experience extends StatefulWidget {
@@ -18,7 +17,6 @@ class _ExperienceState extends State<Experience> {
     return Responsive(
       webView: const ExperienceWeb(),
       mobileView: const ExperienceMobile(),
-      tabView: const ExperienceTab(),
     );
   }
 }

@@ -4,8 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../controller/general_controller.dart';
-import '../../resource/app_class.dart';
+import '../../resource/app_messages.dart';
 import '../../resource/colors.dart';
+import '../../utils/screen_info.dart';
 
 class ExperienceWeb extends StatefulWidget {
   const ExperienceWeb({Key? key}) : super(key: key);
@@ -66,7 +67,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           ...List.generate(
-                            AppClass().experienceList.length,
+                            experienceList.length,
                             (index) => selectCompany(ref, data, index),
                           ),
                         ]),
@@ -78,11 +79,11 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         InkWell(
-                          onTap: () => launchUrl(Uri.parse(
-                              AppClass().experienceList[data].website!)),
+                          onTap: () => launchUrl(
+                              Uri.parse(experienceList[data].website!)),
                           child: RichText(
                             text: TextSpan(
-                                text: AppClass().experienceList[data].position,
+                                text: experienceList[data].position,
                                 style: GoogleFonts.roboto(
                                     color: AppColors().textColor,
                                     fontWeight: FontWeight.bold,
@@ -90,8 +91,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                                     fontSize: 20),
                                 children: <TextSpan>[
                                   TextSpan(
-                                    text:
-                                        ' @${AppClass().experienceList[data].company}',
+                                    text: ' @${experienceList[data].company}',
                                     style: GoogleFonts.roboto(
                                         color: AppColors().neonColor,
                                         fontSize: 20),
@@ -100,7 +100,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                           ),
                         ),
                         Text(
-                          AppClass().experienceList[data].duration.toString(),
+                          experienceList[data].duration.toString(),
                           style: TextStyle(
                               color: AppColors().textLight,
                               letterSpacing: 1,
@@ -139,7 +139,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                         : Colors.white,
                     width: 2))),
         child: Text(
-          AppClass().experienceList[index].company!,
+          experienceList[index].company!,
           style: TextStyle(
               color: index == selectedIndex
                   ? AppColors().neonColor
@@ -157,7 +157,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
     return Column(
       children: [
         ...List.generate(
-          AppClass().experienceList[indexExp].jobs!.length,
+          experienceList[indexExp].jobs!.length,
           (index) => Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
@@ -177,7 +177,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                       SizedBox(
                         width: ScreenInfo().getMqWidth(context) * 0.35,
                         child: Text(
-                          AppClass().experienceList[indexExp].jobs![index],
+                          experienceList[indexExp].jobs![index],
                           style: TextStyle(
                               color: AppColors().textLight,
                               letterSpacing: 1,

@@ -5,9 +5,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
 import '../../controller/general_controller.dart';
-import '../../resource/app_class.dart';
 import '../../resource/appbar_items.dart';
 import '../../resource/colors.dart';
+import '../../utils/screen_info.dart';
 
 class ActionBar extends ConsumerStatefulWidget implements PreferredSizeWidget {
   final AutoScrollController controller;
@@ -28,8 +28,8 @@ class _ActionBarState extends ConsumerState<ActionBar> {
         height: 70,
         padding: const EdgeInsets.only(right: 20.0, top: 25.0),
         child: () {
-          ScreenType scrType = AppClass().getScreenType(context);
-          if (scrType == ScreenType.mobile || scrType == ScreenType.tab) {
+          ScreenType scrType = ScreenInfo().getScreenType(context);
+          if (scrType == ScreenType.mobile) {
             return Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

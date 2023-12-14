@@ -7,6 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../controller/general_controller.dart';
 import '../../resource/colors.dart';
+import '../../utils/screen_info.dart';
 
 class LeftPane extends ConsumerStatefulWidget {
   const LeftPane({Key? key}) : super(key: key);

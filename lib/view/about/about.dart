@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/resource/app_assets.dart';
 import 'package:portfolio/utils/screen_info.dart';
 
 import '../../controller/general_controller.dart';
@@ -18,13 +19,13 @@ class _AboutState extends State<About> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(
-          left: ScreenInfo().getMqWidth(context) * 0.1,
-          right: ScreenInfo().getMqWidth(context) * 0.1),
-      padding: EdgeInsets.only(
-          bottom: ScreenInfo().getScreenType(context) == ScreenType.mobile
-              ? 30
-              : 40),
+      // margin: EdgeInsets.only(
+      // left: ScreenInfo().getMqWidth(context) * 0.1,
+      // right: ScreenInfo().getMqWidth(context) * 0.1),
+      // padding: EdgeInsets.only(
+      //     bottom: ScreenInfo().getScreenType(context) == ScreenType.mobile
+      //         ? 30
+      //         : 40),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -164,8 +165,8 @@ class _AboutState extends State<About> {
                                             Radius.circular(10.0)),
                                         image: DecorationImage(
                                             fit: BoxFit.cover,
-                                            image: AssetImage(
-                                                'assets/svg/profilePic.jpg')),
+                                            image:
+                                                AssetImage(AppAssets.avatar)),
                                         color: Colors.transparent),
                                   ),
                                 ),

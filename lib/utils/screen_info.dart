@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-enum ScreenType { mobile, tab, web }
+enum ScreenType { mobile, web }
 
 class ScreenInfo {
   ScreenType getScreenType(BuildContext context) {
@@ -9,8 +9,9 @@ class ScreenInfo {
       return ScreenType.web;
     } else if (scrWidth < 650) {
       return ScreenType.mobile;
+    } else {
+      return ScreenType.web;
     }
-    return ScreenType.tab;
   }
 
   getMqWidth(BuildContext context) {

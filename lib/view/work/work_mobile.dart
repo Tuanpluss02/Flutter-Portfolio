@@ -6,11 +6,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../controller/general_controller.dart';
-import '../../resource/app_class.dart';
+import '../../resource/app_messages.dart';
 import '../../resource/colors.dart';
 
 class WorkMobile extends ConsumerStatefulWidget {
@@ -61,7 +60,7 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
             crossAxisSpacing: 4,
             children: [
               ...List.generate(
-                AppClass().projectList.length,
+                projectList.length,
                 (index) => StaggeredGridTile.count(
                   crossAxisCellCount: 1,
                   mainAxisCellCount: 1,
@@ -78,7 +77,7 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
   projectWidget({required int index}) {
     return InkWell(
       onTap: () async {
-        await launchUrl(Uri.parse(AppClass().projectList[index].link!));
+        await launchUrl(Uri.parse(projectList[index].link!));
       },
       onHover: (bol) {
         if (bol) {
@@ -123,10 +122,7 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                       children: [
                         Expanded(
                           child: AutoSizeText(
-                            AppClass()
-                                .projectList[index]
-                                .projectTitle
-                                .toString(),
+                            projectList[index].projectTitle.toString(),
                             maxLines: 2,
                             overflow: TextOverflow.clip,
                             textAlign: TextAlign.left,
@@ -146,7 +142,7 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
                       child: AutoSizeText(
-                        AppClass().projectList[index].projectContent.toString(),
+                        projectList[index].projectContent.toString(),
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
                           letterSpacing: 1,
@@ -160,7 +156,7 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       AutoSizeText(
-                        AppClass().projectList[index].tech1.toString(),
+                        projectList[index].tech1.toString(),
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
                           letterSpacing: 1,
@@ -168,7 +164,7 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                         ),
                       ),
                       AutoSizeText(
-                        AppClass().projectList[index].tech2.toString(),
+                        projectList[index].tech2.toString(),
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
                           letterSpacing: 1,
@@ -176,7 +172,7 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                         ),
                       ),
                       AutoSizeText(
-                        AppClass().projectList[index].tech3.toString(),
+                        projectList[index].tech3.toString(),
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
                           letterSpacing: 1,

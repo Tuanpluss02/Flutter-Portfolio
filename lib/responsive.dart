@@ -19,8 +19,6 @@ class _ResponsiveState extends State<Responsive> {
     switch (scrType) {
       case ScreenType.mobile:
         return widget.mobileView;
-      case ScreenType.tab:
-        return widget.tabView;
       case ScreenType.web:
         return widget.webView;
     }

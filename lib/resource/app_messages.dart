@@ -1,3 +1,5 @@
+import 'package:portfolio/resource/app_assets.dart';
+
 import '../model/experience_model.dart';
 import '../model/technology_model.dart';
 import '../model/work_model.dart';
@@ -28,14 +30,6 @@ const contactLink = "https://m.me/tuanpluss02/";
 const endTxt =
     '''Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!''';
 
-List<String> introScreenContentsList = [
-  IntroScreenContents.welcomeTxt,
-  IntroScreenContents.name,
-  IntroScreenContents.whatIdo,
-  IntroScreenContents.introAbout,
-  IntroScreenContents.currentOrgName,
-];
-
 List<String> aboutScreenContentsList = [
   AboutScreenContents.aboutPara1,
   AboutScreenContents.aboutPara2,
@@ -44,10 +38,10 @@ List<String> aboutScreenContentsList = [
 ];
 
 List<Technology> technologiesList = [
-  Technology(techName: 'Flutter', techLogo: 'assets/images/tech/flutter.png'),
-  Technology(techName: 'Firebase', techLogo: 'assets/images/tech/firebase.png'),
-  Technology(techName: 'NestJS', techLogo: 'assets/images/tech/nestjs.png'),
-  Technology(techName: 'Rive', techLogo: 'assets/images/tech/rive.png'),
+  Technology(techName: 'Flutter', techLogo: AppAssets.flutterLogo),
+  Technology(techName: 'Firebase', techLogo: AppAssets.firebaseLogo),
+  Technology(techName: 'NestJS', techLogo: AppAssets.nestjsLogo),
+  Technology(techName: 'Rive', techLogo: AppAssets.riveLogo),
 ];
 List<WorkModel> projectList = [
   WorkModel(

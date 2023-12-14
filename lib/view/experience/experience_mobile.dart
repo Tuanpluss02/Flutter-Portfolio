@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/utils/screen_info.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../controller/general_controller.dart';
-import '../../resource/app_class.dart';
+import '../../resource/app_messages.dart';
 import '../../resource/colors.dart';
 
 class ExperienceMobile extends StatefulWidget {
@@ -65,7 +66,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        ...List.generate(AppClass().experienceList.length,
+                        ...List.generate(experienceList.length,
                             (index) => selectCompany(ref, data, index))
                       ],
                     ),
@@ -77,11 +78,11 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         InkWell(
-                          onTap: () => launchUrl(Uri.parse(
-                              AppClass().experienceList[data].website!)),
+                          onTap: () => launchUrl(
+                              Uri.parse(experienceList[data].website!)),
                           child: RichText(
                             text: TextSpan(
-                                text: AppClass().experienceList[data].position,
+                                text: experienceList[data].position,
                                 style: GoogleFonts.roboto(
                                     color: AppColors().textColor,
                                     fontWeight: FontWeight.bold,
@@ -89,8 +90,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                                     fontSize: 18),
                                 children: <TextSpan>[
                                   TextSpan(
-                                    text:
-                                        ' @${AppClass().experienceList[data].company}',
+                                    text: ' @${experienceList[data].company}',
                                     style: GoogleFonts.roboto(
                                         color: AppColors().neonColor,
                                         fontSize: 18),
@@ -99,7 +99,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                           ),
                         ),
                         Text(
-                          AppClass().experienceList[data].duration!,
+                          experienceList[data].duration!,
                           style: TextStyle(
                               color: AppColors().textLight,
                               letterSpacing: 1,
@@ -138,7 +138,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                         : Colors.white,
                     width: 2))),
         child: Text(
-          AppClass().experienceList[index].company!,
+          experienceList[index].company!,
           style: TextStyle(
               color: index == selectedIndex
                   ? AppColors().neonColor
@@ -155,7 +155,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
     return Column(
       children: [
         ...List.generate(
-          AppClass().experienceList[indexExp].jobs!.length,
+          experienceList[indexExp].jobs!.length,
           (index) => Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
@@ -175,7 +175,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                       SizedBox(
                         width: ScreenInfo().getMqWidth(context) * 0.5,
                         child: Text(
-                          AppClass().experienceList[indexExp].jobs![index],
+                          experienceList[indexExp].jobs![index],
                           style: TextStyle(
                               color: AppColors().textLight,
                               letterSpacing: 1,
