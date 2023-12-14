@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../resource/app_class.dart';
 import '../../resource/colors.dart';
-import '../../resource/strings.dart';
+import '../../resource/app_messages.dart';
 
 class AboutTab extends StatefulWidget {
   const AboutTab({Key? key}) : super(key: key);

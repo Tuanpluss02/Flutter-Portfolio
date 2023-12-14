@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../controller/general_controller.dart';
 import '../../resource/app_class.dart';
 import '../../resource/colors.dart';
-import '../../resource/strings.dart';
+import '../../resource/app_messages.dart';
 
 class AboutWeb extends ConsumerStatefulWidget {
   const AboutWeb({Key? key}) : super(key: key);

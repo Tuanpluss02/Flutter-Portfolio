@@ -4,7 +4,7 @@ import 'package:scroll_to_index/scroll_to_index.dart';
 
 import '../../resource/app_class.dart';
 import '../../resource/colors.dart';
-import '../../resource/strings.dart';
+import '../../resource/app_messages.dart';
 
 // ignore: must_be_immutable
 class IntroTab extends StatefulWidget {

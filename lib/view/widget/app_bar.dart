@@ -48,31 +48,32 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                     children: [
                       PopupMenuButton(
                         color: AppColors().cardColor,
-                        itemBuilder: (c) => <PopupMenuEntry>[
-                          for (var item in appBarItems)
-                            PopupMenuItem(
-                              child: InkWell(
-                                onTap: () => widget.controller.scrollToIndex(
-                                    item.index,
-                                    preferPosition: AutoScrollPosition.begin),
-                                child: SizedBox(
-                                    width: 90.0,
-                                    child: Row(
-                                      children: [
-                                        item.icon,
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 10.0),
-                                          child: Text(
-                                            item.title,
-                                            style: GoogleFonts.roboto(),
+                        itemBuilder: (context) => appBarItems
+                            .map(
+                              (item) => PopupMenuItem(
+                                child: InkWell(
+                                  onTap: () => widget.controller.scrollToIndex(
+                                      item.index,
+                                      preferPosition: AutoScrollPosition.begin),
+                                  child: SizedBox(
+                                      width: 90.0,
+                                      child: Row(
+                                        children: [
+                                          item.icon,
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                left: 10.0),
+                                            child: Text(
+                                              item.title,
+                                              style: GoogleFonts.roboto(),
+                                            ),
                                           ),
-                                        ),
-                                      ],
-                                    )),
+                                        ],
+                                      )),
+                                ),
                               ),
-                            ),
-                        ],
+                            )
+                            .toList(),
                         child: const Icon(Icons.menu_rounded, size: 25),
                       )
                     ],
@@ -92,48 +93,50 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                 flex: 9,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    for (var item in appBarItems)
-                      InkWell(
-                        onTap: () => widget.controller.scrollToIndex(item.index,
-                            preferPosition: AutoScrollPosition.begin),
-                        onHover: (bol) {
-                          if (bol) {
-                            ref.read(hoverProvider.notifier).state =
-                                item.riverpodKey;
-                          } else {
-                            ref.read(hoverProvider.notifier).state = "";
-                          }
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.only(right: 30.0),
-                          child: Row(
-                            children: [
-                              Text(
-                                "${item.index.toString().padLeft(2, '0')}. ",
-                                style: TextStyle(
-                                    color: AppColors().neonColor,
-                                    fontSize: 13,
-                                    fontFamily: 'sfmono'),
-                              ),
-                              Consumer(builder: (context, ref, child) {
-                                String state = ref.watch(hoverProvider);
-                                bool isHovered = (state == item.riverpodKey);
-                                return Text(
-                                  item.title,
+                  children: appBarItems
+                      .map(
+                        (item) => InkWell(
+                          onTap: () => widget.controller.scrollToIndex(
+                              item.index,
+                              preferPosition: AutoScrollPosition.begin),
+                          onHover: (bol) {
+                            if (bol) {
+                              ref.read(hoverProvider.notifier).state =
+                                  item.riverpodKey;
+                            } else {
+                              ref.read(hoverProvider.notifier).state = "";
+                            }
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.only(right: 30.0),
+                            child: Row(
+                              children: [
+                                Text(
+                                  "${item.index.toString().padLeft(2, '0')}. ",
                                   style: TextStyle(
-                                      color: isHovered
-                                          ? AppColors().neonColor
-                                          : AppColors().textColor,
+                                      color: AppColors().neonColor,
                                       fontSize: 13,
                                       fontFamily: 'sfmono'),
-                                );
-                              }),
-                            ],
+                                ),
+                                Consumer(builder: (context, ref, child) {
+                                  String state = ref.watch(hoverProvider);
+                                  bool isHovered = (state == item.riverpodKey);
+                                  return Text(
+                                    item.title,
+                                    style: TextStyle(
+                                        color: isHovered
+                                            ? AppColors().neonColor
+                                            : AppColors().textColor,
+                                        fontSize: 13,
+                                        fontFamily: 'sfmono'),
+                                  );
+                                }),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                  ],
+                      )
+                      .toList(),
                 ),
               ),
             ],

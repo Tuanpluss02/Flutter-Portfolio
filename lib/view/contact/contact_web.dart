@@ -5,7 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../resource/app_class.dart';
 import '../../resource/colors.dart';
-import '../../resource/strings.dart';
+import '../../resource/app_messages.dart';
 
 class ContactWeb extends StatefulWidget {
   const ContactWeb({Key? key}) : super(key: key);

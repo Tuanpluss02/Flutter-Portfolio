@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../resource/app_class.dart';
+import '../../resource/app_messages.dart';
 import '../../resource/colors.dart';
-import '../../resource/strings.dart';
 
 class AboutMobile extends StatefulWidget {
   const AboutMobile({Key? key}) : super(key: key);
@@ -60,54 +60,20 @@ class _AboutMobileState extends State<AboutMobile> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 30.0),
-                      child: Text(
-                        Strings.aboutPara1,
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          height: 1.5,
-                          fontSize: 15,
+                    ...aboutScreenContentsList.map((content) {
+                      return Padding(
+                        padding: const EdgeInsets.only(top: 30.0),
+                        child: Text(
+                          content,
+                          style: GoogleFonts.roboto(
+                            color: AppColors().textLight,
+                            letterSpacing: 1,
+                            height: 1.5,
+                            fontSize: 15,
+                          ),
                         ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 10.0),
-                      child: Text(
-                        Strings.aboutPara2,
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          height: 1.5,
-                          fontSize: 15,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 10.0),
-                      child: Text(
-                        Strings.aboutPara3,
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          height: 1.5,
-                          fontSize: 15,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 10.0),
-                      child: Text(
-                        Strings.techIntro,
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          height: 1.5,
-                          fontSize: 15,
-                        ),
-                      ),
-                    ),
+                      );
+                    }).toList(),
                     Padding(
                       padding: const EdgeInsets.only(top: 20.0),
                       child: GridView.count(
