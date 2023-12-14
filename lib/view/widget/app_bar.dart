@@ -100,7 +100,7 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                         onHover: (bol) {
                           if (bol) {
                             ref.read(hoverProvider.notifier).state =
-                                item.riverpod_key;
+                                item.riverpodKey;
                           } else {
                             ref.read(hoverProvider.notifier).state = "";
                           }
@@ -118,7 +118,7 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                               ),
                               Consumer(builder: (context, ref, child) {
                                 String state = ref.watch(hoverProvider);
-                                bool isHovered = (state == item.riverpod_key);
+                                bool isHovered = (state == item.riverpodKey);
                                 return Text(
                                   item.title,
                                   style: TextStyle(
