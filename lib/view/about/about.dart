@@ -95,7 +95,11 @@ class _AboutState extends State<About> {
                                   children: [
                                     Image.asset(
                                       item.techLogo,
-                                      height: 20,
+                                      width: 30,
+                                      height: 30,
+                                    ),
+                                    const SizedBox(
+                                      width: 10,
                                     ),
                                     Text(item.techName,
                                         style: GoogleFonts.robotoFlex(
