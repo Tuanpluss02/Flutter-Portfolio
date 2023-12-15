@@ -5,8 +5,8 @@ import 'package:portfolio/resource/app_assets.dart';
 import 'package:portfolio/utils/screen_info.dart';
 
 import '../../controller/general_controller.dart';
-import '../../resource/app_messages.dart';
 import '../../resource/app_colors.dart';
+import '../../resource/app_messages.dart';
 
 class About extends StatefulWidget {
   const About({Key? key}) : super(key: key);
@@ -86,33 +86,16 @@ class _AboutState extends State<About> {
                     Padding(
                       padding: const EdgeInsets.only(top: 20.0),
                       child: GridView.count(
-                          crossAxisCount: 2,
+                          crossAxisCount: 3,
                           shrinkWrap: true,
-                          childAspectRatio: 10,
+                          childAspectRatio: 5,
                           children: technologiesList
                               .map(
-                                (item) => Row(
-                                  children: [
-                                    Image.asset(
-                                      item.techLogo,
-                                      width: 30,
-                                      height: 30,
-                                    ),
-                                    const SizedBox(
-                                      width: 10,
-                                    ),
-                                    Text(item.techName,
-                                        style: GoogleFonts.robotoFlex(
-                                          color: AppColors().textLight,
-                                          letterSpacing: 1,
-                                          height: 1.5,
-                                          fontSize: ScreenInfo()
-                                                      .getScreenType(context) ==
-                                                  ScreenType.mobile
-                                              ? 14
-                                              : 17,
-                                        )),
-                                  ],
+                                (item) => Image.asset(
+                                  // fit: BoxFit.fill,
+                                  item.techLogo,
+                                  // width: 80,
+                                  // height: 100,
                                 ),
                               )
                               .toList()),

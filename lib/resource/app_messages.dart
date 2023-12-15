@@ -41,6 +41,8 @@ List<Technology> technologiesList = [
   Technology(techName: 'Flutter', techLogo: AppAssets.flutterLogo),
   Technology(techName: 'Firebase', techLogo: AppAssets.firebaseLogo),
   Technology(techName: 'NestJS', techLogo: AppAssets.nestjsLogo),
+  Technology(techName: 'MongoDB', techLogo: AppAssets.mongoDBLogo),
+  Technology(techName: 'Docker', techLogo: AppAssets.dockerLogo),
   Technology(techName: 'Rive', techLogo: AppAssets.riveLogo),
 ];
 List<WorkModel> projectList = [

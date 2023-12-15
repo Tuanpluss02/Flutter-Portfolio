@@ -4,4 +4,6 @@ class AppAssets {
   static const String firebaseLogo = 'assets/images/firebase.png';
   static const String nestjsLogo = 'assets/images/nestjs.png';
   static const String riveLogo = 'assets/images/rive.png';
+  static const String mongoDBLogo = 'assets/images/mongodb.png';
+  static const String dockerLogo = 'assets/images/docker.png';
 }
