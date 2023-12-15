@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/resource/app_assets.dart';
 import 'package:rive/rive.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
 import '../../controller/general_controller.dart';
-import '../../resource/app_messages.dart';
 import '../../resource/app_colors.dart';
+import '../../resource/app_resource.dart';
 import '../../utils/screen_info.dart';
 
 // ignore: must_be_immutable
@@ -34,7 +35,7 @@ class _IntroWebState extends State<IntroWeb> {
             child: SizedBox(
                 height: 600,
                 width: 700,
-                child: RiveAnimation.asset('assets/rive/handwriting.riv')),
+                child: RiveAnimation.asset(AppAssets.handWritingRive)),
           ),
           Row(
             children: [

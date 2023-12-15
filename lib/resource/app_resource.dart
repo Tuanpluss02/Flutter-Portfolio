@@ -1,6 +1,7 @@
 import 'package:portfolio/resource/app_assets.dart';
 
 import '../model/experience_model.dart';
+import '../model/social_model.dart';
 import '../model/technology_model.dart';
 import '../model/work_model.dart';
 
@@ -24,11 +25,47 @@ class AboutScreenContents {
       '''Here are a few technologies I’ve been working with recently:''';
 }
 
-const resumeDownloadURL = '''https://www.linkedin.com/in/Tuanpluss02''';
-const contactLink = "https://m.me/tuanpluss02/";
+class SocialLinks {
+  static const linkedin = "https://www.linkedin.com/in/Tuanpluss02";
+  static const messenger = "https://m.me/tuanpluss02/";
+  static const github = "https://github.com/Tuanpluss02";
+  static const twitter = "";
+  static const instagram = "https://www.instagram.com/tuanpluss02/";
+  static const stackoverflow =
+      "https://stackoverflow.com/users/15892425/tuan-plus";
+}
 
 const endTxt =
     '''Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!''';
+
+List<Social> socialLinksList = [
+  Social(
+      name: "LinkedIn",
+      link: SocialLinks.linkedin,
+      image: AppAssets.linkedinLogo,
+      state: "linkedinHovered"),
+  Social(
+    name: "Github",
+    link: SocialLinks.github,
+    image: AppAssets.githubLogo,
+    state: "githubHovered",
+  ),
+  Social(
+      name: "Stack Overflow",
+      image: AppAssets.stackoverflowLogo,
+      link: SocialLinks.stackoverflow,
+      state: "stackoverflowHovered"),
+  Social(
+      name: "Instagram",
+      link: SocialLinks.instagram,
+      image: AppAssets.instagramLogo,
+      state: "instagramHovered"),
+  Social(
+      name: "X",
+      image: AppAssets.twitterLogo,
+      link: SocialLinks.twitter,
+      state: "TwitterHovered"),
+];
 
 List<String> aboutScreenContentsList = [
   AboutScreenContents.aboutPara1,
@@ -45,6 +82,7 @@ List<Technology> technologiesList = [
   Technology(techName: 'Docker', techLogo: AppAssets.dockerLogo),
   Technology(techName: 'Rive', techLogo: AppAssets.riveLogo),
 ];
+
 List<WorkModel> projectList = [
   WorkModel(
       projectTitle: "URL Shortener",
@@ -99,29 +137,29 @@ List<WorkModel> projectList = [
 List<ExperienceModel> experienceList = [
   ExperienceModel(
       company: "Code MeLy",
-      position: "Flutter Developer",
+      position: "Developer",
       duration: "2022 - Present",
-      website: "https://codemely.tech/",
+      website: "https://codemely.dev/",
       jobs: [
         "Discord Admin.",
-        "Content writer for company's blog.",
-        "Developed Flutter application for clients.",
+        "Content writer.",
+        "Develop Flutter application for clients.",
       ]),
   ExperienceModel(
       company: "T-Town",
-      position: "Tech Lead",
+      position: "Developer",
       duration: "2020 - 2022",
-      website: "https://t-town.tech/",
+      website: "",
       jobs: [
         "Human Resource Manager.",
         "Content writer for company's blog.",
-        "Developed Flutter application for company.",
+        "Develop Flutter application for company.",
       ]),
   ExperienceModel(
     company: "StormX",
-    position: "Founder",
+    position: "Developer",
     duration: "2019 - Present",
-    website: "https://stormx.software/",
+    website: "https://stormx.works/",
     jobs: [
       "Design and develop the landing page using Flutter for web.",
       "Write articles about technology.",

@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/resource/app_assets.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
 import '../../controller/general_controller.dart';
-import '../../resource/appbar_items.dart';
 import '../../resource/app_colors.dart';
+import '../../resource/appbar_items.dart';
 import '../../utils/screen_info.dart';
 
 class ActionBar extends ConsumerStatefulWidget implements PreferredSizeWidget {
@@ -38,7 +39,7 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                     child: Padding(
                         padding: const EdgeInsets.only(left: 20.0, bottom: 5.0),
                         child: SvgPicture.asset(
-                          'svg/Stormx_logo.svg',
+                          AppAssets.stormxLogo,
                           height: 30,
                         ))),
                 Expanded(
@@ -87,7 +88,7 @@ class _ActionBarState extends ConsumerState<ActionBar> {
               Expanded(
                   flex: 2,
                   child: SvgPicture.asset(
-                    'svg/Stormx_logo.svg',
+                    AppAssets.stormxLogo,
                   )),
               Expanded(
                 flex: 9,

@@ -6,10 +6,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/resource/app_assets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../controller/general_controller.dart';
-import '../../resource/app_messages.dart';
+import '../../resource/app_resource.dart';
 import '../../resource/app_colors.dart';
 
 class WorkMobile extends ConsumerStatefulWidget {
@@ -103,13 +104,13 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SvgPicture.asset(
-                        'assets/svg/folder.svg',
+                        AppAssets.folderLogo,
                         width: 35,
                         height: 35,
                         color: AppColors().neonColor,
                       ),
                       SvgPicture.asset(
-                        'assets/svg/externalLink.svg',
+                        AppAssets.externalLink,
                         width: 20,
                         height: 20,
                         color: isHovered ? AppColors().neonColor : Colors.white,

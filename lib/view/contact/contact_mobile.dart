@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../resource/app_messages.dart';
 import '../../resource/app_colors.dart';
+import '../../resource/app_resource.dart';
 import '../../utils/screen_info.dart';
 
 class ContactMobile extends StatefulWidget {
@@ -72,7 +72,7 @@ class _ContactMobileState extends State<ContactMobile> {
               ),
               TextButton(
                 onPressed: () {
-                  launchUrl(Uri.parse(contactLink));
+                  launchUrl(Uri.parse(SocialLinks.messenger));
                 },
                 child: Container(
                   margin: const EdgeInsets.only(top: 30),

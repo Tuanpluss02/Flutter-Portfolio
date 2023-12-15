@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/resource/app_assets.dart';
 import 'package:rive/rive.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../resource/app_messages.dart';
 import '../../resource/app_colors.dart';
+import '../../resource/app_resource.dart';
 import '../../utils/screen_info.dart';
 
 class ContactWeb extends StatefulWidget {
@@ -88,8 +89,7 @@ class _ContactWebState extends State<ContactWeb> {
                   width: ScreenInfo().getMqWidth(context) * 0.5,
                   child: InkWell(
                     onTap: () async {
-                      await launchUrl(
-                          Uri.parse("https://m.me/tuanpluss.stormX/"));
+                      await launchUrl(Uri.parse(SocialLinks.messenger));
                     },
                     onHover: (bol) {
                       if (bol) {
@@ -103,7 +103,7 @@ class _ContactWebState extends State<ContactWeb> {
                         child: Container(
                           margin: const EdgeInsets.only(top: 5),
                           child: RiveAnimation.asset(
-                            'assets/rive/pup_hello.riv',
+                            AppAssets.pupHelloRive,
                             onInit: (artboard) {
                               stateMachineController =
                                   StateMachineController.fromArtboard(

@@ -9,8 +9,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../controller/general_controller.dart';
-import '../../resource/app_messages.dart';
+import '../../resource/app_assets.dart';
 import '../../resource/app_colors.dart';
+import '../../resource/app_resource.dart';
 
 class WorkWeb extends ConsumerStatefulWidget {
   const WorkWeb({Key? key}) : super(key: key);
@@ -108,13 +109,13 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SvgPicture.asset(
-                        'assets/svg/folder.svg',
+                        AppAssets.folderLogo,
                         width: 45,
                         height: 45,
                         color: AppColors().neonColor,
                       ),
                       SvgPicture.asset(
-                        'assets/svg/externalLink.svg',
+                        AppAssets.externalLink,
                         width: 22,
                         height: 22,
                         color: isHovered ? AppColors().neonColor : Colors.white,

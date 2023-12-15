@@ -2,8 +2,8 @@
 
 import 'package:url_launcher/url_launcher.dart';
 
-import '../resource/app_messages.dart';
+import '../resource/app_resource.dart';
 
 downloadResume(context) async {
-  await launchUrl(Uri.parse(resumeDownloadURL));
+  await launchUrl(Uri.parse(SocialLinks.linkedin));
 }
