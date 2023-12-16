@@ -79,8 +79,8 @@ List<Technology> technologiesList = [
   Technology(techName: 'Firebase', techLogo: AppAssets.firebaseLogo),
   Technology(techName: 'NestJS', techLogo: AppAssets.nestjsLogo),
   Technology(techName: 'MongoDB', techLogo: AppAssets.mongoDBLogo),
-  Technology(techName: 'Docker', techLogo: AppAssets.dockerLogo),
   Technology(techName: 'Rive', techLogo: AppAssets.riveLogo),
+  Technology(techName: 'Docker', techLogo: AppAssets.dockerLogo),
 ];
 
 List<WorkModel> projectList = [

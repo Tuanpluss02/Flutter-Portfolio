@@ -1,23 +1,23 @@
 class AppAssets {
-  static const avatar = 'assets/images/avatar.jpg';
-  static const flutterLogo = 'assets/images/flutter.png';
-  static const firebaseLogo = 'assets/images/firebase.png';
-  static const nestjsLogo = 'assets/images/nestjs.png';
-  static const riveLogo = 'assets/images/rive.png';
-  static const mongoDBLogo = 'assets/images/mongodb.png';
-  static const dockerLogo = 'assets/images/docker.png';
+  static const avatar = 'images/avatar.jpg';
+  static const flutterLogo = 'images/flutter.png';
+  static const firebaseLogo = 'images/firebase.png';
+  static const nestjsLogo = 'images/nestjs.png';
+  static const riveLogo = 'images/rive.png';
+  static const mongoDBLogo = 'images/mongodb.png';
+  static const dockerLogo = 'images/docker.png';
 
-  static const githubLogo = 'assets/svg/github.svg';
-  static const linkedinLogo = 'assets/svg/linkedin.svg';
-  static const twitterLogo = 'assets/svg/twitter.svg';
-  static const instagramLogo = 'assets/svg/instagram.svg';
-  static const stackoverflowLogo = 'assets/svg/stackoverflow.svg';
+  static const githubLogo = 'svg/github.svg';
+  static const linkedinLogo = 'svg/linkedin.svg';
+  static const twitterLogo = 'svg/twitter.svg';
+  static const instagramLogo = 'svg/instagram.svg';
+  static const stackoverflowLogo = 'svg/stackoverflow.svg';
 
-  static const stormxLogo = 'assets/svg/stormx.svg';
-  static const folderLogo = 'assets/svg/folder.svg';
-  static const externalLink = 'assets/svg/external_link.svg';
+  static const stormxLogo = 'svg/stormx.svg';
+  static const folderLogo = 'svg/folder.svg';
+  static const externalLink = 'svg/external_link.svg';
 
-  static const pupHelloRive = 'assets/rive/pup_hello.riv';
-  static const buttonRive = 'assets/rive/button.riv';
-  static const handWritingRive = 'assets/rive/handwriting.riv';
+  static const pupHelloRive = 'rive/pup_hello.riv';
+  static const buttonRive = 'rive/button.riv';
+  static const handWritingRive = 'rive/handwriting.riv';
 }
