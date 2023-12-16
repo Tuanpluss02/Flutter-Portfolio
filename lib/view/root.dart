@@ -23,7 +23,7 @@ class RootScreen extends ConsumerStatefulWidget {
 }
 
 class _RootScreenState extends ConsumerState<RootScreen> {
-  final aScrollController = AutoScrollController();
+  final aScrollController = AutoScrollController(keepScrollOffset: false);
 
   @override
   Widget build(BuildContext context) {
@@ -74,9 +74,9 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                               controller: aScrollController,
                               scrollOffset: 250,
                               child: ListView(
-                                physics: scrType == ScreenType.web
-                                    ? const NeverScrollableScrollPhysics()
-                                    : const BouncingScrollPhysics(),
+                                // physics: scrType == ScreenType.web
+                                //     ? const NeverScrollableScrollPhysics()
+                                //     : const BouncingScrollPhysics(),
                                 controller: aScrollController,
                                 children: [
                                   AutoScrollTag(
