@@ -85,52 +85,54 @@ List<Technology> technologiesList = [
 
 List<WorkModel> projectList = [
   WorkModel(
-      projectTitle: "URL Shortener",
+      projectTitle: "URL Shortener Backend",
       projectContent:
-          "Backend for URL Shortener Launcher. Using FastAPI for backend and MongoDB for database.",
-      tech1: "Python",
-      tech2: "FastAPI",
-      tech3: "MongoDB",
-      link: "https://github.com/Tuanpluss02/URL-Shortener"),
+          '''Backend for URL Shortener Launcher. Using NestJS and MongoDB for database. This project provides a robust and scalable backend infrastructure for the URL Shortener Launcher web application. It handles the creation and management of shortened URLs, as well as the storage and retrieval of data from the MongoDB database. The Nestjs framework is used to build the RESTful API endpoints, while MongoDB serves as the persistent data storage. With this backend implementation, the URL Shortener Launcher can efficiently handle a large number of requests and ensure the reliability and security of the shortened URLs.''',
+      techs: [
+        Technology(techName: 'NestJS', techLogo: AppAssets.nestjsLogo),
+        Technology(techName: 'MongoDB', techLogo: AppAssets.mongoDBLogo),
+        Technology(techName: 'Docker', techLogo: AppAssets.dockerLogo),
+      ],
+      link: "https://github.com/Tuanpluss02/URL-Shortener-Backend"),
   WorkModel(
       projectTitle: "URL Shortener Launcher",
       projectContent:
           '''URL Shortener Launcher is a web application that allows users to shorten long URLs into short and easy-to-remember links.''',
-      tech1: "Flutter",
-      tech2: "Rive",
-      tech3: "Firebase",
+      techs: [
+        Technology(techName: 'Flutter', techLogo: AppAssets.flutterLogo),
+        Technology(techName: 'Firebase', techLogo: AppAssets.firebaseLogo),
+        Technology(techName: 'Rive', techLogo: AppAssets.riveLogo),
+      ],
       link: "https://github.com/Tuanpluss02/URL-Shortener-Launcher"),
-  WorkModel(
-      projectTitle: "Pro Chat",
-      projectContent:
-          "Pro Chat is a real-time messaging web application that allows users to chat with each other instantly.",
-      tech1: "ReactJS",
-      tech2: "FastAPI",
-      tech3: "MongoDB",
-      link: "https://github.com/Tuanpluss02/Pro-Chat"),
   WorkModel(
       projectTitle: "Pro Note",
       projectContent:
           '''The ultimate cross-platform note-taking application built with Flutter framework.''',
-      tech1: "Flutter",
-      tech2: "Firebase",
-      tech3: "Dart",
+      techs: [
+        Technology(techName: 'Flutter', techLogo: AppAssets.flutterLogo),
+        Technology(techName: 'Firebase', techLogo: AppAssets.firebaseLogo),
+        Technology(techName: 'Rive', techLogo: AppAssets.riveLogo),
+      ],
       link: "https://github.com/Tuanpluss02/Pro-Note"),
   WorkModel(
       projectTitle: "SVG to Turtle",
       projectContent:
           '''The script reads an SVG file and extracts the path data from it. It then converts the path data into a series of Turtle draw commands that can be executed by a Turtle graphics library. This enables you to take advantage of the rich graphics capabilities offered by SVG files and replicate them using the Turtle graphics library.''',
-      tech1: "Python",
-      tech2: "Turtle",
-      tech3: "SVG",
+      techs: [
+        Technology(techName: 'Python', techLogo: AppAssets.folderLogo),
+        Technology(techName: 'SVG', techLogo: AppAssets.folderLogo),
+        Technology(techName: 'Turlte', techLogo: AppAssets.folderLogo)
+      ],
       link: "https://github.com/Tuanpluss02/turtle-svg"),
   WorkModel(
       projectTitle: "Flutter Portfolio",
       projectContent:
           '''My portfolio built using Flutter, an open-source UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase. This portfolio showcases my skills and experiences as a Flutter developer.''',
-      tech1: "Flutter",
-      tech2: "Firebase",
-      tech3: "Rive",
+      techs: [
+        Technology(techName: 'Flutter', techLogo: AppAssets.flutterLogo),
+        Technology(techName: 'Rive', techLogo: AppAssets.riveLogo),
+        Technology(techName: "Firebase", techLogo: AppAssets.firebaseLogo)
+      ],
       link: "https://github.com/Tuanpluss02/my-portfolio"),
 ];
 

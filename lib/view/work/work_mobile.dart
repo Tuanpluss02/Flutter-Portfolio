@@ -10,8 +10,8 @@ import 'package:portfolio/resource/app_assets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../controller/general_controller.dart';
-import '../../resource/app_resource.dart';
 import '../../resource/app_colors.dart';
+import '../../resource/app_resource.dart';
 
 class WorkMobile extends ConsumerStatefulWidget {
   const WorkMobile({Key? key}) : super(key: key);
@@ -153,36 +153,40 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                       ),
                     ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      AutoSizeText(
-                        projectList[index].tech1.toString(),
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          fontSize: 10,
-                        ),
+                  GridView(
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        mainAxisSpacing: 4,
+                        crossAxisSpacing: 4,
                       ),
-                      AutoSizeText(
-                        projectList[index].tech2.toString(),
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          fontSize: 10,
-                        ),
-                      ),
-                      AutoSizeText(
-                        projectList[index].tech3.toString(),
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          height: 1.5,
-                          fontSize: 10,
-                        ),
-                      ),
-                    ],
-                  )
+                      children: [
+                        ...List.generate(
+                          projectList[index].techs!.length,
+                          (index2) => StaggeredGridTile.count(
+                            crossAxisCellCount: 1,
+                            mainAxisCellCount: 1,
+                            child: Container(
+                              padding: const EdgeInsets.all(8.0),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: AppColors().cardColor,
+                              ),
+                              child: Center(
+                                child: Text(
+                                  projectList[index].techs![index2].techName,
+                                  style: GoogleFonts.roboto(
+                                    color: AppColors().textLight,
+                                    letterSpacing: 1,
+                                    height: 1.5,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        )
+                      ])
                 ],
               ),
             ),

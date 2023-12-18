@@ -144,11 +144,6 @@ class _IntroWebState extends State<IntroWeb> {
                                     letterSpacing: 1,
                                     fontWeight: FontWeight.bold,
                                     fontFamily: 'sfmono')),
-                            // child: SizedBox(
-                            //     height: ScreenInfo().getMqHeight(context) * 0.2,
-                            //     width: ScreenInfo().getMqWidth(context) * 0.3,
-                            //     child: const RiveAnimation.asset(
-                            //         'rive/handwriting.riv')),
                           ),
                         ),
                       );

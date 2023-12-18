@@ -1,16 +1,10 @@
+import 'technology_model.dart';
+
 class WorkModel {
   String? projectTitle;
   String? projectContent;
-  String? tech1;
-  String? tech2;
-  String? tech3;
+  List<Technology>? techs;
   String? link;
 
-  WorkModel(
-      {this.projectTitle,
-      this.projectContent,
-      this.tech1,
-      this.tech2,
-      this.tech3,
-      this.link});
+  WorkModel({this.projectTitle, this.projectContent, this.techs, this.link});
 }

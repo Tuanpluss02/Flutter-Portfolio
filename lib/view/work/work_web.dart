@@ -156,35 +156,24 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                       ),
                     ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text(
-                        projectList[index].tech1.toString(),
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          fontSize: 12,
+                  Expanded(
+                    child: GridView(
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                          // childAspectRatio: 0.9,
+                          crossAxisCount: 3,
+                          // mainAxisSpacing: 7,
+                          // crossAxisSpacing: 7,
                         ),
-                      ),
-                      Text(
-                        projectList[index].tech2.toString(),
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          fontSize: 12,
-                        ),
-                      ),
-                      Text(
-                        projectList[index].tech3.toString(),
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          height: 1.5,
-                          fontSize: 12,
-                        ),
-                      ),
-                    ],
+                        children: projectList[index]
+                            .techs!
+                            .map((item) => Image.asset(
+                                  item.techLogo,
+                                  width: 50,
+                                  height: 30,
+                                  fit: BoxFit.scaleDown,
+                                ))
+                            .toList()),
                   )
                 ],
               ),
