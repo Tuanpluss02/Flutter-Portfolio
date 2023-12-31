@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_portfolio/resource/app_class.dart';
+import 'package:portfolio/resource/app_assets.dart';
 import 'package:rive/rive.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../resource/colors.dart';
-import '../../resource/strings.dart';
+import '../../resource/app_colors.dart';
+import '../../resource/app_resource.dart';
+import '../../utils/screen_info.dart';
 
 class ContactWeb extends StatefulWidget {
   const ContactWeb({Key? key}) : super(key: key);
@@ -29,7 +30,7 @@ class _ContactWebState extends State<ContactWeb> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: AppClass().getMqHeight(context) - 70,
+        height: ScreenInfo().getMqHeight(context) - 70,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -69,9 +70,9 @@ class _ContactWebState extends State<ContactWeb> {
                 Padding(
                   padding: const EdgeInsets.only(top: 15.0),
                   child: SizedBox(
-                    width: AppClass().getMqWidth(context) * 0.45,
+                    width: ScreenInfo().getMqWidth(context) * 0.45,
                     child: Text(
-                      Strings.endTxt,
+                      endTxt,
                       textAlign: TextAlign.center,
                       style: GoogleFonts.roboto(
                         color: AppColors().textLight,
@@ -84,12 +85,11 @@ class _ContactWebState extends State<ContactWeb> {
                 ),
                 SizedBox(
                   // padding: const EdgeInsets.only(bottom: 20),
-                  height: AppClass().getMqHeight(context) * 0.2,
-                  width: AppClass().getMqWidth(context) * 0.5,
+                  height: ScreenInfo().getMqHeight(context) * 0.2,
+                  width: ScreenInfo().getMqWidth(context) * 0.5,
                   child: InkWell(
                     onTap: () async {
-                      await launchUrl(
-                          Uri.parse("https://m.me/tuanpluss.stormX/"));
+                      await launchUrl(Uri.parse(SocialLinks.linkedin));
                     },
                     onHover: (bol) {
                       if (bol) {
@@ -103,7 +103,7 @@ class _ContactWebState extends State<ContactWeb> {
                         child: Container(
                           margin: const EdgeInsets.only(top: 5),
                           child: RiveAnimation.asset(
-                            'assets/rive/pup_hello.riv',
+                            AppAssets.pupHelloRive,
                             onInit: (artboard) {
                               stateMachineController =
                                   StateMachineController.fromArtboard(
@@ -123,7 +123,7 @@ class _ContactWebState extends State<ContactWeb> {
                       ),
                       Padding(
                         padding: EdgeInsets.only(
-                            top: AppClass().getMqHeight(context) * 0.09,
+                            top: ScreenInfo().getMqHeight(context) * 0.09,
                             right: 10),
                         child: Center(
                           child: Text('Say Hello!',
@@ -156,7 +156,7 @@ class _ContactWebState extends State<ContactWeb> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    '''Do Ngoc Tuan - 2023''',
+                    '''Do Ngoc Tuan - 2024''',
                     style: TextStyle(
                         color: AppColors().neonColor,
                         fontSize: 12,

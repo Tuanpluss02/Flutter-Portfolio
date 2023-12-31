@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_portfolio/controller/general_controller.dart';
+import 'package:portfolio/resource/app_assets.dart';
 import 'package:rive/rive.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
-import '../../resource/app_class.dart';
-import '../../resource/colors.dart';
-import '../../resource/strings.dart';
+import '../../controller/general_controller.dart';
+import '../../resource/app_colors.dart';
+import '../../resource/app_resource.dart';
+import '../../utils/screen_info.dart';
 
 // ignore: must_be_immutable
 class IntroWeb extends StatefulWidget {
@@ -26,15 +27,15 @@ class _IntroWebState extends State<IntroWeb> {
     return Container(
       color: Colors.transparent,
       margin: EdgeInsets.only(
-          left: AppClass().getMqWidth(context) * 0.01,
-          top: AppClass().getMqHeight(context) * 0.1),
+          left: ScreenInfo().getMqWidth(context) * 0.01,
+          top: ScreenInfo().getMqHeight(context) * 0.1),
       child: Column(
         children: [
           const Center(
             child: SizedBox(
                 height: 600,
                 width: 700,
-                child: RiveAnimation.asset('assets/rive/handwriting.riv')),
+                child: RiveAnimation.asset(AppAssets.handWritingRive)),
           ),
           Row(
             children: [
@@ -44,7 +45,7 @@ class _IntroWebState extends State<IntroWeb> {
                   Padding(
                     padding: const EdgeInsets.only(left: 8.0, top: 50),
                     child: Text(
-                      Strings.welcomeTxt,
+                      IntroScreenContents.welcomeTxt,
                       style: TextStyle(
                           color: AppColors().neonColor,
                           fontSize: 18,
@@ -54,7 +55,7 @@ class _IntroWebState extends State<IntroWeb> {
                   Padding(
                     padding: const EdgeInsets.only(top: 8.0),
                     child: Text(
-                      Strings.name,
+                      IntroScreenContents.name,
                       style: GoogleFonts.robotoSlab(
                         color: AppColors().textColor,
                         fontWeight: FontWeight.bold,
@@ -64,12 +65,12 @@ class _IntroWebState extends State<IntroWeb> {
                     ),
                   ),
                   SizedBox(
-                    width: AppClass().getMqWidth(context) -
-                        (AppClass().getMqWidth(context) * 0.23),
+                    width: ScreenInfo().getMqWidth(context) -
+                        (ScreenInfo().getMqWidth(context) * 0.23),
                     child: Padding(
                       padding: const EdgeInsets.only(top: 5.0),
                       child: Text(
-                        Strings.whatIdo,
+                        IntroScreenContents.whatIdo,
                         style: GoogleFonts.robotoSlab(
                           color: AppColors().textLight,
                           fontWeight: FontWeight.bold,
@@ -82,10 +83,10 @@ class _IntroWebState extends State<IntroWeb> {
                   Padding(
                     padding: const EdgeInsets.only(top: 30.0),
                     child: SizedBox(
-                      width: AppClass().getMqWidth(context) * 0.45,
+                      width: ScreenInfo().getMqWidth(context) * 0.45,
                       child: RichText(
                           text: TextSpan(
-                              text: Strings.introAbout,
+                              text: IntroScreenContents.introAbout,
                               style: GoogleFonts.roboto(
                                 color: AppColors().textLight,
                                 letterSpacing: 1,
@@ -94,7 +95,7 @@ class _IntroWebState extends State<IntroWeb> {
                               ),
                               children: <TextSpan>[
                             TextSpan(
-                              text: Strings.currentOrgName,
+                              text: IntroScreenContents.currentOrgName,
                               style: GoogleFonts.roboto(
                                 color: AppColors().neonColor,
                                 letterSpacing: 1,
@@ -123,8 +124,8 @@ class _IntroWebState extends State<IntroWeb> {
                               preferPosition: AutoScrollPosition.begin);
                         },
                         child: Container(
-                          height: AppClass().getMqHeight(context) * 0.09,
-                          width: AppClass().getMqWidth(context) * 0.2,
+                          height: ScreenInfo().getMqHeight(context) * 0.09,
+                          width: ScreenInfo().getMqWidth(context) * 0.2,
                           decoration: BoxDecoration(
                               color: (isHovered
                                   ? AppColors().neonColor
@@ -143,11 +144,6 @@ class _IntroWebState extends State<IntroWeb> {
                                     letterSpacing: 1,
                                     fontWeight: FontWeight.bold,
                                     fontFamily: 'sfmono')),
-                            // child: SizedBox(
-                            //     height: AppClass().getMqHeight(context) * 0.2,
-                            //     width: AppClass().getMqWidth(context) * 0.3,
-                            //     child: const RiveAnimation.asset(
-                            //         'rive/handwriting.riv')),
                           ),
                         ),
                       );

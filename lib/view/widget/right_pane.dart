@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../resource/colors.dart';
+import '../../resource/app_colors.dart';
 
 class RightPane extends StatefulWidget {
   const RightPane({Key? key}) : super(key: key);

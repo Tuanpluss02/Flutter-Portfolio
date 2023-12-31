@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_portfolio/view/widget/app_bar.dart';
-import 'package:my_portfolio/view/widget/left_pane.dart';
-import 'package:my_portfolio/view/widget/right_pane.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:web_smooth_scroll/web_smooth_scroll.dart';
 
 import '../controller/general_controller.dart';
-import '../resource/app_class.dart';
+import '../utils/screen_info.dart';
 import 'about/about.dart';
 import 'contact/contact.dart';
 import 'experience/experience.dart';
 import 'intro/intro.dart';
+import 'widget/app_bar.dart';
+import 'widget/left_pane.dart';
+import 'widget/right_pane.dart';
 import 'work/work.dart';
 
 class RootScreen extends ConsumerStatefulWidget {
@@ -23,7 +23,7 @@ class RootScreen extends ConsumerStatefulWidget {
 }
 
 class _RootScreenState extends ConsumerState<RootScreen> {
-  final aScrollController = AutoScrollController();
+  final aScrollController = AutoScrollController(keepScrollOffset: false);
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,7 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                   Color(0xff0a192f),
                   Color(0xff020c1b)
                 ])),
-            height: AppClass().getMqHeight(context),
+            height: ScreenInfo().getMqHeight(context),
             child: Column(
               children: [
                 Consumer(builder: (context, ref, child) {
@@ -62,7 +62,7 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                 }),
                 Expanded(
                   child: () {
-                    ScreenType scrType = AppClass().getScreenType(context);
+                    ScreenType scrType = ScreenInfo().getScreenType(context);
                     return Row(
                       children: [
                         scrType == ScreenType.mobile
@@ -74,9 +74,9 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                               controller: aScrollController,
                               scrollOffset: 250,
                               child: ListView(
-                                physics: scrType == ScreenType.web
-                                    ? const NeverScrollableScrollPhysics()
-                                    : const BouncingScrollPhysics(),
+                                // physics: scrType == ScreenType.web
+                                //     ? const NeverScrollableScrollPhysics()
+                                //     : const BouncingScrollPhysics(),
                                 controller: aScrollController,
                                 children: [
                                   AutoScrollTag(

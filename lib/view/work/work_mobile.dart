@@ -1,14 +1,17 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_portfolio/controller/general_controller.dart';
-import 'package:my_portfolio/resource/app_class.dart';
+import 'package:portfolio/resource/app_assets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../resource/colors.dart';
+import '../../controller/general_controller.dart';
+import '../../resource/app_colors.dart';
+import '../../resource/app_resource.dart';
 
 class WorkMobile extends ConsumerStatefulWidget {
   const WorkMobile({Key? key}) : super(key: key);
@@ -58,7 +61,7 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
             crossAxisSpacing: 4,
             children: [
               ...List.generate(
-                AppClass().projectList.length,
+                projectList.length,
                 (index) => StaggeredGridTile.count(
                   crossAxisCellCount: 1,
                   mainAxisCellCount: 1,
@@ -75,7 +78,7 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
   projectWidget({required int index}) {
     return InkWell(
       onTap: () async {
-        await launchUrl(Uri.parse(AppClass().projectList[index].link!));
+        await launchUrl(Uri.parse(projectList[index].link!));
       },
       onHover: (bol) {
         if (bol) {
@@ -101,13 +104,13 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SvgPicture.asset(
-                        'assets/svg/folder.svg',
+                        AppAssets.folderLogo,
                         width: 35,
                         height: 35,
                         color: AppColors().neonColor,
                       ),
                       SvgPicture.asset(
-                        'assets/svg/externalLink.svg',
+                        AppAssets.externalLink,
                         width: 20,
                         height: 20,
                         color: isHovered ? AppColors().neonColor : Colors.white,
@@ -120,10 +123,7 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                       children: [
                         Expanded(
                           child: AutoSizeText(
-                            AppClass()
-                                .projectList[index]
-                                .projectTitle
-                                .toString(),
+                            projectList[index].projectTitle.toString(),
                             maxLines: 2,
                             overflow: TextOverflow.clip,
                             textAlign: TextAlign.left,
@@ -143,7 +143,7 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
                       child: AutoSizeText(
-                        AppClass().projectList[index].projectContent.toString(),
+                        projectList[index].projectContent.toString(),
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
                           letterSpacing: 1,
@@ -153,36 +153,40 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                       ),
                     ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      AutoSizeText(
-                        AppClass().projectList[index].tech1.toString(),
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          fontSize: 10,
-                        ),
+                  GridView(
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        mainAxisSpacing: 4,
+                        crossAxisSpacing: 4,
                       ),
-                      AutoSizeText(
-                        AppClass().projectList[index].tech2.toString(),
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          fontSize: 10,
-                        ),
-                      ),
-                      AutoSizeText(
-                        AppClass().projectList[index].tech3.toString(),
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          height: 1.5,
-                          fontSize: 10,
-                        ),
-                      ),
-                    ],
-                  )
+                      children: [
+                        ...List.generate(
+                          projectList[index].techs!.length,
+                          (index2) => StaggeredGridTile.count(
+                            crossAxisCellCount: 1,
+                            mainAxisCellCount: 1,
+                            child: Container(
+                              padding: const EdgeInsets.all(8.0),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: AppColors().cardColor,
+                              ),
+                              child: Center(
+                                child: Text(
+                                  projectList[index].techs![index2].techName,
+                                  style: GoogleFonts.roboto(
+                                    color: AppColors().textLight,
+                                    letterSpacing: 1,
+                                    height: 1.5,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        )
+                      ])
                 ],
               ),
             ),

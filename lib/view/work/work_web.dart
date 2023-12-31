@@ -1,14 +1,17 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_portfolio/controller/general_controller.dart';
-import 'package:my_portfolio/resource/app_class.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../resource/colors.dart';
+import '../../controller/general_controller.dart';
+import '../../resource/app_assets.dart';
+import '../../resource/app_colors.dart';
+import '../../resource/app_resource.dart';
 
 class WorkWeb extends ConsumerStatefulWidget {
   const WorkWeb({Key? key}) : super(key: key);
@@ -58,7 +61,7 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
             crossAxisSpacing: 4,
             children: [
               ...List.generate(
-                AppClass().projectList.length,
+                projectList.length,
                 (index) => StaggeredGridTile.count(
                   crossAxisCellCount: 1,
                   mainAxisCellCount: 1,
@@ -76,7 +79,7 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
   projectWidget({required int index}) {
     return InkWell(
       onTap: () async {
-        await launchUrl(Uri.parse(AppClass().projectList[index].link!));
+        await launchUrl(Uri.parse(projectList[index].link!));
       },
       onHover: (val) {
         if (val) {
@@ -101,18 +104,19 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
               padding: const EdgeInsets.all(15.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SvgPicture.asset(
-                        'assets/svg/folder.svg',
+                        AppAssets.folderLogo,
                         width: 45,
                         height: 45,
                         color: AppColors().neonColor,
                       ),
                       SvgPicture.asset(
-                        'assets/svg/externalLink.svg',
+                        AppAssets.externalLink,
                         width: 22,
                         height: 22,
                         color: isHovered ? AppColors().neonColor : Colors.white,
@@ -125,10 +129,7 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                       children: [
                         Expanded(
                           child: AutoSizeText(
-                            AppClass()
-                                .projectList[index]
-                                .projectTitle
-                                .toString(),
+                            projectList[index].projectTitle.toString(),
                             textAlign: TextAlign.left,
                             style: GoogleFonts.robotoSlab(
                                 color: isHovered
@@ -143,10 +144,11 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                     ),
                   ),
                   Expanded(
-                    child: Padding(
+                    child: Container(
+                      margin: const EdgeInsets.only(top: 10.0),
                       padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
                       child: Text(
-                        AppClass().projectList[index].projectContent.toString(),
+                        projectList[index].projectContent.toString(),
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
                           letterSpacing: 1,
@@ -156,35 +158,25 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                       ),
                     ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text(
-                        AppClass().projectList[index].tech1.toString(),
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          fontSize: 12,
+                  Expanded(
+                    child: GridView(
+                        physics: const NeverScrollableScrollPhysics(),
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 3,
                         ),
-                      ),
-                      Text(
-                        AppClass().projectList[index].tech2.toString(),
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          fontSize: 12,
-                        ),
-                      ),
-                      Text(
-                        AppClass().projectList[index].tech3.toString(),
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          height: 1.5,
-                          fontSize: 12,
-                        ),
-                      ),
-                    ],
+                        children: projectList[index]
+                            .techs!
+                            .map((item) => Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Image.asset(
+                                    item.techLogo,
+                                    width: 50,
+                                    height: 30,
+                                    fit: BoxFit.scaleDown,
+                                  ),
+                                ))
+                            .toList()),
                   )
                 ],
               ),

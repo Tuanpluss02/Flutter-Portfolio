@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_portfolio/resource/app_class.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../controller/general_controller.dart';
-import '../../resource/colors.dart';
+import '../../resource/app_resource.dart';
+import '../../resource/app_colors.dart';
+import '../../utils/screen_info.dart';
 
 class ExperienceWeb extends StatefulWidget {
   const ExperienceWeb({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: AppClass().getMqHeight(context) - 70,
+      height: ScreenInfo().getMqHeight(context) - 70,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -47,7 +48,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
               Container(
                 height: 0.5,
                 margin: const EdgeInsets.only(left: 15),
-                width: AppClass().getMqWidth(context) * 0.2,
+                width: ScreenInfo().getMqWidth(context) * 0.2,
                 color: AppColors().textLight,
               )
             ],
@@ -55,7 +56,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
           Consumer(builder: (context, ref, child) {
             var data = ref.watch(selectedExpProvider);
             return Container(
-              width: AppClass().getMqWidth(context) * 0.6,
+              width: ScreenInfo().getMqWidth(context) * 0.6,
               margin: const EdgeInsets.only(top: 30.0, left: 30.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -66,7 +67,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           ...List.generate(
-                            AppClass().experienceList.length,
+                            experienceList.length,
                             (index) => selectCompany(ref, data, index),
                           ),
                         ]),
@@ -78,11 +79,11 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         InkWell(
-                          onTap: () => launchUrl(Uri.parse(
-                              AppClass().experienceList[data].website!)),
+                          onTap: () => launchUrl(
+                              Uri.parse(experienceList[data].website!)),
                           child: RichText(
                             text: TextSpan(
-                                text: AppClass().experienceList[data].position,
+                                text: experienceList[data].position,
                                 style: GoogleFonts.roboto(
                                     color: AppColors().textColor,
                                     fontWeight: FontWeight.bold,
@@ -90,8 +91,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                                     fontSize: 20),
                                 children: <TextSpan>[
                                   TextSpan(
-                                    text:
-                                        ' @${AppClass().experienceList[data].company}',
+                                    text: ' @${experienceList[data].company}',
                                     style: GoogleFonts.roboto(
                                         color: AppColors().neonColor,
                                         fontSize: 20),
@@ -100,7 +100,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                           ),
                         ),
                         Text(
-                          AppClass().experienceList[data].duration.toString(),
+                          experienceList[data].duration.toString(),
                           style: TextStyle(
                               color: AppColors().textLight,
                               letterSpacing: 1,
@@ -139,7 +139,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                         : Colors.white,
                     width: 2))),
         child: Text(
-          AppClass().experienceList[index].company!,
+          experienceList[index].company!,
           style: TextStyle(
               color: index == selectedIndex
                   ? AppColors().neonColor
@@ -157,7 +157,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
     return Column(
       children: [
         ...List.generate(
-          AppClass().experienceList[indexExp].jobs!.length,
+          experienceList[indexExp].jobs!.length,
           (index) => Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
@@ -175,9 +175,9 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                         ),
                       ),
                       SizedBox(
-                        width: AppClass().getMqWidth(context) * 0.35,
+                        width: ScreenInfo().getMqWidth(context) * 0.35,
                         child: Text(
-                          AppClass().experienceList[indexExp].jobs![index],
+                          experienceList[indexExp].jobs![index],
                           style: TextStyle(
                               color: AppColors().textLight,
                               letterSpacing: 1,
