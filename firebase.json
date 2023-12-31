@@ -12,5 +12,11 @@
         "destination": "/index.html"
       }
     ]
+  },
+  "emulators": {
+    "hosting": {
+      "host": "192.168.0.102",
+      "port": 5000
+    }
   }
 }
