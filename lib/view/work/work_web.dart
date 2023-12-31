@@ -103,8 +103,8 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
             child: Container(
               padding: const EdgeInsets.all(15.0),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -158,7 +158,6 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                       ),
                     ),
                   ),
-                  const Spacer(),
                   Expanded(
                     child: GridView(
                         physics: const NeverScrollableScrollPhysics(),

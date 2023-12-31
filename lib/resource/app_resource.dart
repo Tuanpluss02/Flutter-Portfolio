@@ -116,7 +116,7 @@ List<WorkModel> projectList = [
   WorkModel(
       projectTitle: "Pro Note",
       projectContent:
-          '''The ultimate cross-platform note-taking application built with Flutter framework.''',
+          '''The ultimate cross-platform note-taking application built with Flutter framework. Pro Notes helps you stay organized and on top of your game with its simple and clean interface, and powerful features.''',
       techs: [
         Technology(techName: 'Flutter', techLogo: AppAssets.flutterLogo),
         Technology(techName: 'Firebase', techLogo: AppAssets.firebaseLogo),
@@ -132,6 +132,15 @@ List<WorkModel> projectList = [
         Technology(techName: 'Vectorizer', techLogo: AppAssets.vectorizerLogo),
       ],
       link: "https://github.com/Tuanpluss02/turtle-svg"),
+  WorkModel(
+      projectTitle: "COVID-19 Tracker",
+      projectContent:
+          "The COVID-19 Tracker is an efficient mobile application designed to provide real-time data and statistics on the COVID-19 pandemic. ",
+      techs: [
+        Technology(techName: 'Flutter', techLogo: AppAssets.flutterLogo),
+        Technology(techName: 'Dart', techLogo: AppAssets.dartLogo),
+      ],
+      link: "https://github.com/Tuanpluss02/Covid19-Tracker/tree/main"),
 ];
 
 List<ExperienceModel> experienceList = [
