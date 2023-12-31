@@ -27,7 +27,6 @@ class AboutScreenContents {
 
 class SocialLinks {
   static const linkedin = "https://www.linkedin.com/in/Tuanpluss02";
-  static const messenger = "https://m.me/tuanpluss02/";
   static const github = "https://github.com/Tuanpluss02";
   static const twitter = "";
   static const instagram = "https://www.instagram.com/tuanpluss02/";
@@ -87,7 +86,7 @@ List<WorkModel> projectList = [
   WorkModel(
       projectTitle: "URL Shortener Backend",
       projectContent:
-          '''Backend for URL Shortener Launcher. Using NestJS and MongoDB for database. This project provides a robust and scalable backend infrastructure for the URL Shortener Launcher web application. It handles the creation and management of shortened URLs, as well as the storage and retrieval of data from the MongoDB database. The Nestjs framework is used to build the RESTful API endpoints, while MongoDB serves as the persistent data storage. With this backend implementation, the URL Shortener Launcher can efficiently handle a large number of requests and ensure the reliability and security of the shortened URLs.''',
+          '''Backend for URL Shortener Launcher. Using NestJS and MongoDB for database. This project provides a robust and scalable backend infrastructure for the URL Shortener Launcher web application.''',
       techs: [
         Technology(techName: 'NestJS', techLogo: AppAssets.nestjsLogo),
         Technology(techName: 'MongoDB', techLogo: AppAssets.mongoDBLogo),
@@ -105,6 +104,16 @@ List<WorkModel> projectList = [
       ],
       link: "https://github.com/Tuanpluss02/URL-Shortener-Launcher"),
   WorkModel(
+      projectTitle: "Flutter Portfolio",
+      projectContent:
+          '''My portfolio built using Flutter, an open-source UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase. This portfolio showcases my skills and experiences as a Flutter developer.''',
+      techs: [
+        Technology(techName: 'Flutter', techLogo: AppAssets.flutterLogo),
+        Technology(techName: 'Rive', techLogo: AppAssets.riveLogo),
+        Technology(techName: "Firebase", techLogo: AppAssets.firebaseLogo)
+      ],
+      link: "https://github.com/Tuanpluss02/my-portfolio"),
+  WorkModel(
       projectTitle: "Pro Note",
       projectContent:
           '''The ultimate cross-platform note-taking application built with Flutter framework.''',
@@ -117,23 +126,13 @@ List<WorkModel> projectList = [
   WorkModel(
       projectTitle: "SVG to Turtle",
       projectContent:
-          '''The script reads an SVG file and extracts the path data from it. It then converts the path data into a series of Turtle draw commands that can be executed by a Turtle graphics library. This enables you to take advantage of the rich graphics capabilities offered by SVG files and replicate them using the Turtle graphics library.''',
+          '''The script reads an SVG file and extracts the path data from it. It then converts the path data into a series of Turtle draw commands that can be executed by a Turtle graphics library.''',
       techs: [
         Technology(techName: 'Python', techLogo: AppAssets.folderLogo),
         Technology(techName: 'SVG', techLogo: AppAssets.folderLogo),
         Technology(techName: 'Turlte', techLogo: AppAssets.folderLogo)
       ],
       link: "https://github.com/Tuanpluss02/turtle-svg"),
-  WorkModel(
-      projectTitle: "Flutter Portfolio",
-      projectContent:
-          '''My portfolio built using Flutter, an open-source UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase. This portfolio showcases my skills and experiences as a Flutter developer.''',
-      techs: [
-        Technology(techName: 'Flutter', techLogo: AppAssets.flutterLogo),
-        Technology(techName: 'Rive', techLogo: AppAssets.riveLogo),
-        Technology(techName: "Firebase", techLogo: AppAssets.firebaseLogo)
-      ],
-      link: "https://github.com/Tuanpluss02/my-portfolio"),
 ];
 
 List<ExperienceModel> experienceList = [

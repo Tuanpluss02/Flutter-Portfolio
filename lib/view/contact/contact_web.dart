@@ -89,7 +89,7 @@ class _ContactWebState extends State<ContactWeb> {
                   width: ScreenInfo().getMqWidth(context) * 0.5,
                   child: InkWell(
                     onTap: () async {
-                      await launchUrl(Uri.parse(SocialLinks.messenger));
+                      await launchUrl(Uri.parse(SocialLinks.linkedin));
                     },
                     onHover: (bol) {
                       if (bol) {
@@ -156,7 +156,7 @@ class _ContactWebState extends State<ContactWeb> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    '''Do Ngoc Tuan - 2023''',
+                    '''Do Ngoc Tuan - 2024''',
                     style: TextStyle(
                         color: AppColors().neonColor,
                         fontSize: 12,

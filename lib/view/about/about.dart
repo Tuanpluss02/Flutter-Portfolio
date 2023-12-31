@@ -83,11 +83,15 @@ class _AboutState extends State<About> {
                         childAspectRatio: 6,
                         children: technologiesList
                             .map(
-                              (item) => Image.asset(
-                                fit: BoxFit.scaleDown,
-                                item.techLogo,
-                                // width: 50,
-                                // height: 30,
+                              (item) => Container(
+                                margin: const EdgeInsets.all(2),
+                                padding: const EdgeInsets.all(2),
+                                child: Image.asset(
+                                  fit: BoxFit.scaleDown,
+                                  item.techLogo,
+                                  // width: 50,
+                                  // height: 30,
+                                ),
                               ),
                             )
                             .toList()),

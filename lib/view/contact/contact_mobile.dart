@@ -72,7 +72,7 @@ class _ContactMobileState extends State<ContactMobile> {
               ),
               TextButton(
                 onPressed: () {
-                  launchUrl(Uri.parse(SocialLinks.messenger));
+                  launchUrl(Uri.parse(SocialLinks.linkedin));
                 },
                 child: Container(
                   margin: const EdgeInsets.only(top: 30),
@@ -109,7 +109,7 @@ class _ContactMobileState extends State<ContactMobile> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  '''Do Ngoc Tuan - 2023''',
+                  '''Do Ngoc Tuan - 2024''',
                   style: TextStyle(
                       color: AppColors().neonColor,
                       fontSize: 12,

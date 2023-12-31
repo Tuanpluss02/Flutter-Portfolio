@@ -103,7 +103,8 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
             child: Container(
               padding: const EdgeInsets.all(15.0),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.start,
+                // mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -143,7 +144,8 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                     ),
                   ),
                   Expanded(
-                    child: Padding(
+                    child: Container(
+                      margin: const EdgeInsets.only(top: 10.0),
                       padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
                       child: Text(
                         projectList[index].projectContent.toString(),
@@ -156,22 +158,24 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                       ),
                     ),
                   ),
+                  const Spacer(),
                   Expanded(
                     child: GridView(
+                        physics: const NeverScrollableScrollPhysics(),
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
-                          // childAspectRatio: 0.9,
                           crossAxisCount: 3,
-                          // mainAxisSpacing: 7,
-                          // crossAxisSpacing: 7,
                         ),
                         children: projectList[index]
                             .techs!
-                            .map((item) => Image.asset(
-                                  item.techLogo,
-                                  width: 50,
-                                  height: 30,
-                                  fit: BoxFit.scaleDown,
+                            .map((item) => Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Image.asset(
+                                    item.techLogo,
+                                    width: 50,
+                                    height: 30,
+                                    fit: BoxFit.scaleDown,
+                                  ),
                                 ))
                             .toList()),
                   )
