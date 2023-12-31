@@ -6,6 +6,8 @@ class AppAssets {
   static const riveLogo = 'images/rive.png';
   static const mongoDBLogo = 'images/mongodb.png';
   static const dockerLogo = 'images/docker.png';
+  static const pythonLogo = 'images/python.png';
+  static const vectorizerLogo = 'images/vectorizer.png';
 
   static const githubLogo = 'svg/github.svg';
   static const linkedinLogo = 'svg/linkedin.svg';

@@ -128,9 +128,8 @@ List<WorkModel> projectList = [
       projectContent:
           '''The script reads an SVG file and extracts the path data from it. It then converts the path data into a series of Turtle draw commands that can be executed by a Turtle graphics library.''',
       techs: [
-        Technology(techName: 'Python', techLogo: AppAssets.folderLogo),
-        Technology(techName: 'SVG', techLogo: AppAssets.folderLogo),
-        Technology(techName: 'Turlte', techLogo: AppAssets.folderLogo)
+        Technology(techName: 'Python', techLogo: AppAssets.pythonLogo),
+        Technology(techName: 'Vectorizer', techLogo: AppAssets.vectorizerLogo),
       ],
       link: "https://github.com/Tuanpluss02/turtle-svg"),
 ];
