@@ -18,7 +18,7 @@ Welcome to my portfolio built using Flutter, an open-source UI toolkit for build
 To run on your local machine, follow these simple steps:
 ```
 1. Clone the repository:
-> git clone https://github.com/Tuanpluss02/my-portfolio.git
+> git clone https://github.com/Tuanpluss02/Flutter-Portfolio.git
 
 2. Change into the project directory:
 > cd my-portfolio
