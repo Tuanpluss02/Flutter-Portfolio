@@ -30,10 +30,10 @@ class _RightPaneState extends State<RightPane> {
                           child: InkWell(
                             onTap: () async {
                               await launchUrl(Uri.parse(
-                                  "mailto: dongoctuan2002sp@gmail.com"));
+                                  "mailto:tuando@stormx.works"));
                             },
                             child: Text(
-                              'dongoctuan2002sp@gmail.com',
+                              'tuando@stormx.works',
                               style: TextStyle(
                                   letterSpacing: 1,
                                   color: AppColors().textColor,
