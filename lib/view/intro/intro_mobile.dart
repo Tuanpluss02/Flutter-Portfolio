@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
 import '../../resource/app_resource.dart';
@@ -35,14 +34,14 @@ class _IntroMobileState extends State<IntroMobile> {
                   style: TextStyle(
                       color: AppColors().neonColor,
                       fontSize: 16,
-                      fontFamily: 'sfmono'),
+                      fontFamily: 'CircularStd'),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 10.0),
                 child: Text(
                   IntroScreenContents.name,
-                  style: GoogleFonts.robotoSlab(
+                  style: TextStyle(
                     color: AppColors().textColor,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 3,
@@ -57,7 +56,7 @@ class _IntroMobileState extends State<IntroMobile> {
                   padding: const EdgeInsets.only(top: 5.0),
                   child: Text(
                     IntroScreenContents.whatIdo,
-                    style: GoogleFonts.robotoSlab(
+                    style: TextStyle(
                       color: AppColors().textLight,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 3,
@@ -73,7 +72,7 @@ class _IntroMobileState extends State<IntroMobile> {
                   child: RichText(
                       text: TextSpan(
                           text: IntroScreenContents.introAbout,
-                          style: GoogleFonts.roboto(
+                          style: TextStyle(
                             color: AppColors().textLight,
                             letterSpacing: 1,
                             height: 1.5,
@@ -82,7 +81,7 @@ class _IntroMobileState extends State<IntroMobile> {
                           children: <TextSpan>[
                         TextSpan(
                           text: IntroScreenContents.currentOrgName,
-                          style: GoogleFonts.roboto(
+                          style: TextStyle(
                             color: AppColors().neonColor,
                             letterSpacing: 1,
                             height: 1.5,
@@ -115,7 +114,7 @@ class _IntroMobileState extends State<IntroMobile> {
                               fontSize: 13,
                               letterSpacing: 1,
                               fontWeight: FontWeight.bold,
-                              fontFamily: 'sfmono')),
+                              fontFamily: 'CircularStd')),
                     ),
                   ),
                 ),

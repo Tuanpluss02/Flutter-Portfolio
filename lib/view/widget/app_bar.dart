@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/resource/app_assets.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
@@ -66,7 +65,7 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                                                 left: 10.0),
                                             child: Text(
                                               item.title,
-                                              style: GoogleFonts.roboto(),
+                                              style: const TextStyle(),
                                             ),
                                           ),
                                         ],
@@ -117,7 +116,7 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                                   style: TextStyle(
                                       color: AppColors().neonColor,
                                       fontSize: 13,
-                                      fontFamily: 'sfmono'),
+                                      fontFamily: 'CircularStd'),
                                 ),
                                 Consumer(builder: (context, ref, child) {
                                   String state = ref.watch(hoverProvider);
@@ -129,7 +128,7 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                                             ? AppColors().neonColor
                                             : AppColors().textColor,
                                         fontSize: 13,
-                                        fontFamily: 'sfmono'),
+                                        fontFamily: 'CircularStd'),
                                   );
                                 }),
                               ],

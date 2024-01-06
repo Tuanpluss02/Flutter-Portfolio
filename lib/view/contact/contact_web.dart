@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/resource/app_assets.dart';
 import 'package:rive/rive.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -44,14 +43,14 @@ class _ContactWebState extends State<ContactWeb> {
                       style: TextStyle(
                           color: AppColors().neonColor,
                           fontSize: 15,
-                          fontFamily: 'sfmono'),
+                          fontFamily: 'CircularStd'),
                     ),
                     Text(
                       ''' What's next?''',
                       style: TextStyle(
                           color: AppColors().neonColor,
                           fontSize: 18,
-                          fontFamily: 'sfmono'),
+                          fontFamily: 'CircularStd'),
                     ),
                   ],
                 ),
@@ -59,7 +58,7 @@ class _ContactWebState extends State<ContactWeb> {
                   padding: const EdgeInsets.only(top: 8.0),
                   child: Text(
                     'Get In Touch',
-                    style: GoogleFonts.robotoSlab(
+                    style: TextStyle(
                       color: AppColors().textColor,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 3,
@@ -74,7 +73,7 @@ class _ContactWebState extends State<ContactWeb> {
                     child: Text(
                       endTxt,
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.roboto(
+                      style: TextStyle(
                         color: AppColors().textLight,
                         letterSpacing: 1,
                         height: 1.5,
@@ -133,7 +132,7 @@ class _ContactWebState extends State<ContactWeb> {
                                   fontSize: 25,
                                   letterSpacing: 1,
                                   fontWeight: FontWeight.bold,
-                                  fontFamily: 'sfmono')),
+                                  fontFamily: 'CircularStd')),
                         ),
                       ),
                     ]),
@@ -151,7 +150,7 @@ class _ContactWebState extends State<ContactWeb> {
                   style: TextStyle(
                       color: AppColors().textColor,
                       fontSize: 12,
-                      fontFamily: 'sfmono'),
+                      fontFamily: 'CircularStd'),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -160,7 +159,7 @@ class _ContactWebState extends State<ContactWeb> {
                     style: TextStyle(
                         color: AppColors().neonColor,
                         fontSize: 12,
-                        fontFamily: 'sfmono'),
+                        fontFamily: 'CircularStd'),
                   ),
                 ),
               ],

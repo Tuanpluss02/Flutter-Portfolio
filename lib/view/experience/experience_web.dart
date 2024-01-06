@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../controller/general_controller.dart';
@@ -33,11 +32,11 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                     style: TextStyle(
                         color: AppColors().neonColor,
                         fontSize: 20,
-                        fontFamily: 'sfmono'),
-                    children: <TextSpan>[
+                        fontFamily: 'CircularStd'),
+                    children: const <TextSpan>[
                       TextSpan(
                         text: ''' Where I've Worked''',
-                        style: GoogleFonts.robotoSlab(
+                        style: TextStyle(
                             color: Colors.white,
                             letterSpacing: 1,
                             fontWeight: FontWeight.bold,
@@ -84,7 +83,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                           child: RichText(
                             text: TextSpan(
                                 text: experienceList[data].position,
-                                style: GoogleFonts.roboto(
+                                style: TextStyle(
                                     color: AppColors().textColor,
                                     fontWeight: FontWeight.bold,
                                     letterSpacing: 1,
@@ -92,7 +91,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                                 children: <TextSpan>[
                                   TextSpan(
                                     text: ' @${experienceList[data].company}',
-                                    style: GoogleFonts.roboto(
+                                    style: TextStyle(
                                         color: AppColors().neonColor,
                                         fontSize: 20),
                                   )
@@ -106,7 +105,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                               letterSpacing: 1,
                               height: 1.5,
                               fontSize: 14,
-                              fontFamily: 'sfmono'),
+                              fontFamily: 'CircularStd'),
                         ),
                         expWidget(data)
                       ],
@@ -147,7 +146,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
               letterSpacing: 1,
               height: 1.5,
               fontSize: 14,
-              fontFamily: 'sfmono'),
+              fontFamily: 'CircularStd'),
         ),
       ),
     );
@@ -183,7 +182,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                               letterSpacing: 1,
                               height: 1.5,
                               fontSize: 14,
-                              fontFamily: 'sfmono'),
+                              fontFamily: 'CircularStd'),
                         ),
                       ),
                     ],

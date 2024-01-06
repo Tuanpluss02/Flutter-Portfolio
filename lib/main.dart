@@ -21,6 +21,7 @@ class AppTheme extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.dark,
         primaryColor: AppColors().primaryColor,
+        fontFamily: 'CircularStd',
       ),
       home: const RootScreen(),
     );

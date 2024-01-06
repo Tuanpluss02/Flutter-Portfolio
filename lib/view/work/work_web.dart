@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../controller/general_controller.dart';
@@ -31,11 +30,11 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
               style: TextStyle(
                   color: AppColors().neonColor,
                   fontSize: 20,
-                  fontFamily: 'sfmono'),
+                  fontFamily: 'CircularStd'),
               children: <TextSpan>[
                 TextSpan(
                   text: ' My Noteworthy Projects',
-                  style: GoogleFonts.roboto(
+                  style: TextStyle(
                       color: AppColors().textColor,
                       letterSpacing: 1,
                       fontWeight: FontWeight.bold,
@@ -50,7 +49,7 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
             style: TextStyle(
                 color: AppColors().neonColor,
                 fontSize: 15,
-                fontFamily: 'sfmono'),
+                fontFamily: 'CircularStd'),
           ),
         ),
         Container(
@@ -131,7 +130,7 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                           child: AutoSizeText(
                             projectList[index].projectTitle.toString(),
                             textAlign: TextAlign.left,
-                            style: GoogleFonts.robotoSlab(
+                            style: TextStyle(
                                 color: isHovered
                                     ? AppColors().neonColor
                                     : Colors.white,
@@ -149,7 +148,7 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                       padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
                       child: Text(
                         projectList[index].projectContent.toString(),
-                        style: GoogleFonts.roboto(
+                        style: TextStyle(
                           color: AppColors().textLight,
                           letterSpacing: 1,
                           height: 1.5,

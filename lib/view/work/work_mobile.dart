@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/resource/app_assets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -31,11 +30,11 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
               style: TextStyle(
                   color: AppColors().neonColor,
                   fontSize: 20,
-                  fontFamily: 'sfmono'),
+                  fontFamily: 'CircularStd'),
               children: <TextSpan>[
                 TextSpan(
                   text: ' My Noteworthy Projects',
-                  style: GoogleFonts.roboto(
+                  style: TextStyle(
                       color: AppColors().textColor,
                       letterSpacing: 1,
                       fontWeight: FontWeight.bold,
@@ -50,7 +49,7 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
             style: TextStyle(
                 color: AppColors().neonColor,
                 fontSize: 12,
-                fontFamily: 'sfmono'),
+                fontFamily: 'CircularStd'),
           ),
         ),
         Container(
@@ -127,7 +126,7 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                             maxLines: 2,
                             overflow: TextOverflow.clip,
                             textAlign: TextAlign.left,
-                            style: GoogleFonts.robotoSlab(
+                            style: TextStyle(
                               color: isHovered
                                   ? AppColors().neonColor
                                   : Colors.white,
@@ -144,7 +143,7 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                       padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
                       child: AutoSizeText(
                         projectList[index].projectContent.toString(),
-                        style: GoogleFonts.roboto(
+                        style: TextStyle(
                           color: AppColors().textLight,
                           letterSpacing: 1,
                           height: 1.5,
@@ -175,7 +174,7 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                               child: Center(
                                 child: Text(
                                   projectList[index].techs![index2].techName,
-                                  style: GoogleFonts.roboto(
+                                  style: TextStyle(
                                     color: AppColors().textLight,
                                     letterSpacing: 1,
                                     height: 1.5,

@@ -35,7 +35,6 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  google_fonts: ^6.1.0
   flutter_svg: ^2.0.9
   flutter_riverpod: ^2.4.9
   flutter_staggered_grid_view: ^0.7.0
@@ -76,6 +75,9 @@ flutter:
 
 
   fonts:
-    - family: sfmono
+    - family: CircularStd
       fonts:
-        - asset: fonts/sfmono.otf
+        - asset: fonts/CircularStd.otf
+    - family: CircularStd
+      fonts:
+        - asset: fonts/CircularStd.otf

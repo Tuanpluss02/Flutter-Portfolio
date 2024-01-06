@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/resource/app_assets.dart';
 import 'package:portfolio/utils/screen_info.dart';
 
@@ -33,11 +32,11 @@ class _AboutState extends State<About> {
                     style: TextStyle(
                         color: AppColors().neonColor,
                         fontSize: 20,
-                        fontFamily: 'sfmono'),
-                    children: <TextSpan>[
+                        fontFamily: 'CircularStd'),
+                    children: const <TextSpan>[
                       TextSpan(
                         text: ' About Me',
-                        style: GoogleFonts.robotoSlab(
+                        style: TextStyle(
                             color: Colors.white,
                             letterSpacing: 1,
                             fontWeight: FontWeight.bold,
@@ -65,7 +64,7 @@ class _AboutState extends State<About> {
                         padding: const EdgeInsets.only(top: 30.0),
                         child: Text(
                           content,
-                          style: GoogleFonts.roboto(
+                          style: TextStyle(
                             color: AppColors().textLight,
                             letterSpacing: 1,
                             height: 1.5,

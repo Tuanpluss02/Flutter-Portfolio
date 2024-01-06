@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../resource/app_colors.dart';
@@ -31,14 +30,14 @@ class _ContactMobileState extends State<ContactMobile> {
                     style: TextStyle(
                         color: AppColors().neonColor,
                         fontSize: 12,
-                        fontFamily: 'sfmono'),
+                        fontFamily: 'CircularStd'),
                   ),
                   Text(
                     ''' What's next?''',
                     style: TextStyle(
                         color: AppColors().neonColor,
                         fontSize: 14,
-                        fontFamily: 'sfmono'),
+                        fontFamily: 'CircularStd'),
                   ),
                 ],
               ),
@@ -46,7 +45,7 @@ class _ContactMobileState extends State<ContactMobile> {
                 padding: const EdgeInsets.only(top: 8.0),
                 child: Text(
                   'Get In Touch',
-                  style: GoogleFonts.robotoSlab(
+                  style: TextStyle(
                     color: AppColors().textColor,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 3,
@@ -61,7 +60,7 @@ class _ContactMobileState extends State<ContactMobile> {
                   child: Text(
                     endTxt,
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.roboto(
+                    style: TextStyle(
                       color: AppColors().textLight,
                       letterSpacing: 1,
                       height: 1.5,
@@ -91,7 +90,7 @@ class _ContactMobileState extends State<ContactMobile> {
                             fontSize: 20,
                             letterSpacing: 1,
                             fontWeight: FontWeight.bold,
-                            fontFamily: 'sfmono')),
+                            fontFamily: 'CircularStd')),
                   ),
                 ),
               )
@@ -104,7 +103,7 @@ class _ContactMobileState extends State<ContactMobile> {
                 style: TextStyle(
                     color: AppColors().textColor,
                     fontSize: 12,
-                    fontFamily: 'sfmono'),
+                    fontFamily: 'CircularStd'),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -113,7 +112,7 @@ class _ContactMobileState extends State<ContactMobile> {
                   style: TextStyle(
                       color: AppColors().neonColor,
                       fontSize: 12,
-                      fontFamily: 'sfmono'),
+                      fontFamily: 'CircularStd'),
                 ),
               ),
             ],

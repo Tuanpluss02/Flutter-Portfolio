@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/utils/screen_info.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -33,11 +32,11 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                     style: TextStyle(
                         color: AppColors().neonColor,
                         fontSize: 20,
-                        fontFamily: 'sfmono'),
-                    children: <TextSpan>[
+                        fontFamily: 'CircularStd'),
+                    children: const <TextSpan>[
                       TextSpan(
                         text: ''' Where I've Worked''',
-                        style: GoogleFonts.robotoSlab(
+                        style: TextStyle(
                             color: Colors.white,
                             letterSpacing: 1,
                             fontWeight: FontWeight.bold,
@@ -83,7 +82,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                           child: RichText(
                             text: TextSpan(
                                 text: experienceList[data].position,
-                                style: GoogleFonts.roboto(
+                                style: TextStyle(
                                     color: AppColors().textColor,
                                     fontWeight: FontWeight.bold,
                                     letterSpacing: 1,
@@ -91,7 +90,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                                 children: <TextSpan>[
                                   TextSpan(
                                     text: ' @${experienceList[data].company}',
-                                    style: GoogleFonts.roboto(
+                                    style: TextStyle(
                                         color: AppColors().neonColor,
                                         fontSize: 18),
                                   )
@@ -105,7 +104,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                               letterSpacing: 1,
                               height: 1.5,
                               fontSize: 13,
-                              fontFamily: 'sfmono'),
+                              fontFamily: 'CircularStd'),
                         ),
                         expWidget(data)
                       ],
@@ -145,7 +144,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                   : AppColors().textLight,
               height: 1.5,
               fontSize: 11,
-              fontFamily: 'sfmono'),
+              fontFamily: 'CircularStd'),
         ),
       ),
     );
@@ -181,7 +180,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                               letterSpacing: 1,
                               height: 1.5,
                               fontSize: 13,
-                              fontFamily: 'sfmono'),
+                              fontFamily: 'CircularStd'),
                         ),
                       ),
                     ],

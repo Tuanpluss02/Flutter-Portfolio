@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/resource/app_assets.dart';
 import 'package:rive/rive.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
@@ -49,14 +48,14 @@ class _IntroWebState extends State<IntroWeb> {
                       style: TextStyle(
                           color: AppColors().neonColor,
                           fontSize: 18,
-                          fontFamily: 'sfmono'),
+                          fontFamily: 'CircularStd'),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 8.0),
                     child: Text(
                       IntroScreenContents.name,
-                      style: GoogleFonts.robotoSlab(
+                      style: TextStyle(
                         color: AppColors().textColor,
                         fontWeight: FontWeight.bold,
                         letterSpacing: 3,
@@ -71,7 +70,7 @@ class _IntroWebState extends State<IntroWeb> {
                       padding: const EdgeInsets.only(top: 5.0),
                       child: Text(
                         IntroScreenContents.whatIdo,
-                        style: GoogleFonts.robotoSlab(
+                        style: TextStyle(
                           color: AppColors().textLight,
                           fontWeight: FontWeight.bold,
                           letterSpacing: 3,
@@ -87,7 +86,7 @@ class _IntroWebState extends State<IntroWeb> {
                       child: RichText(
                           text: TextSpan(
                               text: IntroScreenContents.introAbout,
-                              style: GoogleFonts.roboto(
+                              style: TextStyle(
                                 color: AppColors().textLight,
                                 letterSpacing: 1,
                                 height: 1.5,
@@ -96,7 +95,7 @@ class _IntroWebState extends State<IntroWeb> {
                               children: <TextSpan>[
                             TextSpan(
                               text: IntroScreenContents.currentOrgName,
-                              style: GoogleFonts.roboto(
+                              style: TextStyle(
                                 color: AppColors().neonColor,
                                 letterSpacing: 1,
                                 height: 1.5,
@@ -143,7 +142,7 @@ class _IntroWebState extends State<IntroWeb> {
                                     fontSize: 13,
                                     letterSpacing: 1,
                                     fontWeight: FontWeight.bold,
-                                    fontFamily: 'sfmono')),
+                                    fontFamily: 'CircularStd')),
                           ),
                         ),
                       );

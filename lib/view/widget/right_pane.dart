@@ -29,8 +29,8 @@ class _RightPaneState extends State<RightPane> {
                           quarterTurns: 1,
                           child: InkWell(
                             onTap: () async {
-                              await launchUrl(Uri.parse(
-                                  "mailto:tuando@stormx.works"));
+                              await launchUrl(
+                                  Uri.parse("mailto:tuando@stormx.works"));
                             },
                             child: Text(
                               'tuando@stormx.works',
@@ -38,7 +38,7 @@ class _RightPaneState extends State<RightPane> {
                                   letterSpacing: 1,
                                   color: AppColors().textColor,
                                   fontSize: 14,
-                                  fontFamily: 'sfmono'),
+                                  fontFamily: 'CircularStd'),
                             ),
                           )),
                     )
