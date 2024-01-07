@@ -84,25 +84,25 @@ List<Technology> technologiesList = [
 
 List<WorkModel> projectList = [
   WorkModel(
-      projectTitle: "URL Shortener Backend",
+      projectTitle: "StormX Link Backend",
       projectContent:
-          '''Backend for URL Shortener Launcher. Using NestJS and MongoDB for database. This project provides a robust and scalable backend infrastructure for the URL Shortener Launcher web application.''',
+          '''Backend for StormX Link. Using NestJS and MongoDB for database. This project provides a robust and scalable backend infrastructure for the StormX Link web application.''',
       techs: [
         Technology(techName: 'NestJS', techLogo: AppAssets.nestjsLogo),
         Technology(techName: 'MongoDB', techLogo: AppAssets.mongoDBLogo),
         Technology(techName: 'Docker', techLogo: AppAssets.dockerLogo),
       ],
-      link: "https://github.com/Tuanpluss02/URL-Shortener-Backend"),
+      link: "https://github.com/Tuanpluss02/StormX-Link-Backend"),
   WorkModel(
-      projectTitle: "URL Shortener Launcher",
+      projectTitle: "StormX Link",
       projectContent:
-          '''URL Shortener Launcher is a web application that allows users to shorten long URLs into short and easy-to-remember links.''',
+          '''StormX Link is a web application that allows users to shorten long URLs into short and easy-to-remember links.''',
       techs: [
         Technology(techName: 'Flutter', techLogo: AppAssets.flutterLogo),
         Technology(techName: 'Firebase', techLogo: AppAssets.firebaseLogo),
         Technology(techName: 'Rive', techLogo: AppAssets.riveLogo),
       ],
-      link: "https://github.com/Tuanpluss02/URL-Shortener-Launcher"),
+      link: "https://github.com/Tuanpluss02/StormX-Link"),
   WorkModel(
       projectTitle: "Flutter Portfolio",
       projectContent:
@@ -112,7 +112,7 @@ List<WorkModel> projectList = [
         Technology(techName: 'Rive', techLogo: AppAssets.riveLogo),
         Technology(techName: "Firebase", techLogo: AppAssets.firebaseLogo)
       ],
-      link: "https://github.com/Tuanpluss02/my-portfolio"),
+      link: "https://github.com/Tuanpluss02/Flutter-Portfolio"),
   WorkModel(
       projectTitle: "Pro Note",
       projectContent:
