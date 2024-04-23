@@ -8,8 +8,8 @@ This is my portfolio built using Flutter, an open-source UI toolkit for building
 
 - A clean and modern design that showcases my projects, skills, and experiences
 - Responsive design for mobile, tablet, and desktop devices
-- Easy navigation through the use of a bottom navigation bar
-- Detailed information about my projects, including screenshots and descriptions
+- Easy navigation through the use of a top navigation bar
+- Detailed information about my projects, including Github link and descriptions
 - Information about my skills and experiences, including relevant technologies and frameworks
 - A contact form for easy communication with me
 
