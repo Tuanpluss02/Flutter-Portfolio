@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:url_strategy/url_strategy.dart';
 
+import 'features/portfolio/presentation/bloc/portfolio_bloc.dart';
+import 'features/portfolio/presentation/bloc/scroll_cubit.dart';
+import 'features/portfolio/presentation/bloc/hover_cubit.dart';
+import 'features/portfolio/presentation/pages/root_screen.dart';
+import 'injection.dart';
 import 'resource/app_colors.dart';
-import 'view/root.dart';
 
 void main() {
   setPathUrlStrategy();
-  runApp(const ProviderScope(child: AppTheme()));
+  configureDependencies();
+  runApp(const AppTheme());
 }
 
 class AppTheme extends StatelessWidget {
@@ -15,15 +20,22 @@ class AppTheme extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Tuan Do\'s Portfolio',
-      theme: ThemeData(
-        brightness: Brightness.dark,
-        primaryColor: AppColors().primaryColor,
-        fontFamily: 'CircularStd',
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (_) => getIt<PortfolioBloc>()),
+        BlocProvider(create: (_) => ScrollCubit()),
+        BlocProvider(create: (_) => HoverCubit()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Tuan Do\'s Portfolio',
+        theme: ThemeData(
+          brightness: Brightness.dark,
+          primaryColor: AppColors().primaryColor,
+          fontFamily: 'CircularStd',
+        ),
+        home: const RootScreen(),
       ),
-      home: const RootScreen(),
     );
   }
 }

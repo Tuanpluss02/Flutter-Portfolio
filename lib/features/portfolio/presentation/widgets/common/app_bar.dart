@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:portfolio/resource/app_assets.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
-import '../../controller/general_controller.dart';
-import '../../resource/app_colors.dart';
-import '../../resource/appbar_items.dart';
-import '../../utils/screen_info.dart';
+import '../../../../../resource/app_assets.dart';
+import '../../../../../resource/app_colors.dart';
+import '../../../../../resource/appbar_items.dart';
+import '../../../../../utils/screen_info.dart';
+import '../../bloc/hover_cubit.dart';
 
-class ActionBar extends ConsumerStatefulWidget implements PreferredSizeWidget {
+class ActionBar extends StatefulWidget implements PreferredSizeWidget {
   final AutoScrollController controller;
 
   const ActionBar(this.controller, {Key? key}) : super(key: key);
 
   @override
-  ConsumerState<ActionBar> createState() => _ActionBarState();
+  State<ActionBar> createState() => _ActionBarState();
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
 
-class _ActionBarState extends ConsumerState<ActionBar> {
+class _ActionBarState extends State<ActionBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -101,10 +101,9 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                               preferPosition: AutoScrollPosition.begin),
                           onHover: (bol) {
                             if (bol) {
-                              ref.read(hoverProvider.notifier).state =
-                                  item.riverpodKey;
+                              context.read<HoverCubit>().setHover(item.riverpodKey);
                             } else {
-                              ref.read(hoverProvider.notifier).state = "";
+                              context.read<HoverCubit>().setHover("");
                             }
                           },
                           child: Padding(
@@ -118,19 +117,20 @@ class _ActionBarState extends ConsumerState<ActionBar> {
                                       fontSize: 13,
                                       fontFamily: 'CircularStd'),
                                 ),
-                                Consumer(builder: (context, ref, child) {
-                                  String state = ref.watch(hoverProvider);
-                                  bool isHovered = (state == item.riverpodKey);
-                                  return Text(
-                                    item.title,
-                                    style: TextStyle(
-                                        color: isHovered
-                                            ? AppColors().neonColor
-                                            : AppColors().textColor,
-                                        fontSize: 13,
-                                        fontFamily: 'CircularStd'),
-                                  );
-                                }),
+                                BlocBuilder<HoverCubit, String>(
+                                  builder: (context, state) {
+                                    bool isHovered = (state == item.riverpodKey);
+                                    return Text(
+                                      item.title,
+                                      style: TextStyle(
+                                          color: isHovered
+                                              ? AppColors().neonColor
+                                              : AppColors().textColor,
+                                          fontSize: 13,
+                                          fontFamily: 'CircularStd'),
+                                    );
+                                  },
+                                ),
                               ],
                             ),
                           ),

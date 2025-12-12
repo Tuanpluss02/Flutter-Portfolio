@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../controller/general_controller.dart';
-import '../../resource/app_resource.dart';
-import '../../resource/app_colors.dart';
-import '../../utils/screen_info.dart';
+import '../../../../../resource/app_colors.dart';
+import '../../../../../utils/screen_info.dart';
+import '../../bloc/portfolio_bloc.dart';
 
 class ExperienceWeb extends StatefulWidget {
   const ExperienceWeb({Key? key}) : super(key: key);
@@ -52,78 +51,83 @@ class _ExperienceWebState extends State<ExperienceWeb> {
               )
             ],
           ),
-          Consumer(builder: (context, ref, child) {
-            var data = ref.watch(selectedExpProvider);
-            return Container(
-              width: ScreenInfo().getMqWidth(context) * 0.6,
-              margin: const EdgeInsets.only(top: 30.0, left: 30.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    flex: 2,
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          ...List.generate(
-                            experienceList.length,
-                            (index) => selectCompany(ref, data, index),
-                          ),
-                        ]),
-                  ),
-                  Expanded(
-                    flex: 8,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        InkWell(
-                          onTap: () => launchUrl(
-                              Uri.parse(experienceList[data].website!)),
-                          child: RichText(
-                            text: TextSpan(
-                                text: experienceList[data].position,
-                                style: TextStyle(
-                                    color: AppColors().textColor,
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: 1,
-                                    fontSize: 20),
-                                children: <TextSpan>[
-                                  TextSpan(
-                                    text: ' @${experienceList[data].company}',
-                                    style: TextStyle(
-                                        color: AppColors().neonColor,
-                                        fontSize: 20),
-                                  )
-                                ]),
-                          ),
-                        ),
-                        Text(
-                          experienceList[data].duration.toString(),
-                          style: TextStyle(
-                              color: AppColors().textLight,
-                              letterSpacing: 1,
-                              height: 1.5,
-                              fontSize: 14,
-                              fontFamily: 'CircularStd'),
-                        ),
-                        expWidget(data)
-                      ],
+          BlocBuilder<PortfolioBloc, PortfolioState>(
+            builder: (context, state) {
+              if (state is! PortfolioLoaded) return const SizedBox();
+              final experiences = state.data.experiences;
+              final selectedIndex = state.selectedExperienceIndex;
+
+              return Container(
+                width: ScreenInfo().getMqWidth(context) * 0.6,
+                margin: const EdgeInsets.only(top: 30.0, left: 30.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      flex: 2,
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            ...List.generate(
+                              experiences.length,
+                              (index) => selectCompany(context, selectedIndex, index, experiences[index].company!),
+                            ),
+                          ]),
                     ),
-                  )
-                ],
-              ),
-            );
-          })
+                    Expanded(
+                      flex: 8,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          InkWell(
+                            onTap: () => launchUrl(
+                                Uri.parse(experiences[selectedIndex].website!)),
+                            child: RichText(
+                              text: TextSpan(
+                                  text: experiences[selectedIndex].position,
+                                  style: TextStyle(
+                                      color: AppColors().textColor,
+                                      fontWeight: FontWeight.bold,
+                                      letterSpacing: 1,
+                                      fontSize: 20),
+                                  children: <TextSpan>[
+                                    TextSpan(
+                                      text: ' @${experiences[selectedIndex].company}',
+                                      style: TextStyle(
+                                          color: AppColors().neonColor,
+                                          fontSize: 20),
+                                    )
+                                  ]),
+                            ),
+                          ),
+                          Text(
+                            experiences[selectedIndex].duration.toString(),
+                            style: TextStyle(
+                                color: AppColors().textLight,
+                                letterSpacing: 1,
+                                height: 1.5,
+                                fontSize: 14,
+                                fontFamily: 'CircularStd'),
+                          ),
+                          expWidget(experiences[selectedIndex].jobs!)
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              );
+            },
+          )
         ],
       ),
     );
   }
 
-  Widget selectCompany(WidgetRef ref, int selectedIndex, int index) {
+  Widget selectCompany(BuildContext context, int selectedIndex, int index, String companyName) {
     return InkWell(
       onTap: () {
-        ref.read(selectedExpProvider.notifier).state = index;
+        context.read<PortfolioBloc>().add(ChangeSelectedExperience(index));
       },
       child: Container(
         padding: const EdgeInsets.all(10.0),
@@ -138,7 +142,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                         : Colors.white,
                     width: 2))),
         child: Text(
-          experienceList[index].company!,
+          companyName,
           style: TextStyle(
               color: index == selectedIndex
                   ? AppColors().neonColor
@@ -152,11 +156,11 @@ class _ExperienceWebState extends State<ExperienceWeb> {
     );
   }
 
-  Widget expWidget(int indexExp) {
+  Widget expWidget(List<String> jobs) {
     return Column(
       children: [
         ...List.generate(
-          experienceList[indexExp].jobs!.length,
+          jobs.length,
           (index) => Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
@@ -176,7 +180,7 @@ class _ExperienceWebState extends State<ExperienceWeb> {
                       SizedBox(
                         width: ScreenInfo().getMqWidth(context) * 0.35,
                         child: Text(
-                          experienceList[indexExp].jobs![index],
+                          jobs[index],
                           style: TextStyle(
                               color: AppColors().textLight,
                               letterSpacing: 1,

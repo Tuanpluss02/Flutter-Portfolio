@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:portfolio/resource/app_assets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rive/rive.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
-import '../../controller/general_controller.dart';
-import '../../resource/app_colors.dart';
-import '../../resource/app_resource.dart';
-import '../../utils/screen_info.dart';
+import '../../../../../resource/app_assets.dart';
+import '../../../../../resource/app_colors.dart';
+import '../../../../../resource/app_resource.dart';
+import '../../../../../utils/screen_info.dart';
+import '../../bloc/hover_cubit.dart';
 
 // ignore: must_be_immutable
 class IntroWeb extends StatefulWidget {
@@ -107,46 +107,47 @@ class _IntroWebState extends State<IntroWeb> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 50, bottom: 70),
-                    child: Consumer(builder: (context, ref, child) {
-                      var data = ref.watch(hoverProvider);
-                      bool isHovered = (data == "checkout");
-                      return InkWell(
-                        onHover: (bol) {
-                          if (bol) {
-                            ref.read(hoverProvider.notifier).state = "checkout";
-                          } else {
-                            ref.read(hoverProvider.notifier).state = "";
-                          }
-                        },
-                        onTap: () {
-                          widget.aScrollController.scrollToIndex(1,
-                              preferPosition: AutoScrollPosition.begin);
-                        },
-                        child: Container(
-                          height: ScreenInfo().getMqHeight(context) * 0.09,
-                          width: ScreenInfo().getMqWidth(context) * 0.2,
-                          decoration: BoxDecoration(
-                              color: (isHovered
-                                  ? AppColors().neonColor
-                                  : Colors.transparent),
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(45)),
-                              border: Border.all(
-                                  color: AppColors().neonColor, width: 1.5)),
-                          child: Center(
-                            child: Text('Check Out My Work!',
-                                style: TextStyle(
-                                    color: (isHovered
-                                        ? Colors.black
-                                        : AppColors().neonColor),
-                                    fontSize: 13,
-                                    letterSpacing: 1,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'CircularStd')),
+                    child: BlocBuilder<HoverCubit, String>(
+                      builder: (context, data) {
+                        bool isHovered = (data == "checkout");
+                        return InkWell(
+                          onHover: (bol) {
+                            if (bol) {
+                              context.read<HoverCubit>().setHover("checkout");
+                            } else {
+                              context.read<HoverCubit>().setHover("");
+                            }
+                          },
+                          onTap: () {
+                            widget.aScrollController.scrollToIndex(1,
+                                preferPosition: AutoScrollPosition.begin);
+                          },
+                          child: Container(
+                            height: ScreenInfo().getMqHeight(context) * 0.09,
+                            width: ScreenInfo().getMqWidth(context) * 0.2,
+                            decoration: BoxDecoration(
+                                color: (isHovered
+                                    ? AppColors().neonColor
+                                    : Colors.transparent),
+                                borderRadius:
+                                    const BorderRadius.all(Radius.circular(45)),
+                                border: Border.all(
+                                    color: AppColors().neonColor, width: 1.5)),
+                            child: Center(
+                              child: Text('Check Out My Work!',
+                                  style: TextStyle(
+                                      color: (isHovered
+                                          ? Colors.black
+                                          : AppColors().neonColor),
+                                      fontSize: 13,
+                                      letterSpacing: 1,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'CircularStd')),
+                            ),
                           ),
-                        ),
-                      );
-                    }),
+                        );
+                      },
+                    ),
                   ),
                 ],
               ),
