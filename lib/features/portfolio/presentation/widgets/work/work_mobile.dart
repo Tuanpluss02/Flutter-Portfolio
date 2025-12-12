@@ -14,7 +14,7 @@ import '../../bloc/portfolio_bloc.dart';
 import '../../../domain/entities/work_model.dart';
 
 class WorkMobile extends StatefulWidget {
-  const WorkMobile({Key? key}) : super(key: key);
+  const WorkMobile({super.key});
 
   @override
   State<WorkMobile> createState() => _WorkMobileState();
@@ -82,7 +82,7 @@ class _WorkMobileState extends State<WorkMobile> {
     );
   }
 
-  projectWidget({required int index, required WorkModel work}) {
+  InkWell projectWidget({required int index, required WorkModel work}) {
     return InkWell(
       onTap: () async {
         await launchUrl(Uri.parse(work.link!));

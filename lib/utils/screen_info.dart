@@ -14,11 +14,11 @@ class ScreenInfo {
     }
   }
 
-  getMqWidth(BuildContext context) {
+  double getMqWidth(BuildContext context) {
     return MediaQuery.of(context).size.width;
   }
 
-  getMqHeight(BuildContext context) {
+  double getMqHeight(BuildContext context) {
     return MediaQuery.of(context).size.height;
   }
 }

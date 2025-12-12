@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
+import 'package:portfolio/responsive.dart';
 
-import '../../responsive.dart';
 import 'contact_mobile.dart';
 import 'contact_web.dart';
 
 class Contact extends StatefulWidget {
-  const Contact({Key? key}) : super(key: key);
+  const Contact({super.key});
 
   @override
   State<Contact> createState() => _ContactState();

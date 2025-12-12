@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'app_colors.dart';
 
 class TxtStyle {
-  var neonText = TextStyle(color: AppColors().neonColor, fontSize: 14);
+  TextStyle neonText = TextStyle(color: AppColors().neonColor, fontSize: 14);
 
-  boldBlack(context) =>
+  TextStyle boldBlack(BuildContext context) =>
       const TextStyle(color: Colors.black, fontWeight: FontWeight.bold);
 
-  boldWhite(context) =>
+  TextStyle boldWhite(BuildContext context) =>
       const TextStyle(color: Colors.white, fontWeight: FontWeight.bold);
 }

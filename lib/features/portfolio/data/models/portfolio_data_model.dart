@@ -4,8 +4,8 @@ import '../../domain/entities/technology_model.dart';
 import '../../domain/entities/work_model.dart';
 
 class PortfolioDataModel {
-  final List<SocialModel> socials;
-  final List<TechnologyModel> technologies;
+  final List<Social> socials;
+  final List<Technology> technologies;
   final List<ExperienceModel> experiences;
   final List<WorkModel> works;
 

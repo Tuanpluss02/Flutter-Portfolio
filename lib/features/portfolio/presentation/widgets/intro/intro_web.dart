@@ -13,28 +13,40 @@ import '../../bloc/hover_cubit.dart';
 class IntroWeb extends StatefulWidget {
   AutoScrollController aScrollController;
 
-  IntroWeb(this.aScrollController, {Key? key}) : super(key: key);
+  IntroWeb(this.aScrollController, {super.key});
 
   @override
   State<IntroWeb> createState() => _IntroWebState();
 }
 
 class _IntroWebState extends State<IntroWeb> {
-  // late bool isHovered;
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.transparent,
       margin: EdgeInsets.only(
-          left: ScreenInfo().getMqWidth(context) * 0.01,
-          top: ScreenInfo().getMqHeight(context) * 0.1),
+        left: ScreenInfo().getMqWidth(context) * 0.01,
+        top: ScreenInfo().getMqHeight(context) * 0.1,
+      ),
       child: Column(
         children: [
-          const Center(
+          Center(
             child: SizedBox(
-                height: 600,
-                width: 700,
-                child: RiveAnimation.asset(AppAssets.handWritingRive)),
+              height: 600,
+              width: 700,
+              child: RiveWidgetBuilder(
+                fileLoader: FileLoader.fromAsset(
+                  AppAssets.handWritingRive,
+                  riveFactory: Factory.flutter,
+                ),
+                builder: (context, state) {
+                  if (state is RiveLoaded) {
+                    return RiveWidget(controller: state.controller);
+                  }
+                  return const SizedBox.shrink();
+                },
+              ),
+            ),
           ),
           Row(
             children: [
@@ -46,9 +58,10 @@ class _IntroWebState extends State<IntroWeb> {
                     child: Text(
                       IntroScreenContents.welcomeTxt,
                       style: TextStyle(
-                          color: AppColors().neonColor,
-                          fontSize: 18,
-                          fontFamily: 'CircularStd'),
+                        color: AppColors().neonColor,
+                        fontSize: 18,
+                        fontFamily: 'CircularStd',
+                      ),
                     ),
                   ),
                   Padding(
@@ -64,7 +77,8 @@ class _IntroWebState extends State<IntroWeb> {
                     ),
                   ),
                   SizedBox(
-                    width: ScreenInfo().getMqWidth(context) -
+                    width:
+                        ScreenInfo().getMqWidth(context) -
                         (ScreenInfo().getMqWidth(context) * 0.23),
                     child: Padding(
                       padding: const EdgeInsets.only(top: 5.0),
@@ -84,15 +98,15 @@ class _IntroWebState extends State<IntroWeb> {
                     child: SizedBox(
                       width: ScreenInfo().getMqWidth(context) * 0.45,
                       child: RichText(
-                          text: TextSpan(
-                              text: IntroScreenContents.introAbout,
-                              style: TextStyle(
-                                color: AppColors().textLight,
-                                letterSpacing: 1,
-                                height: 1.5,
-                                fontSize: 18,
-                              ),
-                              children: <TextSpan>[
+                        text: TextSpan(
+                          text: IntroScreenContents.introAbout,
+                          style: TextStyle(
+                            color: AppColors().textLight,
+                            letterSpacing: 1,
+                            height: 1.5,
+                            fontSize: 18,
+                          ),
+                          children: <TextSpan>[
                             TextSpan(
                               text: IntroScreenContents.currentOrgName,
                               style: TextStyle(
@@ -101,8 +115,10 @@ class _IntroWebState extends State<IntroWeb> {
                                 height: 1.5,
                                 fontSize: 18,
                               ),
-                            )
-                          ])),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                   Padding(
@@ -119,30 +135,39 @@ class _IntroWebState extends State<IntroWeb> {
                             }
                           },
                           onTap: () {
-                            widget.aScrollController.scrollToIndex(1,
-                                preferPosition: AutoScrollPosition.begin);
+                            widget.aScrollController.scrollToIndex(
+                              1,
+                              preferPosition: AutoScrollPosition.begin,
+                            );
                           },
                           child: Container(
                             height: ScreenInfo().getMqHeight(context) * 0.09,
                             width: ScreenInfo().getMqWidth(context) * 0.2,
                             decoration: BoxDecoration(
-                                color: (isHovered
-                                    ? AppColors().neonColor
-                                    : Colors.transparent),
-                                borderRadius:
-                                    const BorderRadius.all(Radius.circular(45)),
-                                border: Border.all(
-                                    color: AppColors().neonColor, width: 1.5)),
+                              color: (isHovered
+                                  ? AppColors().neonColor
+                                  : Colors.transparent),
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(45),
+                              ),
+                              border: Border.all(
+                                color: AppColors().neonColor,
+                                width: 1.5,
+                              ),
+                            ),
                             child: Center(
-                              child: Text('Check Out My Work!',
-                                  style: TextStyle(
-                                      color: (isHovered
-                                          ? Colors.black
-                                          : AppColors().neonColor),
-                                      fontSize: 13,
-                                      letterSpacing: 1,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'CircularStd')),
+                              child: Text(
+                                'Check Out My Work!',
+                                style: TextStyle(
+                                  color: (isHovered
+                                      ? Colors.black
+                                      : AppColors().neonColor),
+                                  fontSize: 13,
+                                  letterSpacing: 1,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'CircularStd',
+                                ),
+                              ),
                             ),
                           ),
                         );

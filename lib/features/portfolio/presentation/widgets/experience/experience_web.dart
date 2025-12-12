@@ -7,7 +7,7 @@ import '../../../../../utils/screen_info.dart';
 import '../../bloc/portfolio_bloc.dart';
 
 class ExperienceWeb extends StatefulWidget {
-  const ExperienceWeb({Key? key}) : super(key: key);
+  const ExperienceWeb({super.key});
 
   @override
   State<ExperienceWeb> createState() => _ExperienceWebState();

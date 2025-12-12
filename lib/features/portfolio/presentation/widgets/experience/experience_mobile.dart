@@ -7,7 +7,7 @@ import '../../../../../resource/app_colors.dart';
 import '../../bloc/portfolio_bloc.dart';
 
 class ExperienceMobile extends StatefulWidget {
-  const ExperienceMobile({Key? key}) : super(key: key);
+  const ExperienceMobile({super.key});
 
   @override
   State<ExperienceMobile> createState() => _ExperienceMobileState();

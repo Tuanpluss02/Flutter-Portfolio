@@ -11,7 +11,7 @@ import '../../bloc/hover_cubit.dart';
 import '../../bloc/portfolio_bloc.dart';
 
 class LeftPane extends StatelessWidget {
-  const LeftPane({Key? key}) : super(key: key);
+  const LeftPane({super.key});
 
   @override
   Widget build(BuildContext context) {

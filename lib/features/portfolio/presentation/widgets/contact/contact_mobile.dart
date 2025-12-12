@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/resource/app_colors.dart';
+import 'package:portfolio/resource/app_resource.dart';
+import 'package:portfolio/utils/screen_info.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../resource/app_colors.dart';
-import '../../resource/app_resource.dart';
-import '../../utils/screen_info.dart';
-
 class ContactMobile extends StatefulWidget {
-  const ContactMobile({Key? key}) : super(key: key);
+  const ContactMobile({super.key});
 
   @override
   State<ContactMobile> createState() => _ContactMobileState();
@@ -28,16 +27,18 @@ class _ContactMobileState extends State<ContactMobile> {
                   Text(
                     '''04.''',
                     style: TextStyle(
-                        color: AppColors().neonColor,
-                        fontSize: 12,
-                        fontFamily: 'CircularStd'),
+                      color: AppColors().neonColor,
+                      fontSize: 12,
+                      fontFamily: 'CircularStd',
+                    ),
                   ),
                   Text(
                     ''' What's next?''',
                     style: TextStyle(
-                        color: AppColors().neonColor,
-                        fontSize: 14,
-                        fontFamily: 'CircularStd'),
+                      color: AppColors().neonColor,
+                      fontSize: 14,
+                      fontFamily: 'CircularStd',
+                    ),
                   ),
                 ],
               ),
@@ -78,22 +79,27 @@ class _ContactMobileState extends State<ContactMobile> {
                   height: ScreenInfo().getMqHeight(context) * 0.09,
                   width: ScreenInfo().getMqWidth(context) * 0.45,
                   decoration: BoxDecoration(
-                      color: Colors.transparent,
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(3.0)),
-                      border:
-                          Border.all(color: AppColors().neonColor, width: 1.5)),
+                    color: Colors.transparent,
+                    borderRadius: const BorderRadius.all(Radius.circular(3.0)),
+                    border: Border.all(
+                      color: AppColors().neonColor,
+                      width: 1.5,
+                    ),
+                  ),
                   child: Center(
-                    child: Text('Say Hello!',
-                        style: TextStyle(
-                            color: AppColors().neonColor,
-                            fontSize: 20,
-                            letterSpacing: 1,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'CircularStd')),
+                    child: Text(
+                      'Say Hello!',
+                      style: TextStyle(
+                        color: AppColors().neonColor,
+                        fontSize: 20,
+                        letterSpacing: 1,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'CircularStd',
+                      ),
+                    ),
                   ),
                 ),
-              )
+              ),
             ],
           ),
           Column(
@@ -101,22 +107,24 @@ class _ContactMobileState extends State<ContactMobile> {
               Text(
                 '''Thanks for visit my website''',
                 style: TextStyle(
-                    color: AppColors().textColor,
-                    fontSize: 12,
-                    fontFamily: 'CircularStd'),
+                  color: AppColors().textColor,
+                  fontSize: 12,
+                  fontFamily: 'CircularStd',
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   '''Do Ngoc Tuan - 2024''',
                   style: TextStyle(
-                      color: AppColors().neonColor,
-                      fontSize: 12,
-                      fontFamily: 'CircularStd'),
+                    color: AppColors().neonColor,
+                    fontSize: 12,
+                    fontFamily: 'CircularStd',
+                  ),
                 ),
               ),
             ],
-          )
+          ),
         ],
       ),
     );

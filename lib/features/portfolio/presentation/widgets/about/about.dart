@@ -9,7 +9,7 @@ import '../../bloc/hover_cubit.dart';
 import '../../bloc/portfolio_bloc.dart';
 
 class About extends StatefulWidget {
-  const About({Key? key}) : super(key: key);
+  const About({super.key});
 
   @override
   State<About> createState() => _AboutState();
@@ -76,7 +76,7 @@ class _AboutState extends State<About> {
                           ),
                         ),
                       );
-                    }).toList(),
+                    }),
                     Padding(
                       padding: const EdgeInsets.only(top: 20.0),
                       child: BlocBuilder<PortfolioBloc, PortfolioState>(

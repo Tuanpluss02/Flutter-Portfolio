@@ -12,7 +12,7 @@ import '../../bloc/hover_cubit.dart';
 class ActionBar extends StatefulWidget implements PreferredSizeWidget {
   final AutoScrollController controller;
 
-  const ActionBar(this.controller, {Key? key}) : super(key: key);
+  const ActionBar(this.controller, {super.key});
 
   @override
   State<ActionBar> createState() => _ActionBarState();

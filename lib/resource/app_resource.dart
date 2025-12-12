@@ -1,9 +1,8 @@
+import 'package:portfolio/features/portfolio/domain/entities/experience_model.dart';
+import 'package:portfolio/features/portfolio/domain/entities/social_model.dart';
+import 'package:portfolio/features/portfolio/domain/entities/technology_model.dart';
+import 'package:portfolio/features/portfolio/domain/entities/work_model.dart';
 import 'package:portfolio/resource/app_assets.dart';
-
-import '../model/experience_model.dart';
-import '../model/social_model.dart';
-import '../model/technology_model.dart';
-import '../model/work_model.dart';
 
 class IntroScreenContents {
   static const welcomeTxt = '''Hi, my name is''';
@@ -39,10 +38,11 @@ const endTxt =
 
 List<Social> socialLinksList = [
   Social(
-      name: "LinkedIn",
-      link: SocialLinks.linkedin,
-      image: AppAssets.linkedinLogo,
-      state: "linkedinHovered"),
+    name: "LinkedIn",
+    link: SocialLinks.linkedin,
+    image: AppAssets.linkedinLogo,
+    state: "linkedinHovered",
+  ),
   Social(
     name: "Github",
     link: SocialLinks.github,
@@ -50,20 +50,23 @@ List<Social> socialLinksList = [
     state: "githubHovered",
   ),
   Social(
-      name: "Stack Overflow",
-      image: AppAssets.stackoverflowLogo,
-      link: SocialLinks.stackoverflow,
-      state: "stackoverflowHovered"),
+    name: "Stack Overflow",
+    image: AppAssets.stackoverflowLogo,
+    link: SocialLinks.stackoverflow,
+    state: "stackoverflowHovered",
+  ),
   Social(
-      name: "Instagram",
-      link: SocialLinks.instagram,
-      image: AppAssets.instagramLogo,
-      state: "instagramHovered"),
+    name: "Instagram",
+    link: SocialLinks.instagram,
+    image: AppAssets.instagramLogo,
+    state: "instagramHovered",
+  ),
   Social(
-      name: "X",
-      image: AppAssets.twitterLogo,
-      link: SocialLinks.twitter,
-      state: "TwitterHovered"),
+    name: "X",
+    image: AppAssets.twitterLogo,
+    link: SocialLinks.twitter,
+    state: "TwitterHovered",
+  ),
 ];
 
 List<String> aboutScreenContentsList = [
@@ -84,86 +87,94 @@ List<Technology> technologiesList = [
 
 List<WorkModel> projectList = [
   WorkModel(
-      projectTitle: "StormX Link Backend",
-      projectContent:
-          '''Backend for StormX Link. Using NestJS and MongoDB for database. This project provides a robust and scalable backend infrastructure for the StormX Link web application.''',
-      techs: [
-        Technology(techName: 'NestJS', techLogo: AppAssets.nestjsLogo),
-        Technology(techName: 'MongoDB', techLogo: AppAssets.mongoDBLogo),
-        Technology(techName: 'Docker', techLogo: AppAssets.dockerLogo),
-      ],
-      link: "https://github.com/Tuanpluss02/StormX-Link-Backend"),
+    projectTitle: "StormX Link Backend",
+    projectContent:
+        '''Backend for StormX Link. Using NestJS and MongoDB for database. This project provides a robust and scalable backend infrastructure for the StormX Link web application.''',
+    techs: [
+      Technology(techName: 'NestJS', techLogo: AppAssets.nestjsLogo),
+      Technology(techName: 'MongoDB', techLogo: AppAssets.mongoDBLogo),
+      Technology(techName: 'Docker', techLogo: AppAssets.dockerLogo),
+    ],
+    link: "https://github.com/Tuanpluss02/StormX-Link-Backend",
+  ),
   WorkModel(
-      projectTitle: "StormX Link",
-      projectContent:
-          '''StormX Link is a web application that allows users to shorten long URLs into short and easy-to-remember links.''',
-      techs: [
-        Technology(techName: 'Flutter', techLogo: AppAssets.flutterLogo),
-        Technology(techName: 'Firebase', techLogo: AppAssets.firebaseLogo),
-        Technology(techName: 'Rive', techLogo: AppAssets.riveLogo),
-      ],
-      link: "https://github.com/Tuanpluss02/StormX-Link"),
+    projectTitle: "StormX Link",
+    projectContent:
+        '''StormX Link is a web application that allows users to shorten long URLs into short and easy-to-remember links.''',
+    techs: [
+      Technology(techName: 'Flutter', techLogo: AppAssets.flutterLogo),
+      Technology(techName: 'Firebase', techLogo: AppAssets.firebaseLogo),
+      Technology(techName: 'Rive', techLogo: AppAssets.riveLogo),
+    ],
+    link: "https://github.com/Tuanpluss02/StormX-Link",
+  ),
   WorkModel(
-      projectTitle: "Flutter Portfolio",
-      projectContent:
-          '''My portfolio built using Flutter, an open-source UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase. This portfolio showcases my skills and experiences as a Flutter developer.''',
-      techs: [
-        Technology(techName: 'Flutter', techLogo: AppAssets.flutterLogo),
-        Technology(techName: 'Rive', techLogo: AppAssets.riveLogo),
-        Technology(techName: "Firebase", techLogo: AppAssets.firebaseLogo)
-      ],
-      link: "https://github.com/Tuanpluss02/Flutter-Portfolio"),
+    projectTitle: "Flutter Portfolio",
+    projectContent:
+        '''My portfolio built using Flutter, an open-source UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase. This portfolio showcases my skills and experiences as a Flutter developer.''',
+    techs: [
+      Technology(techName: 'Flutter', techLogo: AppAssets.flutterLogo),
+      Technology(techName: 'Rive', techLogo: AppAssets.riveLogo),
+      Technology(techName: "Firebase", techLogo: AppAssets.firebaseLogo),
+    ],
+    link: "https://github.com/Tuanpluss02/Flutter-Portfolio",
+  ),
   WorkModel(
-      projectTitle: "Pro Note",
-      projectContent:
-          '''The ultimate cross-platform note-taking application built with Flutter framework. Pro Notes helps you stay organized and on top of your game with its simple and clean interface, and powerful features.''',
-      techs: [
-        Technology(techName: 'Flutter', techLogo: AppAssets.flutterLogo),
-        Technology(techName: 'Firebase', techLogo: AppAssets.firebaseLogo),
-        Technology(techName: 'Rive', techLogo: AppAssets.riveLogo),
-      ],
-      link: "https://github.com/Tuanpluss02/Pro-Note"),
+    projectTitle: "Pro Note",
+    projectContent:
+        '''The ultimate cross-platform note-taking application built with Flutter framework. Pro Notes helps you stay organized and on top of your game with its simple and clean interface, and powerful features.''',
+    techs: [
+      Technology(techName: 'Flutter', techLogo: AppAssets.flutterLogo),
+      Technology(techName: 'Firebase', techLogo: AppAssets.firebaseLogo),
+      Technology(techName: 'Rive', techLogo: AppAssets.riveLogo),
+    ],
+    link: "https://github.com/Tuanpluss02/Pro-Note",
+  ),
   WorkModel(
-      projectTitle: "SVG to Turtle",
-      projectContent:
-          '''The script reads an SVG file and extracts the path data from it. It then converts the path data into a series of Turtle draw commands that can be executed by a Turtle graphics library.''',
-      techs: [
-        Technology(techName: 'Python', techLogo: AppAssets.pythonLogo),
-        Technology(techName: 'Vectorizer', techLogo: AppAssets.vectorizerLogo),
-      ],
-      link: "https://github.com/Tuanpluss02/turtle-svg"),
+    projectTitle: "SVG to Turtle",
+    projectContent:
+        '''The script reads an SVG file and extracts the path data from it. It then converts the path data into a series of Turtle draw commands that can be executed by a Turtle graphics library.''',
+    techs: [
+      Technology(techName: 'Python', techLogo: AppAssets.pythonLogo),
+      Technology(techName: 'Vectorizer', techLogo: AppAssets.vectorizerLogo),
+    ],
+    link: "https://github.com/Tuanpluss02/turtle-svg",
+  ),
   WorkModel(
-      projectTitle: "COVID-19 Tracker",
-      projectContent:
-          "The COVID-19 Tracker is an efficient mobile application designed to provide real-time data and statistics on the COVID-19 pandemic. ",
-      techs: [
-        Technology(techName: 'Flutter', techLogo: AppAssets.flutterLogo),
-        Technology(techName: 'Dart', techLogo: AppAssets.dartLogo),
-      ],
-      link: "https://github.com/Tuanpluss02/Covid19-Tracker/tree/main"),
+    projectTitle: "COVID-19 Tracker",
+    projectContent:
+        "The COVID-19 Tracker is an efficient mobile application designed to provide real-time data and statistics on the COVID-19 pandemic. ",
+    techs: [
+      Technology(techName: 'Flutter', techLogo: AppAssets.flutterLogo),
+      Technology(techName: 'Dart', techLogo: AppAssets.dartLogo),
+    ],
+    link: "https://github.com/Tuanpluss02/Covid19-Tracker/tree/main",
+  ),
 ];
 
 List<ExperienceModel> experienceList = [
   ExperienceModel(
-      company: "Code MeLy",
-      position: "Developer",
-      duration: "2022 - Present",
-      website: "https://codemely.dev/",
-      jobs: [
-        "Discord Admin.",
-        "Content writer.",
-        "Develop Flutter application for clients.",
-      ]),
+    company: "Code MeLy",
+    position: "Developer",
+    duration: "2022 - Present",
+    website: "https://codemely.dev/",
+    jobs: [
+      "Discord Admin.",
+      "Content writer.",
+      "Develop Flutter application for clients.",
+    ],
+  ),
   ExperienceModel(
-      company: "T-Town",
-      position: "Developer",
-      duration: "2020 - 2022",
-      website: "",
-      jobs: [
-        "Human Resource Manager.",
-        "Content writer for company's blog.",
-        "Develop Flutter application for company.",
-      ]),
+    company: "T-Town",
+    position: "Developer",
+    duration: "2020 - 2022",
+    website: "",
+    jobs: [
+      "Human Resource Manager.",
+      "Content writer for company's blog.",
+      "Develop Flutter application for company.",
+    ],
+  ),
   ExperienceModel(
     company: "StormX",
     position: "Developer",
@@ -174,5 +185,5 @@ List<ExperienceModel> experienceList = [
       "Write articles about technology.",
       "Learn and research about new technology.",
     ],
-  )
+  ),
 ];

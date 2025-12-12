@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/responsive.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
-import '../../responsive.dart';
 import 'intro_mobile.dart';
 import 'intro_web.dart';
 
@@ -9,7 +9,7 @@ import 'intro_web.dart';
 class IntroContent extends StatefulWidget {
   AutoScrollController aScrollController;
 
-  IntroContent(this.aScrollController, {Key? key}) : super(key: key);
+  IntroContent(this.aScrollController, {super.key});
 
   @override
   State<IntroContent> createState() => _IntroContentState();

@@ -14,7 +14,7 @@ import '../../bloc/portfolio_bloc.dart';
 import '../../../domain/entities/work_model.dart';
 
 class WorkWeb extends StatefulWidget {
-  const WorkWeb({Key? key}) : super(key: key);
+  const WorkWeb({super.key});
 
   @override
   State<WorkWeb> createState() => _WorkWebState();
@@ -83,7 +83,7 @@ class _WorkWebState extends State<WorkWeb> {
   }
 
   // ignore: non_constant_identifier_names
-  projectWidget({required int index, required WorkModel work}) {
+  InkWell projectWidget({required int index, required WorkModel work}) {
     return InkWell(
       onTap: () async {
         await launchUrl(Uri.parse(work.link!));

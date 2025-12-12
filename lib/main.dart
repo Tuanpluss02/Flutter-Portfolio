@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rive/rive.dart';
 import 'package:url_strategy/url_strategy.dart';
 
+import 'features/portfolio/presentation/bloc/hover_cubit.dart';
 import 'features/portfolio/presentation/bloc/portfolio_bloc.dart';
 import 'features/portfolio/presentation/bloc/scroll_cubit.dart';
-import 'features/portfolio/presentation/bloc/hover_cubit.dart';
 import 'features/portfolio/presentation/pages/root_screen.dart';
 import 'injection.dart';
 import 'resource/app_colors.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await RiveNative.init();
   setPathUrlStrategy();
   configureDependencies();
   runApp(const AppTheme());
 }
 
 class AppTheme extends StatelessWidget {
-  const AppTheme({Key? key}) : super(key: key);
+  const AppTheme({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -17,7 +17,7 @@ import '../widgets/common/right_pane.dart';
 import '../widgets/work/work.dart';
 
 class RootScreen extends StatefulWidget {
-  const RootScreen({Key? key}) : super(key: key);
+  const RootScreen({super.key});
 
   @override
   State<RootScreen> createState() => _RootScreenState();
