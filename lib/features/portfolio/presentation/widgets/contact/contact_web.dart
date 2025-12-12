@@ -17,12 +17,6 @@ class _ContactWebState extends State<ContactWeb> {
   RiveWidgetController? _controller;
   BooleanInput? _hoverInput;
 
-  @override
-  void dispose() {
-    _controller?.dispose();
-    super.dispose();
-  }
-
   void _onRiveLoaded(RiveLoaded state) {
     _controller = state.controller;
     // Find the hover boolean input in the state machine
