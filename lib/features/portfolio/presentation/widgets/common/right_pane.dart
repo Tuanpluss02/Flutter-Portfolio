@@ -36,7 +36,7 @@ class _RightPaneState extends State<RightPane> {
                         'tuando@stormxplus.onmicrosoft.com',
                         style: TextStyle(
                           letterSpacing: 1,
-                          color: AppColors().textColor,
+                          color: AppColors.textColor,
                           fontSize: 14,
                           fontFamily: 'CircularStd',
                         ),

@@ -1,14 +1,16 @@
+/// Experience entity
 class ExperienceModel {
-  String? company;
-  String? position;
-  String? duration;
-  String? website;
-  List<String>? jobs;
-  ExperienceModel({
-    this.company,
-    this.position,
-    this.duration,
-    this.website,
-    this.jobs,
+  final String company;
+  final String position;
+  final String duration;
+  final String website;
+  final List<String> jobs;
+
+  const ExperienceModel({
+    required this.company,
+    required this.position,
+    required this.duration,
+    required this.website,
+    required this.jobs,
   });
 }

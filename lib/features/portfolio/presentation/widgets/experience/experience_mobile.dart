@@ -17,7 +17,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: ScreenInfo().getMqHeight(context) - 100,
+      height: ScreenInfo.getHeight(context) - 100,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -29,7 +29,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                 text: TextSpan(
                     text: "02.",
                     style: TextStyle(
-                        color: AppColors().neonColor,
+                        color: AppColors.neonColor,
                         fontSize: 20,
                         fontFamily: 'CircularStd'),
                     children: const <TextSpan>[
@@ -46,8 +46,8 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
               Container(
                 height: 0.5,
                 margin: const EdgeInsets.only(left: 15),
-                width: ScreenInfo().getMqWidth(context) * 0.2,
-                color: AppColors().textLight,
+                width: ScreenInfo.getWidth(context) * 0.2,
+                color: AppColors.textLight,
               )
             ],
           ),
@@ -58,7 +58,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
               final selectedIndex = state.selectedExperienceIndex;
 
               return Container(
-                width: ScreenInfo().getMqWidth(context),
+                width: ScreenInfo.getWidth(context),
                 margin: const EdgeInsets.all(30.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -69,7 +69,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           ...List.generate(experiences.length,
-                              (index) => selectCompany(context, selectedIndex, index, experiences[index].company!))
+                              (index) => selectCompany(context, selectedIndex, index, experiences[index].company))
                         ],
                       ),
                     ),
@@ -81,12 +81,12 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                         children: [
                           InkWell(
                             onTap: () => launchUrl(
-                                Uri.parse(experiences[selectedIndex].website!)),
+                                Uri.parse(experiences[selectedIndex].website)),
                             child: RichText(
                               text: TextSpan(
                                   text: experiences[selectedIndex].position,
                                   style: TextStyle(
-                                      color: AppColors().textColor,
+                                      color: AppColors.textColor,
                                       fontWeight: FontWeight.bold,
                                       letterSpacing: 1,
                                       fontSize: 18),
@@ -94,22 +94,22 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                                     TextSpan(
                                       text: ' @${experiences[selectedIndex].company}',
                                       style: TextStyle(
-                                          color: AppColors().neonColor,
+                                          color: AppColors.neonColor,
                                           fontSize: 18),
                                     )
                                   ]),
                             ),
                           ),
                           Text(
-                            experiences[selectedIndex].duration!,
+                            experiences[selectedIndex].duration,
                             style: TextStyle(
-                                color: AppColors().textLight,
+                                color: AppColors.textLight,
                                 letterSpacing: 1,
                                 height: 1.5,
                                 fontSize: 13,
                                 fontFamily: 'CircularStd'),
                           ),
-                          expWidget(experiences[selectedIndex].jobs!)
+                          expWidget(experiences[selectedIndex].jobs)
                         ],
                       ),
                     )
@@ -132,20 +132,20 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
         padding: const EdgeInsets.all(10.0),
         decoration: BoxDecoration(
             color: index == selectedIndex
-                ? AppColors().cardColor
+                ? AppColors.cardColor
                 : Colors.transparent,
             border: Border(
                 left: BorderSide(
                     color: index == selectedIndex
-                        ? AppColors().neonColor
+                        ? AppColors.neonColor
                         : Colors.white,
                     width: 2))),
         child: Text(
           companyName,
           style: TextStyle(
               color: index == selectedIndex
-                  ? AppColors().neonColor
-                  : AppColors().textLight,
+                  ? AppColors.neonColor
+                  : AppColors.textLight,
               height: 1.5,
               fontSize: 11,
               fontFamily: 'CircularStd'),
@@ -171,16 +171,16 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                         padding: const EdgeInsets.only(right: 5.0),
                         child: Icon(
                           Icons.arrow_right,
-                          color: AppColors().neonColor,
+                          color: AppColors.neonColor,
                           size: 20,
                         ),
                       ),
                       SizedBox(
-                        width: ScreenInfo().getMqWidth(context) * 0.5,
+                        width: ScreenInfo.getWidth(context) * 0.5,
                         child: Text(
                           jobs[index],
                           style: TextStyle(
-                              color: AppColors().textLight,
+                              color: AppColors.textLight,
                               letterSpacing: 1,
                               height: 1.5,
                               fontSize: 13,

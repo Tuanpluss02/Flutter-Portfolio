@@ -34,7 +34,7 @@ class AppTheme extends StatelessWidget {
         title: 'Tuan Do\'s Portfolio',
         theme: ThemeData(
           brightness: Brightness.dark,
-          primaryColor: AppColors().primaryColor,
+          primaryColor: AppColors.primaryColor,
           fontFamily: 'CircularStd',
         ),
         home: const RootScreen(),

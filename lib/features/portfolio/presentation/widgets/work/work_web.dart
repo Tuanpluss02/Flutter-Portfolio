@@ -29,14 +29,14 @@ class _WorkWebState extends State<WorkWeb> {
           text: TextSpan(
               text: "03.",
               style: TextStyle(
-                  color: AppColors().neonColor,
+                  color: AppColors.neonColor,
                   fontSize: 20,
                   fontFamily: 'CircularStd'),
               children: <TextSpan>[
                 TextSpan(
                   text: ' My Noteworthy Projects',
                   style: TextStyle(
-                      color: AppColors().textColor,
+                      color: AppColors.textColor,
                       letterSpacing: 1,
                       fontWeight: FontWeight.bold,
                       fontSize: 25),
@@ -48,7 +48,7 @@ class _WorkWebState extends State<WorkWeb> {
           child: Text(
             'view the archives',
             style: TextStyle(
-                color: AppColors().neonColor,
+                color: AppColors.neonColor,
                 fontSize: 15,
                 fontFamily: 'CircularStd'),
           ),
@@ -86,7 +86,7 @@ class _WorkWebState extends State<WorkWeb> {
   InkWell projectWidget({required int index, required WorkModel work}) {
     return InkWell(
       onTap: () async {
-        await launchUrl(Uri.parse(work.link!));
+        await launchUrl(Uri.parse(work.link));
       },
       onHover: (val) {
         if (val) {
@@ -105,7 +105,7 @@ class _WorkWebState extends State<WorkWeb> {
             curve: Curves.fastOutSlowIn,
             margin: EdgeInsets.all(isHovered ? 8.0 : 0.0),
             child: Card(
-              color: AppColors().cardColor,
+              color: AppColors.cardColor,
               elevation: 10,
               child: Container(
                 padding: const EdgeInsets.all(15.0),
@@ -120,13 +120,13 @@ class _WorkWebState extends State<WorkWeb> {
                           AppAssets.folderLogo,
                           width: 45,
                           height: 45,
-                          color: AppColors().neonColor,
+                          color: AppColors.neonColor,
                         ),
                         SvgPicture.asset(
                           AppAssets.externalLink,
                           width: 22,
                           height: 22,
-                          color: isHovered ? AppColors().neonColor : Colors.white,
+                          color: isHovered ? AppColors.neonColor : Colors.white,
                         ),
                       ],
                     ),
@@ -140,7 +140,7 @@ class _WorkWebState extends State<WorkWeb> {
                               textAlign: TextAlign.left,
                               style: TextStyle(
                                   color: isHovered
-                                      ? AppColors().neonColor
+                                      ? AppColors.neonColor
                                       : Colors.white,
                                   letterSpacing: 1,
                                   fontWeight: FontWeight.bold,
@@ -157,7 +157,7 @@ class _WorkWebState extends State<WorkWeb> {
                         child: Text(
                           work.projectContent.toString(),
                           style: TextStyle(
-                            color: AppColors().textLight,
+                            color: AppColors.textLight,
                             letterSpacing: 1,
                             height: 1.5,
                             fontSize: 14,
@@ -172,7 +172,7 @@ class _WorkWebState extends State<WorkWeb> {
                               const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 3,
                           ),
-                          children: work.techs!
+                          children: work.techs
                               .map((item) => Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Image.asset(

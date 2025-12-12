@@ -37,7 +37,7 @@ class LeftPane extends StatelessWidget {
                                   .map(
                                     (item) => SizedBox(
                                       height:
-                                          ScreenInfo().getMqHeight(context) * 0.07,
+                                          ScreenInfo.getHeight(context) * 0.07,
                                       child: InkWell(
                                         onTap: () async {
                                           await launchUrl(Uri.parse(item.link));
@@ -56,8 +56,8 @@ class LeftPane extends StatelessWidget {
                                           duration: const Duration(milliseconds: 300),
                                           child: SvgPicture.asset(item.image,
                                               color: val == item.state
-                                                  ? AppColors().neonColor
-                                                  : AppColors().textColor,
+                                                  ? AppColors.neonColor
+                                                  : AppColors.textColor,
                                               width: 22),
                                         ),
                                       ),
@@ -72,7 +72,7 @@ class LeftPane extends StatelessWidget {
             Expanded(
                 child: Container(
               width: 1,
-              color: AppColors().textColor,
+              color: AppColors.textColor,
             ))
           ],
         ));

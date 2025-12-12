@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../resource/app_colors.dart';
-import '../resource/text_styles.dart';
+import '../resource/app_text_styles.dart';
 
 class AppDialog {
   static BuildContext? lastContext;
@@ -15,12 +15,12 @@ class AppDialog {
     showDialog(
       context: context,
       builder: (_) => AlertDialog(
-        title: Text(title, style: TxtStyle().boldWhite(context)),
+        title: Text(title, style: AppTextStyles.boldWhite),
         content: Text(msg),
         actions: [
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors().neonColor,
+              backgroundColor: AppColors.neonColor,
             ),
             onPressed: () => Navigator.pop(context),
             child: const Text('Okay', style: TextStyle(color: Colors.black)),

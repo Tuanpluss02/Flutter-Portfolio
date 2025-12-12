@@ -2,23 +2,26 @@ import 'package:flutter/material.dart';
 
 enum ScreenType { mobile, web }
 
-class ScreenInfo {
-  ScreenType getScreenType(BuildContext context) {
-    double scrWidth = getMqWidth(context);
-    if (scrWidth > 915) {
+/// Screen utility functions
+abstract final class ScreenInfo {
+  /// Get screen type based on width breakpoints
+  static ScreenType getScreenType(BuildContext context) {
+    final width = getWidth(context);
+    if (width > 915) {
       return ScreenType.web;
-    } else if (scrWidth < 650) {
+    } else if (width < 650) {
       return ScreenType.mobile;
-    } else {
-      return ScreenType.web;
     }
+    return ScreenType.web;
   }
 
-  double getMqWidth(BuildContext context) {
-    return MediaQuery.of(context).size.width;
+  /// Get screen width
+  static double getWidth(BuildContext context) {
+    return MediaQuery.sizeOf(context).width;
   }
 
-  double getMqHeight(BuildContext context) {
-    return MediaQuery.of(context).size.height;
+  /// Get screen height
+  static double getHeight(BuildContext context) {
+    return MediaQuery.sizeOf(context).height;
   }
 }

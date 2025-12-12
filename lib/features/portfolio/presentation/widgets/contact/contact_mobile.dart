@@ -15,7 +15,7 @@ class _ContactMobileState extends State<ContactMobile> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: ScreenInfo().getMqHeight(context) - 100,
+      height: ScreenInfo.getHeight(context) - 100,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -27,7 +27,7 @@ class _ContactMobileState extends State<ContactMobile> {
                   Text(
                     '''04.''',
                     style: TextStyle(
-                      color: AppColors().neonColor,
+                      color: AppColors.neonColor,
                       fontSize: 12,
                       fontFamily: 'CircularStd',
                     ),
@@ -35,7 +35,7 @@ class _ContactMobileState extends State<ContactMobile> {
                   Text(
                     ''' What's next?''',
                     style: TextStyle(
-                      color: AppColors().neonColor,
+                      color: AppColors.neonColor,
                       fontSize: 14,
                       fontFamily: 'CircularStd',
                     ),
@@ -47,7 +47,7 @@ class _ContactMobileState extends State<ContactMobile> {
                 child: Text(
                   'Get In Touch',
                   style: TextStyle(
-                    color: AppColors().textColor,
+                    color: AppColors.textColor,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 3,
                     fontSize: 40,
@@ -57,12 +57,12 @@ class _ContactMobileState extends State<ContactMobile> {
               Padding(
                 padding: const EdgeInsets.only(top: 15.0),
                 child: SizedBox(
-                  width: ScreenInfo().getMqWidth(context) * 0.55,
+                  width: ScreenInfo.getWidth(context) * 0.55,
                   child: Text(
                     endTxt,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: AppColors().textLight,
+                      color: AppColors.textLight,
                       letterSpacing: 1,
                       height: 1.5,
                       fontSize: 14,
@@ -76,13 +76,13 @@ class _ContactMobileState extends State<ContactMobile> {
                 },
                 child: Container(
                   margin: const EdgeInsets.only(top: 30),
-                  height: ScreenInfo().getMqHeight(context) * 0.09,
-                  width: ScreenInfo().getMqWidth(context) * 0.45,
+                  height: ScreenInfo.getHeight(context) * 0.09,
+                  width: ScreenInfo.getWidth(context) * 0.45,
                   decoration: BoxDecoration(
                     color: Colors.transparent,
                     borderRadius: const BorderRadius.all(Radius.circular(3.0)),
                     border: Border.all(
-                      color: AppColors().neonColor,
+                      color: AppColors.neonColor,
                       width: 1.5,
                     ),
                   ),
@@ -90,7 +90,7 @@ class _ContactMobileState extends State<ContactMobile> {
                     child: Text(
                       'Say Hello!',
                       style: TextStyle(
-                        color: AppColors().neonColor,
+                        color: AppColors.neonColor,
                         fontSize: 20,
                         letterSpacing: 1,
                         fontWeight: FontWeight.bold,
@@ -107,7 +107,7 @@ class _ContactMobileState extends State<ContactMobile> {
               Text(
                 '''Thanks for visit my website''',
                 style: TextStyle(
-                  color: AppColors().textColor,
+                  color: AppColors.textColor,
                   fontSize: 12,
                   fontFamily: 'CircularStd',
                 ),
@@ -117,7 +117,7 @@ class _ContactMobileState extends State<ContactMobile> {
                 child: Text(
                   '''Do Ngoc Tuan - 2024''',
                   style: TextStyle(
-                    color: AppColors().neonColor,
+                    color: AppColors.neonColor,
                     fontSize: 12,
                     fontFamily: 'CircularStd',
                   ),

@@ -22,7 +22,7 @@ class Responsive extends StatefulWidget {
 class _ResponsiveState extends State<Responsive> {
   @override
   Widget build(BuildContext context) {
-    ScreenType scrType = ScreenInfo().getScreenType(context);
+    ScreenType scrType = ScreenInfo.getScreenType(context);
     switch (scrType) {
       case ScreenType.mobile:
         return widget.mobileView;

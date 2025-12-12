@@ -63,7 +63,7 @@ class _RootScreenState extends State<RootScreen> {
                 ],
               ),
             ),
-            height: ScreenInfo().getMqHeight(context),
+            height: ScreenInfo.getHeight(context),
             child: Column(
               children: [
                 ActionBar(aScrollController),
@@ -75,7 +75,7 @@ class _RootScreenState extends State<RootScreen> {
                       } else if (state is PortfolioError) {
                         return Center(child: Text(state.message));
                       } else if (state is PortfolioLoaded) {
-                        ScreenType scrType = ScreenInfo().getScreenType(
+                        ScreenType scrType = ScreenInfo.getScreenType(
                           context,
                         );
                         return Row(

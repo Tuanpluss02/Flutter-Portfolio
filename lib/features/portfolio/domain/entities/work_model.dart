@@ -1,10 +1,16 @@
 import 'technology_model.dart';
 
+/// Work/Project entity
 class WorkModel {
-  String? projectTitle;
-  String? projectContent;
-  List<Technology>? techs;
-  String? link;
+  final String projectTitle;
+  final String projectContent;
+  final List<Technology> techs;
+  final String link;
 
-  WorkModel({this.projectTitle, this.projectContent, this.techs, this.link});
+  const WorkModel({
+    required this.projectTitle,
+    required this.projectContent,
+    required this.techs,
+    required this.link,
+  });
 }

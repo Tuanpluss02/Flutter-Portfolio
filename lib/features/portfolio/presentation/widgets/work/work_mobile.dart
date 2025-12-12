@@ -29,14 +29,14 @@ class _WorkMobileState extends State<WorkMobile> {
           text: TextSpan(
               text: "03.",
               style: TextStyle(
-                  color: AppColors().neonColor,
+                  color: AppColors.neonColor,
                   fontSize: 20,
                   fontFamily: 'CircularStd'),
               children: <TextSpan>[
                 TextSpan(
                   text: ' My Noteworthy Projects',
                   style: TextStyle(
-                      color: AppColors().textColor,
+                      color: AppColors.textColor,
                       letterSpacing: 1,
                       fontWeight: FontWeight.bold,
                       fontSize: 18),
@@ -48,7 +48,7 @@ class _WorkMobileState extends State<WorkMobile> {
           child: Text(
             'view the archives',
             style: TextStyle(
-                color: AppColors().neonColor,
+                color: AppColors.neonColor,
                 fontSize: 12,
                 fontFamily: 'CircularStd'),
           ),
@@ -85,7 +85,7 @@ class _WorkMobileState extends State<WorkMobile> {
   InkWell projectWidget({required int index, required WorkModel work}) {
     return InkWell(
       onTap: () async {
-        await launchUrl(Uri.parse(work.link!));
+        await launchUrl(Uri.parse(work.link));
       },
       onHover: (bol) {
         if (bol) {
@@ -100,7 +100,7 @@ class _WorkMobileState extends State<WorkMobile> {
           return Container(
             margin: EdgeInsets.all(isHovered ? 8.0 : 0.0),
             child: Card(
-              color: AppColors().cardColor,
+              color: AppColors.cardColor,
               elevation: 10,
               child: Container(
                 padding: const EdgeInsets.all(15.0),
@@ -114,13 +114,13 @@ class _WorkMobileState extends State<WorkMobile> {
                           AppAssets.folderLogo,
                           width: 35,
                           height: 35,
-                          color: AppColors().neonColor,
+                          color: AppColors.neonColor,
                         ),
                         SvgPicture.asset(
                           AppAssets.externalLink,
                           width: 20,
                           height: 20,
-                          color: isHovered ? AppColors().neonColor : Colors.white,
+                          color: isHovered ? AppColors.neonColor : Colors.white,
                         ),
                       ],
                     ),
@@ -136,7 +136,7 @@ class _WorkMobileState extends State<WorkMobile> {
                               textAlign: TextAlign.left,
                               style: TextStyle(
                                 color: isHovered
-                                    ? AppColors().neonColor
+                                    ? AppColors.neonColor
                                     : Colors.white,
                                 letterSpacing: 1,
                                 fontWeight: FontWeight.bold,
@@ -152,7 +152,7 @@ class _WorkMobileState extends State<WorkMobile> {
                         child: AutoSizeText(
                           work.projectContent.toString(),
                           style: TextStyle(
-                            color: AppColors().textLight,
+                            color: AppColors.textLight,
                             letterSpacing: 1,
                             height: 1.5,
                             fontSize: 12,
@@ -169,12 +169,12 @@ class _WorkMobileState extends State<WorkMobile> {
                           crossAxisSpacing: 4,
                         ),
                         physics: const NeverScrollableScrollPhysics(),
-                        children: work.techs!.map((tech) {
+                        children: work.techs.map((tech) {
                            return Container(
                               padding: const EdgeInsets.all(4.0),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
-                                color: AppColors().cardColor,
+                                color: AppColors.cardColor,
                               ),
                               child: Center(
                                 child: Image.asset(tech.techLogo, width: 20, height: 20,),

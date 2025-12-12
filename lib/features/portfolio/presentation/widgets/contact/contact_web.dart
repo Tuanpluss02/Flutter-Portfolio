@@ -39,7 +39,7 @@ class _ContactWebState extends State<ContactWeb> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: ScreenInfo().getMqHeight(context) - 70,
+      height: ScreenInfo.getHeight(context) - 70,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -51,7 +51,7 @@ class _ContactWebState extends State<ContactWeb> {
                   Text(
                     '''04.''',
                     style: TextStyle(
-                      color: AppColors().neonColor,
+                      color: AppColors.neonColor,
                       fontSize: 15,
                       fontFamily: 'CircularStd',
                     ),
@@ -59,7 +59,7 @@ class _ContactWebState extends State<ContactWeb> {
                   Text(
                     ''' What's next?''',
                     style: TextStyle(
-                      color: AppColors().neonColor,
+                      color: AppColors.neonColor,
                       fontSize: 18,
                       fontFamily: 'CircularStd',
                     ),
@@ -71,7 +71,7 @@ class _ContactWebState extends State<ContactWeb> {
                 child: Text(
                   'Get In Touch',
                   style: TextStyle(
-                    color: AppColors().textColor,
+                    color: AppColors.textColor,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 3,
                     fontSize: 55,
@@ -81,12 +81,12 @@ class _ContactWebState extends State<ContactWeb> {
               Padding(
                 padding: const EdgeInsets.only(top: 15.0),
                 child: SizedBox(
-                  width: ScreenInfo().getMqWidth(context) * 0.45,
+                  width: ScreenInfo.getWidth(context) * 0.45,
                   child: Text(
                     endTxt,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: AppColors().textLight,
+                      color: AppColors.textLight,
                       letterSpacing: 1,
                       height: 1.5,
                       fontSize: 18,
@@ -95,8 +95,8 @@ class _ContactWebState extends State<ContactWeb> {
                 ),
               ),
               SizedBox(
-                height: ScreenInfo().getMqHeight(context) * 0.2,
-                width: ScreenInfo().getMqWidth(context) * 0.5,
+                height: ScreenInfo.getHeight(context) * 0.2,
+                width: ScreenInfo.getWidth(context) * 0.5,
                 child: InkWell(
                   onTap: () async {
                     await launchUrl(Uri.parse(SocialLinks.linkedin));
@@ -129,7 +129,7 @@ class _ContactWebState extends State<ContactWeb> {
                       ),
                       Padding(
                         padding: EdgeInsets.only(
-                          top: ScreenInfo().getMqHeight(context) * 0.09,
+                          top: ScreenInfo.getHeight(context) * 0.09,
                           right: 10,
                         ),
                         child: Center(
@@ -137,7 +137,7 @@ class _ContactWebState extends State<ContactWeb> {
                             'Say Hello!',
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                              color: AppColors().primaryColor,
+                              color: AppColors.primaryColor,
                               fontSize: 25,
                               letterSpacing: 1,
                               fontWeight: FontWeight.bold,
@@ -157,7 +157,7 @@ class _ContactWebState extends State<ContactWeb> {
               Text(
                 '''Thanks for visit my website''',
                 style: TextStyle(
-                  color: AppColors().textColor,
+                  color: AppColors.textColor,
                   fontSize: 12,
                   fontFamily: 'CircularStd',
                 ),
@@ -167,7 +167,7 @@ class _ContactWebState extends State<ContactWeb> {
                 child: Text(
                   '''Do Ngoc Tuan - 2024''',
                   style: TextStyle(
-                    color: AppColors().neonColor,
+                    color: AppColors.neonColor,
                     fontSize: 12,
                     fontFamily: 'CircularStd',
                   ),

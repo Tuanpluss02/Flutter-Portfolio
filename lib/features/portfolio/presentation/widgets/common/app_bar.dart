@@ -28,7 +28,7 @@ class _ActionBarState extends State<ActionBar> {
         height: 70,
         padding: const EdgeInsets.only(right: 20.0, top: 25.0),
         child: () {
-          ScreenType scrType = ScreenInfo().getScreenType(context);
+          ScreenType scrType = ScreenInfo.getScreenType(context);
           if (scrType == ScreenType.mobile) {
             return Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -47,7 +47,7 @@ class _ActionBarState extends State<ActionBar> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       PopupMenuButton(
-                        color: AppColors().cardColor,
+                        color: AppColors.cardColor,
                         itemBuilder: (context) => appBarItems
                             .map(
                               (item) => PopupMenuItem(
@@ -113,7 +113,7 @@ class _ActionBarState extends State<ActionBar> {
                                 Text(
                                   "${item.index.toString().padLeft(2, '0')}. ",
                                   style: TextStyle(
-                                      color: AppColors().neonColor,
+                                      color: AppColors.neonColor,
                                       fontSize: 13,
                                       fontFamily: 'CircularStd'),
                                 ),
@@ -124,8 +124,8 @@ class _ActionBarState extends State<ActionBar> {
                                       item.title,
                                       style: TextStyle(
                                           color: isHovered
-                                              ? AppColors().neonColor
-                                              : AppColors().textColor,
+                                              ? AppColors.neonColor
+                                              : AppColors.textColor,
                                           fontSize: 13,
                                           fontFamily: 'CircularStd'),
                                     );

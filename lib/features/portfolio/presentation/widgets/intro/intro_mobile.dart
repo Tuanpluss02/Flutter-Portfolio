@@ -18,7 +18,7 @@ class _IntroMobileState extends State<IntroMobile> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.transparent,
-      height: ScreenInfo().getMqHeight(context) - 50,
+      height: ScreenInfo.getHeight(context) - 50,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -31,7 +31,7 @@ class _IntroMobileState extends State<IntroMobile> {
                 child: Text(
                   IntroScreenContents.welcomeTxt,
                   style: TextStyle(
-                    color: AppColors().neonColor,
+                    color: AppColors.neonColor,
                     fontSize: 16,
                     fontFamily: 'CircularStd',
                   ),
@@ -42,7 +42,7 @@ class _IntroMobileState extends State<IntroMobile> {
                 child: Text(
                   IntroScreenContents.name,
                   style: TextStyle(
-                    color: AppColors().textColor,
+                    color: AppColors.textColor,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 3,
                     fontSize: 30,
@@ -51,14 +51,14 @@ class _IntroMobileState extends State<IntroMobile> {
               ),
               SizedBox(
                 width:
-                    ScreenInfo().getMqWidth(context) -
-                    (ScreenInfo().getMqWidth(context) * 0.23),
+                    ScreenInfo.getWidth(context) -
+                    (ScreenInfo.getWidth(context) * 0.23),
                 child: Padding(
                   padding: const EdgeInsets.only(top: 5.0),
                   child: Text(
                     IntroScreenContents.whatIdo,
                     style: TextStyle(
-                      color: AppColors().textLight,
+                      color: AppColors.textLight,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 3,
                       fontSize: 30,
@@ -69,12 +69,12 @@ class _IntroMobileState extends State<IntroMobile> {
               Padding(
                 padding: const EdgeInsets.only(top: 20.0),
                 child: SizedBox(
-                  width: ScreenInfo().getMqWidth(context) * 0.6,
+                  width: ScreenInfo.getWidth(context) * 0.6,
                   child: RichText(
                     text: TextSpan(
                       text: IntroScreenContents.introAbout,
                       style: TextStyle(
-                        color: AppColors().textLight,
+                        color: AppColors.textLight,
                         letterSpacing: 1,
                         height: 1.5,
                         fontSize: 15,
@@ -83,7 +83,7 @@ class _IntroMobileState extends State<IntroMobile> {
                         TextSpan(
                           text: IntroScreenContents.currentOrgName,
                           style: TextStyle(
-                            color: AppColors().neonColor,
+                            color: AppColors.neonColor,
                             letterSpacing: 1,
                             height: 1.5,
                             fontSize: 15,
@@ -104,15 +104,15 @@ class _IntroMobileState extends State<IntroMobile> {
                     );
                   },
                   child: Container(
-                    height: ScreenInfo().getMqHeight(context) * 0.09,
-                    width: ScreenInfo().getMqWidth(context) * 0.45,
+                    height: ScreenInfo.getHeight(context) * 0.09,
+                    width: ScreenInfo.getWidth(context) * 0.45,
                     decoration: BoxDecoration(
                       color: Colors.transparent,
                       borderRadius: const BorderRadius.all(
                         Radius.circular(3.0),
                       ),
                       border: Border.all(
-                        color: AppColors().neonColor,
+                        color: AppColors.neonColor,
                         width: 1.5,
                       ),
                     ),
@@ -120,7 +120,7 @@ class _IntroMobileState extends State<IntroMobile> {
                       child: Text(
                         'Check Out My Work!',
                         style: TextStyle(
-                          color: AppColors().neonColor,
+                          color: AppColors.neonColor,
                           fontSize: 13,
                           letterSpacing: 1,
                           fontWeight: FontWeight.bold,

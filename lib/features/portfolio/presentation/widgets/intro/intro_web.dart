@@ -25,8 +25,8 @@ class _IntroWebState extends State<IntroWeb> {
     return Container(
       color: Colors.transparent,
       margin: EdgeInsets.only(
-        left: ScreenInfo().getMqWidth(context) * 0.01,
-        top: ScreenInfo().getMqHeight(context) * 0.1,
+        left: ScreenInfo.getWidth(context) * 0.01,
+        top: ScreenInfo.getHeight(context) * 0.1,
       ),
       child: Column(
         children: [
@@ -58,7 +58,7 @@ class _IntroWebState extends State<IntroWeb> {
                     child: Text(
                       IntroScreenContents.welcomeTxt,
                       style: TextStyle(
-                        color: AppColors().neonColor,
+                        color: AppColors.neonColor,
                         fontSize: 18,
                         fontFamily: 'CircularStd',
                       ),
@@ -69,7 +69,7 @@ class _IntroWebState extends State<IntroWeb> {
                     child: Text(
                       IntroScreenContents.name,
                       style: TextStyle(
-                        color: AppColors().textColor,
+                        color: AppColors.textColor,
                         fontWeight: FontWeight.bold,
                         letterSpacing: 3,
                         fontSize: 55,
@@ -78,14 +78,14 @@ class _IntroWebState extends State<IntroWeb> {
                   ),
                   SizedBox(
                     width:
-                        ScreenInfo().getMqWidth(context) -
-                        (ScreenInfo().getMqWidth(context) * 0.23),
+                        ScreenInfo.getWidth(context) -
+                        (ScreenInfo.getWidth(context) * 0.23),
                     child: Padding(
                       padding: const EdgeInsets.only(top: 5.0),
                       child: Text(
                         IntroScreenContents.whatIdo,
                         style: TextStyle(
-                          color: AppColors().textLight,
+                          color: AppColors.textLight,
                           fontWeight: FontWeight.bold,
                           letterSpacing: 3,
                           fontSize: 55,
@@ -96,12 +96,12 @@ class _IntroWebState extends State<IntroWeb> {
                   Padding(
                     padding: const EdgeInsets.only(top: 30.0),
                     child: SizedBox(
-                      width: ScreenInfo().getMqWidth(context) * 0.45,
+                      width: ScreenInfo.getWidth(context) * 0.45,
                       child: RichText(
                         text: TextSpan(
                           text: IntroScreenContents.introAbout,
                           style: TextStyle(
-                            color: AppColors().textLight,
+                            color: AppColors.textLight,
                             letterSpacing: 1,
                             height: 1.5,
                             fontSize: 18,
@@ -110,7 +110,7 @@ class _IntroWebState extends State<IntroWeb> {
                             TextSpan(
                               text: IntroScreenContents.currentOrgName,
                               style: TextStyle(
-                                color: AppColors().neonColor,
+                                color: AppColors.neonColor,
                                 letterSpacing: 1,
                                 height: 1.5,
                                 fontSize: 18,
@@ -141,17 +141,17 @@ class _IntroWebState extends State<IntroWeb> {
                             );
                           },
                           child: Container(
-                            height: ScreenInfo().getMqHeight(context) * 0.09,
-                            width: ScreenInfo().getMqWidth(context) * 0.2,
+                            height: ScreenInfo.getHeight(context) * 0.09,
+                            width: ScreenInfo.getWidth(context) * 0.2,
                             decoration: BoxDecoration(
                               color: (isHovered
-                                  ? AppColors().neonColor
+                                  ? AppColors.neonColor
                                   : Colors.transparent),
                               borderRadius: const BorderRadius.all(
                                 Radius.circular(45),
                               ),
                               border: Border.all(
-                                color: AppColors().neonColor,
+                                color: AppColors.neonColor,
                                 width: 1.5,
                               ),
                             ),
@@ -161,7 +161,7 @@ class _IntroWebState extends State<IntroWeb> {
                                 style: TextStyle(
                                   color: (isHovered
                                       ? Colors.black
-                                      : AppColors().neonColor),
+                                      : AppColors.neonColor),
                                   fontSize: 13,
                                   letterSpacing: 1,
                                   fontWeight: FontWeight.bold,
